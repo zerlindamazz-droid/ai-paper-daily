@@ -1,0 +1,46 @@
+name: Daily AI Paper Report
+
+on:
+  schedule:
+    # 6:00 AM PDT (UTC-7) = 13:00 UTC  [summer: Mar-Nov]
+    # 6:00 AM PST (UTC-8) = 14:00 UTC  [winter: Nov-Mar]
+    # Run at both to cover DST transitions; script is idempotent
+    - cron: '0 13 * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate report
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TZ: America/Los_Angeles
+        run: python scripts/main.py
+
+      - name: Commit and push report
+        run: |
+          git config --global user.name 'AI Papers Bot'
+          git config --global user.email 'bot@github-actions.com'
+          git add docs/
+          git diff --staged --quiet && echo "No changes to commit" || (
+            git commit -m "📄 Daily report $(TZ=America/Los_Angeles date +%Y-%m-%d)"
+            git push
+          )
