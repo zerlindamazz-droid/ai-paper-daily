@@ -44,6 +44,6 @@ jobs:
           git config --global user.email 'bot@github-actions.com'
           git add docs/
           git diff --staged --quiet && echo "No changes to commit" || (
-            git commit -m "📄 Daily report $(TZ=America/Los_Angeles date +%Y-%m-%d)"
+            git commit -m "📄 Daily report $(TZ=America/Los_Angeles date +%Y-%m-%d) [auto]"
             git push
           )

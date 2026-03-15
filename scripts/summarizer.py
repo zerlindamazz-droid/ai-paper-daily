@@ -114,13 +114,19 @@ def select_and_rank(papers):
         }
     }
 
-    prompt = f"""You are an expert AI researcher. From these {len(papers)} arXiv papers, select the best for a daily digest.
+    prompt = f"""You are an expert AI researcher curating a high-quality daily digest from the past 30 days of arXiv papers.
 
-Select:
-- Top 3 FEATURED (most significant AI model training contributions)
-- Next 5 BRIEF (broader coverage)
+From these {len(papers)} candidate papers (already filtered to exclude previously sent ones), select the BEST for today's digest:
+- Top 3 FEATURED: most significant, novel, and impactful AI model training contributions
+- Next 5 BRIEF: broader coverage of important but slightly less groundbreaking work
 
-Diversify across: LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA/robotics/embodied AI.
+Quality criteria (prioritize papers that):
+- Introduce a genuinely new idea or method (not incremental)
+- Show strong empirical results with specific numbers
+- Come from reputable labs or have strong methodology
+- Would be widely cited or discussed in the AI community
+
+Diversity: cover LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA/robotics/embodied AI.
 
 Papers:
 {paper_list}

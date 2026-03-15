@@ -16,6 +16,7 @@ from extractor import extract_figures
 from renderer import save_report
 from pdf_generator import generate_pdf
 from send_email import send_email
+from dedup import load_sent_ids, save_sent_ids, filter_unsent
 
 
 def get_la_date():
@@ -31,31 +32,43 @@ def main():
     print(f'AI Paper Daily - {date_str}')
     print(f'{"="*60}\n')
 
-    # Step 1: Fetch papers
-    print('📥 Fetching papers from arXiv...')
-    papers = fetch_papers(max_per_cat=12)
-    print(f'   Found {len(papers)} candidate papers\n')
+    # Step 1: Fetch papers (last 30 days)
+    print('📥 Fetching papers from arXiv (last 30 days)...')
+    papers = fetch_papers(days=30, max_per_cat=40)
 
-    if len(papers) < 5:
-        print('⚠️  Too few papers found (weekend/holiday?). Exiting.')
+    # Step 2: Deduplicate against previously sent papers
+    print('\n🔍 Deduplicating against sent history...')
+    sent_ids = load_sent_ids()
+    print(f'  {len(sent_ids)} papers already sent historically')
+    papers = filter_unsent(papers, sent_ids)
+
+    if len(papers) < 8:
+        print('⚠️  Too few unsent papers found. Exiting.')
         sys.exit(0)
 
-    # Step 2: Select and rank
-    print('🧠 Ranking papers with Claude AI...')
+    print(f'   {len(papers)} unsent candidate papers available\n')
+
+    # Step 3: Select and rank (Claude picks best from unsent pool)
+    print('🧠 Selecting best papers with Claude AI...')
+    # Pass up to 60 candidates to Claude (balance quality vs token limit)
+    candidates = papers[:60]
     try:
-        ranking = select_and_rank(papers)
+        ranking = select_and_rank(candidates)
     except Exception as e:
         print(f'   Ranking failed: {e}')
         sys.exit(1)
 
-    # Map ranked indices back to papers (1-based)
+    # Map ranked indices back to candidates (1-based)
     featured_indices = [r['paper_index'] - 1 for r in ranking['featured']]
     brief_indices = [r['paper_index'] - 1 for r in ranking['brief']]
 
-    featured_meta = ranking['featured']  # [{rank, paper_index, importance_score, topic_tags_*}]
+    featured_meta = ranking['featured']
     brief_meta = ranking['brief']
 
     print(f'   Selected {len(featured_indices)} featured + {len(brief_indices)} brief papers\n')
+
+    # Attach ranking metadata to candidates (not full papers list)
+    papers = candidates  # use candidates for index mapping
 
     # Attach ranking metadata to papers
     featured_papers_raw = []
@@ -135,6 +148,12 @@ def main():
     except Exception as e:
         print(f'   Render failed: {e}')
         raise
+
+    # Save sent paper IDs to prevent future duplicates
+    newly_sent = set(
+        r['paper']['id'] for r in featured_results + brief_results
+    )
+    save_sent_ids(newly_sent)
 
     # Clean up temp dir
     if tmp_dir.exists():
