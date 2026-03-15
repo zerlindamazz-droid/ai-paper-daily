@@ -14,6 +14,7 @@ from fetcher import fetch_papers
 from summarizer import select_and_rank, analyze_featured, analyze_brief_batch
 from extractor import extract_figures
 from renderer import save_report
+from send_email import send_email
 
 
 def get_la_date():
@@ -140,6 +141,11 @@ def main():
         shutil.rmtree(tmp_dir, ignore_errors=True)
 
     print(f'\n🌐 Report will be live at: https://zerlindamazz-droid.github.io/ai-paper-daily/')
+
+    # Step 7: Send email
+    print('\n📧 Sending email...')
+    send_email(date_str, featured_results, brief_results)
+
     print('Done! ✨\n')
 
 
