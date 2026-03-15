@@ -104,32 +104,65 @@ Return this exact JSON structure:
 
 
 def analyze_featured(paper):
-    """Deep bilingual analysis for a featured paper."""
-    prompt = f"""Analyze this AI paper for a bilingual daily digest. Use plain, accessible language. Be specific with numbers.
+    """Deep bilingual analysis using tool_use for guaranteed JSON output."""
+    tool = {
+        "name": "paper_analysis",
+        "description": "Submit bilingual analysis of an AI paper",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "title_zh": {"type": "string", "description": "Chinese translation of the paper title"},
+                "one_liner_zh": {"type": "string", "description": "One-sentence core contribution in Chinese, under 20 characters"},
+                "one_liner_en": {"type": "string", "description": "One-sentence core contribution in English, under 20 words"},
+                "problem_zh": {"type": "string", "description": "What problem does this solve? Plain Chinese, 2-3 sentences, accessible to non-experts"},
+                "problem_en": {"type": "string", "description": "What problem does this solve? Plain English, 2-3 sentences"},
+                "method_zh": {"type": "string", "description": "How does it solve the problem? Plain Chinese, 3-4 sentences"},
+                "method_en": {"type": "string", "description": "How does it solve the problem? Plain English, 3-4 sentences"},
+                "results_zh": {"type": "string", "description": "What results were achieved? Chinese, include specific numbers"},
+                "results_en": {"type": "string", "description": "What results were achieved? Include specific numbers/percentages"},
+                "why_it_matters_zh": {"type": "string", "description": "Why does this paper matter to the AI field? Chinese, 2 sentences"},
+                "why_it_matters_en": {"type": "string", "description": "Why does this paper matter? 2 sentences"},
+                "key_formulas": {
+                    "type": "array",
+                    "description": "Key formulas from the abstract, empty array if none",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "latex": {"type": "string", "description": "LaTeX formula string"},
+                            "explanation_zh": {"type": "string", "description": "Plain Chinese explanation"},
+                            "explanation_en": {"type": "string", "description": "Plain English explanation"}
+                        },
+                        "required": ["latex", "explanation_zh", "explanation_en"]
+                    }
+                }
+            },
+            "required": ["title_zh", "one_liner_zh", "one_liner_en", "problem_zh", "problem_en",
+                         "method_zh", "method_en", "results_zh", "results_en",
+                         "why_it_matters_zh", "why_it_matters_en", "key_formulas"]
+        }
+    }
+
+    prompt = f"""Analyze this AI paper for a bilingual daily digest. Use plain, accessible language.
 
 Title: {paper['title']}
 Authors: {', '.join(paper['authors'])}
 Abstract: {paper['abstract']}
 
-Return this exact JSON (all values are strings, use \\n for line breaks if needed):
-{{
-  "title_zh": "中文标题翻译",
-  "one_liner_zh": "一句话核心贡献（中文，20字以内）",
-  "one_liner_en": "Core contribution in one sentence (under 20 words)",
-  "problem_zh": "解决了什么问题（通俗中文，2-3句）",
-  "problem_en": "What problem it solves (plain English, 2-3 sentences)",
-  "method_zh": "怎么解决的（通俗中文，3-4句，可提关键术语）",
-  "method_en": "How it solves it (plain English, 3-4 sentences)",
-  "results_zh": "取得了什么效果（中文，含具体数字）",
-  "results_en": "Results achieved (specific numbers if available)",
-  "key_formulas": [],
-  "why_it_matters_zh": "为什么值得关注（中文，2句）",
-  "why_it_matters_en": "Why it matters (2 sentences)"
-}}
+Call the paper_analysis tool with your analysis. Be specific with numbers in results. Both Chinese and English content must be complete and informative."""
 
-Note: key_formulas should be an empty array [] unless the abstract explicitly contains a formula. If it does, use: [{{"latex": "formula", "explanation_zh": "解释", "explanation_en": "explanation"}}]"""
+    resp = client.messages.create(
+        model='claude-sonnet-4-6',
+        max_tokens=2000,
+        tools=[tool],
+        tool_choice={"type": "any"},
+        messages=[{'role': 'user', 'content': prompt}]
+    )
 
-    return _call_with_retry(prompt, max_tokens=1500)
+    for block in resp.content:
+        if block.type == 'tool_use' and block.name == 'paper_analysis':
+            return block.input
+
+    raise ValueError('No tool_use response received')
 
 
 def analyze_brief_batch(papers):
