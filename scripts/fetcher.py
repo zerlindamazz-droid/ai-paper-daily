@@ -5,7 +5,7 @@ import time
 from datetime import datetime, timezone, timedelta
 
 # Cover all major AI training directions
-CATEGORIES = ['cs.LG', 'cs.AI', 'cs.CL', 'stat.ML']
+CATEGORIES = ['cs.LG', 'cs.AI', 'cs.CL', 'stat.ML', 'cs.RO']
 
 def fetch_papers(max_per_cat=12):
     """Fetch recent papers from arXiv across AI/ML categories."""

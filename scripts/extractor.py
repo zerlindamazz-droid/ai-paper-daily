@@ -43,37 +43,46 @@ def extract_figures(paper_id, pdf_url, output_dir, max_figures=2):
         zoom = 1.5
         mat = fitz.Matrix(zoom, zoom)
 
-        for page_num in range(min(6, len(doc))):
+        # Score each page by how figure-rich it is
+        page_scores = []
+        for page_num in range(min(8, len(doc))):
             page = doc[page_num]
-
-            # Skip pages that are mostly text (low image area ratio)
-            # Use image blocks to detect figure-heavy pages
             blocks = page.get_text('dict')['blocks']
             img_area = sum(
                 (b['bbox'][2] - b['bbox'][0]) * (b['bbox'][3] - b['bbox'][1])
-                for b in blocks if b['type'] == 1  # type 1 = image block
+                for b in blocks if b['type'] == 1
             )
             page_area = page.rect.width * page.rect.height
-
-            # Also check for drawing elements (vector figures)
+            text_blocks = [b for b in blocks if b['type'] == 0]
             drawings = page.get_drawings()
-            has_drawings = len(drawings) > 10  # pages with figures have many drawing commands
+            # Score: image area ratio + drawing count bonus
+            score = (img_area / page_area) * 100 + min(len(drawings) / 5, 10)
+            # Skip pure text pages and the first page (usually just abstract)
+            if page_num == 0:
+                score *= 0.3
+            page_scores.append((score, page_num))
 
-            if img_area / page_area > 0.05 or has_drawings:
-                # Render this page as PNG
-                pix = page.get_pixmap(matrix=mat, alpha=False)
-                png_bytes = pix.tobytes('png')
-                b64 = base64.b64encode(png_bytes).decode('utf-8')
+        # Sort by score and take top pages
+        page_scores.sort(reverse=True)
+        selected_pages = [pn for score, pn in page_scores[:max_figures] if score > 0.5]
 
-                figures.append({
-                    'data_uri': f'data:image/png;base64,{b64}',
-                    'width': pix.width,
-                    'height': pix.height,
-                    'page': page_num + 1,
-                })
+        # Fallback: if nothing scores well, just take page 1 (index 1)
+        if not selected_pages and len(doc) > 1:
+            selected_pages = [1]
 
-                if len(figures) >= max_figures:
-                    break
+        for page_num in sorted(selected_pages):
+            page = doc[page_num]
+            pix = page.get_pixmap(matrix=mat, alpha=False)
+            png_bytes = pix.tobytes('png')
+            b64 = base64.b64encode(png_bytes).decode('utf-8')
+            figures.append({
+                'data_uri': f'data:image/png;base64,{b64}',
+                'width': pix.width,
+                'height': pix.height,
+                'page': page_num + 1,
+            })
+            if len(figures) >= max_figures:
+                break
 
         doc.close()
         print(f'  Extracted {len(figures)} figures from {paper_id}')

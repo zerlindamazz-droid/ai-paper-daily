@@ -79,7 +79,7 @@ From the following {len(papers)} arXiv papers, select:
 - Top 3 FEATURED papers (most significant contributions to AI model training)
 - Next 5 BRIEF papers (worth mentioning, broader coverage)
 
-Diversify topics: LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training.
+Diversify topics across: LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA (Vision-Language-Action models), robotics learning, embodied AI. Always try to include at least one robotics/VLA paper if available.
 
 Papers:
 {paper_list}
