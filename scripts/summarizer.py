@@ -67,40 +67,79 @@ def _call_with_retry(prompt, max_tokens=1000, expect_array=False, retries=2):
 
 
 def select_and_rank(papers):
-    """Send all papers to Claude for ranking. Returns ranking dict."""
+    """Select and rank papers using tool_use for guaranteed structured output."""
     paper_list = '\n\n'.join([
         f'[{i+1}] ID: {p["id"]}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:400]}'
         for i, p in enumerate(papers)
     ])
 
-    prompt = f"""You are an expert AI researcher curating a daily digest of the most important AI model training papers.
+    tool = {
+        "name": "paper_selection",
+        "description": "Select and rank the most important AI training papers",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "featured": {
+                    "type": "array",
+                    "description": "Top 3 featured papers",
+                    "minItems": 3, "maxItems": 3,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "rank": {"type": "integer"},
+                            "paper_index": {"type": "integer", "description": "1-based index from paper list"},
+                            "importance_score": {"type": "integer", "minimum": 1, "maximum": 10},
+                            "topic_tags_en": {"type": "array", "items": {"type": "string"}, "maxItems": 4},
+                            "topic_tags_zh": {"type": "array", "items": {"type": "string"}, "maxItems": 4}
+                        },
+                        "required": ["rank", "paper_index", "importance_score", "topic_tags_en", "topic_tags_zh"]
+                    }
+                },
+                "brief": {
+                    "type": "array",
+                    "description": "Next 5 brief mention papers",
+                    "minItems": 5, "maxItems": 5,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "paper_index": {"type": "integer"},
+                            "topic_tags_en": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
+                            "topic_tags_zh": {"type": "array", "items": {"type": "string"}, "maxItems": 3}
+                        },
+                        "required": ["paper_index", "topic_tags_en", "topic_tags_zh"]
+                    }
+                }
+            },
+            "required": ["featured", "brief"]
+        }
+    }
 
-From the following {len(papers)} arXiv papers, select:
-- Top 3 FEATURED papers (most significant contributions to AI model training)
-- Next 5 BRIEF papers (worth mentioning, broader coverage)
+    prompt = f"""You are an expert AI researcher. From these {len(papers)} arXiv papers, select the best for a daily digest.
 
-Diversify topics across: LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA (Vision-Language-Action models), robotics learning, embodied AI. Always try to include at least one robotics/VLA paper if available.
+Select:
+- Top 3 FEATURED (most significant AI model training contributions)
+- Next 5 BRIEF (broader coverage)
+
+Diversify across: LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA/robotics/embodied AI.
 
 Papers:
 {paper_list}
 
-Return this exact JSON structure:
-{{
-  "featured": [
-    {{"rank": 1, "paper_index": 5, "importance_score": 9, "topic_tags_en": ["LLM", "Fine-tuning"], "topic_tags_zh": ["大语言模型", "微调"]}},
-    {{"rank": 2, "paper_index": 12, "importance_score": 8, "topic_tags_en": ["Diffusion"], "topic_tags_zh": ["扩散模型"]}},
-    {{"rank": 3, "paper_index": 3, "importance_score": 8, "topic_tags_en": ["Optimization"], "topic_tags_zh": ["优化"]}}
-  ],
-  "brief": [
-    {{"paper_index": 7, "topic_tags_en": ["RLHF"], "topic_tags_zh": ["强化学习"]}},
-    {{"paper_index": 9, "topic_tags_en": ["Multimodal"], "topic_tags_zh": ["多模态"]}},
-    {{"paper_index": 15, "topic_tags_en": ["Architecture"], "topic_tags_zh": ["架构"]}},
-    {{"paper_index": 20, "topic_tags_en": ["Efficiency"], "topic_tags_zh": ["效率"]}},
-    {{"paper_index": 25, "topic_tags_en": ["Training"], "topic_tags_zh": ["训练"]}}
-  ]
-}}"""
+Call paper_selection with your choices."""
 
-    return _call_with_retry(prompt, max_tokens=800)
+    resp = client.messages.create(
+        model='claude-sonnet-4-6',
+        max_tokens=1000,
+        tools=[tool],
+        tool_choice={"type": "any"},
+        messages=[{'role': 'user', 'content': prompt}]
+    )
+
+    for block in resp.content:
+        if block.type == 'tool_use' and block.name == 'paper_selection':
+            return block.input
+
+    raise ValueError('No tool_use response from select_and_rank')
 
 
 def analyze_featured(paper):

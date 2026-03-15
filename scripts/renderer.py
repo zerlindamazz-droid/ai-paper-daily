@@ -672,7 +672,7 @@ def build_full_page(date_str, featured_papers, brief_papers, is_archive_copy=Fal
 def build_archive_index(reports):
     """Build archive listing page."""
     items_html = ''
-    for r in sorted(reports, reverse=True):
+    for r in sorted(reports, key=lambda x: x['date'], reverse=True):
         items_html += f"""<div class="archive-item">
   <a href="{r['date']}.html">
     <div class="archive-date">📅 {r['date']}</div>
