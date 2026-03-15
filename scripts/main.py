@@ -14,6 +14,7 @@ from fetcher import fetch_papers
 from summarizer import select_and_rank, analyze_featured, analyze_brief_batch
 from extractor import extract_figures
 from renderer import save_report
+from pdf_generator import generate_pdf
 from send_email import send_email
 
 
@@ -142,9 +143,23 @@ def main():
 
     print(f'\n🌐 Report will be live at: https://zerlindamazz-droid.github.io/ai-paper-daily/')
 
-    # Step 7: Send email
+    # Step 7: Generate PDF
+    print('\n📄 Generating PDF...')
+    pdf_path = None
+    try:
+        html_path = Path('docs/index.html').resolve()
+        pdf_path = Path(f'tmp_{date_str}.pdf')
+        generate_pdf(html_path, pdf_path)
+    except Exception as e:
+        print(f'  PDF generation failed: {e}')
+
+    # Step 8: Send email
     print('\n📧 Sending email...')
-    send_email(date_str, featured_results, brief_results)
+    send_email(date_str, featured_results, brief_results, pdf_path=pdf_path)
+
+    # Clean up PDF
+    if pdf_path and pdf_path.exists():
+        pdf_path.unlink()
 
     print('Done! ✨\n')
 

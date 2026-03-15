@@ -3,6 +3,7 @@ import smtplib
 import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.application import MIMEApplication
 from pathlib import Path
 from datetime import datetime
 
@@ -230,7 +231,7 @@ def build_email_html(date_str, featured_papers, brief_papers):
 </html>"""
 
 
-def send_email(date_str, featured_papers, brief_papers):
+def send_email(date_str, featured_papers, brief_papers, pdf_path=None):
     app_password = os.environ.get('GMAIL_APP_PASSWORD', '')
     if not app_password:
         print('  ⚠️  GMAIL_APP_PASSWORD not set, skipping email')
@@ -238,11 +239,27 @@ def send_email(date_str, featured_papers, brief_papers):
 
     html = build_email_html(date_str, featured_papers, brief_papers)
 
-    msg = MIMEMultipart('alternative')
+    # Use 'mixed' to support both HTML body + PDF attachment
+    msg = MIMEMultipart('mixed')
     msg['Subject'] = f'⚡ AI 论文日报 {date_str} · {len(featured_papers)+len(brief_papers)} papers'
     msg['From'] = SENDER
     msg['To'] = RECIPIENT
-    msg.attach(MIMEText(html, 'html', 'utf-8'))
+
+    # HTML body
+    body = MIMEMultipart('alternative')
+    body.attach(MIMEText(html, 'html', 'utf-8'))
+    msg.attach(body)
+
+    # PDF attachment
+    if pdf_path and Path(pdf_path).exists():
+        with open(pdf_path, 'rb') as f:
+            pdf_data = f.read()
+        pdf_part = MIMEApplication(pdf_data, _subtype='pdf')
+        filename = f'AI论文日报_{date_str}.pdf'
+        pdf_part.add_header('Content-Disposition', 'attachment', filename=filename)
+        msg.attach(pdf_part)
+        size_kb = len(pdf_data) // 1024
+        print(f'  PDF attached: {filename} ({size_kb} KB)')
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
