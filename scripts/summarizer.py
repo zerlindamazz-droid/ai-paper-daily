@@ -211,23 +211,52 @@ Call the paper_analysis tool with your analysis. Be specific with numbers in res
 
 
 def analyze_brief_batch(papers):
-    """Brief bilingual analysis for multiple papers in one call."""
+    """Brief bilingual analysis using tool_use for guaranteed structured output."""
+    tool = {
+        "name": "brief_summaries",
+        "description": "Submit brief bilingual summaries for multiple AI papers",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "summaries": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "index": {"type": "integer"},
+                            "title_zh": {"type": "string", "description": "Chinese title translation"},
+                            "summary_zh": {"type": "string", "description": "2-3 sentence Chinese summary, plain language"},
+                            "summary_en": {"type": "string", "description": "2-3 sentence English summary, plain language"},
+                        },
+                        "required": ["index", "title_zh", "summary_zh", "summary_en"]
+                    }
+                }
+            },
+            "required": ["summaries"]
+        }
+    }
+
     paper_list = '\n\n'.join([
         f'[{i+1}] Title: {p["title"]}\nAbstract: {p["abstract"][:350]}'
         for i, p in enumerate(papers)
     ])
 
-    prompt = f"""Provide brief bilingual summaries for these {len(papers)} AI papers.
+    prompt = f"""Provide brief bilingual summaries for these {len(papers)} AI papers. Be plain and accessible.
 
 {paper_list}
 
-Return a JSON array with exactly {len(papers)} items:
-[
-  {{"index": 1, "title_zh": "中文标题", "summary_zh": "2-3句中文简介", "summary_en": "2-3 sentence English summary"}},
-  {{"index": 2, "title_zh": "中文标题", "summary_zh": "2-3句中文简介", "summary_en": "2-3 sentence English summary"}},
-  {{"index": 3, "title_zh": "中文标题", "summary_zh": "2-3句中文简介", "summary_en": "2-3 sentence English summary"}},
-  {{"index": 4, "title_zh": "中文标题", "summary_zh": "2-3句中文简介", "summary_en": "2-3 sentence English summary"}},
-  {{"index": 5, "title_zh": "中文标题", "summary_zh": "2-3句中文简介", "summary_en": "2-3 sentence English summary"}}
-]"""
+Call brief_summaries with summaries for all {len(papers)} papers."""
 
-    return _call_with_retry(prompt, max_tokens=1500, expect_array=True)
+    resp = client.messages.create(
+        model='claude-sonnet-4-6',
+        max_tokens=2000,
+        tools=[tool],
+        tool_choice={"type": "any"},
+        messages=[{'role': 'user', 'content': prompt}]
+    )
+
+    for block in resp.content:
+        if block.type == 'tool_use' and block.name == 'brief_summaries':
+            return block.input['summaries']
+
+    raise ValueError('No tool_use response from analyze_brief_batch')
