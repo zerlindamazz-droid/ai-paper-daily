@@ -1,35 +1,35 @@
-"""Fetch recent AI/ML papers from arXiv (last 30 days)."""
+"""Fetch recent AI/ML papers from arXiv."""
 import feedparser
 import requests
 import time
-from datetime import datetime, timezone, timedelta
 
 CATEGORIES = ['cs.LG', 'cs.AI', 'cs.CL', 'stat.ML', 'cs.RO']
 
 
 def fetch_papers(days=30, max_per_cat=40):
     """
-    Fetch papers submitted in the last `days` days across AI/ML categories.
+    Fetch the most recent papers across AI/ML categories.
+    Deduplication against previously-sent papers is handled by dedup.py.
     Returns a deduplicated list sorted by submission date (newest first).
     """
     all_papers = []
     seen_ids = set()
 
-    # Build date range filter for arXiv
-    now = datetime.now(timezone.utc)
-    start_date = (now - timedelta(days=days)).strftime('%Y%m%d%H%M%S')
-    end_date = now.strftime('%Y%m%d%H%M%S')
-    date_filter = f'submittedDate:[{start_date}+TO+{end_date}]'
-
     for cat in CATEGORIES:
-        url = (
-            f'http://export.arxiv.org/api/query'
-            f'?search_query=cat:{cat}+AND+{date_filter}'
-            f'&start=0&max_results={max_per_cat}'
-            f'&sortBy=submittedDate&sortOrder=descending'
-        )
+        # Use params dict so requests handles URL encoding correctly
+        params = {
+            'search_query': f'cat:{cat}',
+            'start': 0,
+            'max_results': max_per_cat,
+            'sortBy': 'submittedDate',
+            'sortOrder': 'descending',
+        }
         try:
-            resp = requests.get(url, timeout=30)
+            resp = requests.get(
+                'http://export.arxiv.org/api/query',
+                params=params,
+                timeout=30,
+            )
             feed = feedparser.parse(resp.text)
 
             for entry in feed.entries:
@@ -64,5 +64,5 @@ def fetch_papers(days=30, max_per_cat=40):
             print(f'  Error fetching {cat}: {e}')
 
     all_papers.sort(key=lambda x: x['published'], reverse=True)
-    print(f'  Total unique: {len(all_papers)} papers from last {days} days')
+    print(f'  Total unique candidates: {len(all_papers)} papers')
     return all_papers
