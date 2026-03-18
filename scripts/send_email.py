@@ -140,7 +140,7 @@ def build_email_html(date_str, featured_papers, brief_papers):
     brief_html = ''
     for result in brief_papers:
         paper = result['paper']
-        summary = result['summary']
+        summary = result['summary'] if isinstance(result['summary'], dict) else {}
         tags = ' · '.join(paper.get('topic_tags_zh', [])[:2])
         brief_html += f"""
 <div style="background:#ffffff;border:1.5px solid #e2e4f0;border-radius:12px;

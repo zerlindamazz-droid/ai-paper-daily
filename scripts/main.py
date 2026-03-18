@@ -136,6 +136,9 @@ def main():
 
     brief_results = []
     for paper, summary_data in zip(brief_papers_raw, brief_summaries):
+        # Ensure summary is always a dict regardless of API response quirks
+        if not isinstance(summary_data, dict):
+            summary_data = {'title_zh': paper['title'], 'summary_zh': '', 'summary_en': ''}
         brief_results.append({'paper': paper, 'summary': summary_data})
 
     # Step 6: Generate HTML

@@ -459,6 +459,8 @@ def build_featured_card(rank, paper, analysis, figures):
     if key_formulas:
         formula_items = ''
         for f in key_formulas[:2]:  # Max 2 formulas
+            if not isinstance(f, dict):
+                continue
             latex = f.get('latex', '').strip()
             if not latex:
                 continue
@@ -556,6 +558,8 @@ def build_featured_card(rank, paper, analysis, figures):
 
 
 def build_quick_card(paper, summary):
+    if not isinstance(summary, dict):
+        summary = {}
     tags_en = paper.get('topic_tags_en', [])
     tags_zh = paper.get('topic_tags_zh', [])
     tags_html = ''
