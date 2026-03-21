@@ -156,15 +156,27 @@ def analyze_featured(paper):
         "input_schema": {
             "type": "object",
             "properties": {
+                "importance_score": {"type": "integer", "minimum": 1, "maximum": 10,
+                                     "description": "Impact score 1-10 for the AI research community"},
+                "topic_tags_en": {"type": "array", "items": {"type": "string"}, "maxItems": 4,
+                                  "description": "Up to 4 topic tags in English (e.g. RL, Robotics, LLM, Fine-tuning)"},
+                "topic_tags_zh": {"type": "array", "items": {"type": "string"}, "maxItems": 4,
+                                  "description": "Same tags in Chinese"},
                 "title_zh": {"type": "string", "description": "Chinese translation of the paper title"},
                 "one_liner_zh": {"type": "string", "description": "One-sentence core contribution in Chinese, under 20 characters"},
                 "one_liner_en": {"type": "string", "description": "One-sentence core contribution in English, under 20 words"},
-                "problem_zh": {"type": "string", "description": "What problem does this solve? Plain Chinese, 2-3 sentences, accessible to non-experts"},
-                "problem_en": {"type": "string", "description": "What problem does this solve? Plain English, 2-3 sentences"},
+                "problem_zh": {"type": "string", "description": "待解决的问题：Plain Chinese, 2-3 sentences, accessible to non-experts"},
+                "problem_en": {"type": "string", "description": "Problem being solved: Plain English, 2-3 sentences"},
+                "highlights_zh": {"type": "string", "description": "解决的亮点：Core innovations and key contributions in Chinese, 2-3 bullet-point style sentences"},
+                "highlights_en": {"type": "string", "description": "Key highlights and innovations in English, 2-3 concise sentences"},
                 "method_zh": {"type": "string", "description": "How does it solve the problem? Plain Chinese, 3-4 sentences"},
                 "method_en": {"type": "string", "description": "How does it solve the problem? Plain English, 3-4 sentences"},
-                "results_zh": {"type": "string", "description": "What results were achieved? Chinese, include specific numbers"},
-                "results_en": {"type": "string", "description": "What results were achieved? Include specific numbers/percentages"},
+                "experiment_zh": {"type": "string", "description": "实验内容：本文做了哪些实验？用了什么数据集、基线模型、评估指标？通俗说明，2-3句"},
+                "experiment_en": {"type": "string", "description": "What experiments were conducted? Datasets, baselines, evaluation metrics, experimental setup. 2-3 plain sentences."},
+                "results_zh": {"type": "string", "description": "实验结果：具体的数字指标、性能提升、benchmark排名，要有具体数字"},
+                "results_en": {"type": "string", "description": "Experimental results: specific numbers, percentage improvements, benchmark rankings"},
+                "conclusion_zh": {"type": "string", "description": "结论：本文最终证明了什么？对领域的贡献和意义是什么？1-2句话总结"},
+                "conclusion_en": {"type": "string", "description": "Conclusion: What did this paper ultimately prove? Key contribution and impact on the field. 1-2 sentences."},
                 "why_it_matters_zh": {"type": "string", "description": "Why does this paper matter to the AI field? Chinese, 2 sentences"},
                 "why_it_matters_en": {"type": "string", "description": "Why does this paper matter? 2 sentences"},
                 "key_formulas": {
@@ -181,19 +193,30 @@ def analyze_featured(paper):
                     }
                 }
             },
-            "required": ["title_zh", "one_liner_zh", "one_liner_en", "problem_zh", "problem_en",
-                         "method_zh", "method_en", "results_zh", "results_en",
+            "required": ["importance_score", "topic_tags_en", "topic_tags_zh",
+                         "title_zh", "one_liner_zh", "one_liner_en",
+                         "problem_zh", "problem_en", "highlights_zh", "highlights_en",
+                         "method_zh", "method_en",
+                         "experiment_zh", "experiment_en",
+                         "results_zh", "results_en",
+                         "conclusion_zh", "conclusion_en",
                          "why_it_matters_zh", "why_it_matters_en", "key_formulas"]
         }
     }
 
-    prompt = f"""Analyze this AI paper for a bilingual daily digest. Use plain, accessible language.
+    prompt = f"""Analyze this AI paper for a bilingual daily digest targeting ML/RL/Robotics researchers. Use plain, accessible language.
 
 Title: {paper['title']}
 Authors: {', '.join(paper['authors'])}
 Abstract: {paper['abstract']}
 
-Call the paper_analysis tool with your analysis. Be specific with numbers in results. Both Chinese and English content must be complete and informative."""
+Call the paper_analysis tool with your analysis.
+- importance_score: rate 1-10 for significance to AI/ML community
+- highlights_zh/en: bullet-point style KEY innovations (what's novel/clever), not just the method
+- experiment_zh/en: describe what experiments were done (datasets used, baselines compared, how evaluated) — NOT the numbers, just the setup
+- results_zh/en: must include specific numbers, benchmark names, % improvements
+- conclusion_zh/en: what was ultimately proven/concluded; the paper's core contribution in 1-2 sentences
+Both Chinese and English content must be complete and informative."""
 
     resp = client.messages.create(
         model='claude-sonnet-4-6',
@@ -208,6 +231,65 @@ Call the paper_analysis tool with your analysis. Be specific with numbers in res
             return block.input
 
     raise ValueError('No tool_use response received')
+
+
+def select_brief(papers):
+    """Select 5 brief papers focused on ML / RL / Robotics using tool_use."""
+    tool = {
+        "name": "brief_selection",
+        "description": "Select 5 recommended papers focused on ML, RL, and Robotics",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "papers": {
+                    "type": "array",
+                    "description": "Exactly 5 selected papers",
+                    "minItems": 5, "maxItems": 5,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "paper_index": {"type": "integer", "description": "1-based index from the list"},
+                            "topic_tags_en": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
+                            "topic_tags_zh": {"type": "array", "items": {"type": "string"}, "maxItems": 3},
+                        },
+                        "required": ["paper_index", "topic_tags_en", "topic_tags_zh"]
+                    }
+                }
+            },
+            "required": ["papers"]
+        }
+    }
+
+    paper_list = '\n\n'.join([
+        f'[{i+1}] ID: {p["id"]}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:300]}'
+        for i, p in enumerate(papers)
+    ])
+
+    prompt = f"""You are curating a daily AI digest. From these {len(papers)} candidate papers, select exactly 5 for the "More Papers" recommendation section.
+
+PRIORITY: Papers related to Machine Learning, Reinforcement Learning (RL), or Robotics/Embodied AI.
+- Prefer papers from cs.LG, cs.RO, cs.AI categories
+- Prefer novel methods, strong results, or practical impact
+- Cover diverse sub-topics (don't pick 5 similar papers)
+
+Papers:
+{paper_list}
+
+Call brief_selection with your 5 chosen papers."""
+
+    resp = client.messages.create(
+        model='claude-sonnet-4-6',
+        max_tokens=600,
+        tools=[tool],
+        tool_choice={"type": "any"},
+        messages=[{'role': 'user', 'content': prompt}]
+    )
+
+    for block in resp.content:
+        if block.type == 'tool_use' and block.name == 'brief_selection':
+            return block.input['papers']
+
+    raise ValueError('No tool_use response from select_brief')
 
 
 def analyze_brief_batch(papers):
@@ -227,8 +309,10 @@ def analyze_brief_batch(papers):
                             "title_zh": {"type": "string", "description": "Chinese title translation"},
                             "summary_zh": {"type": "string", "description": "2-3 sentence Chinese summary, plain language"},
                             "summary_en": {"type": "string", "description": "2-3 sentence English summary, plain language"},
+                            "conclusion_zh": {"type": "string", "description": "一句话结论：本文最重要的takeaway或意义，15字以内"},
+                            "conclusion_en": {"type": "string", "description": "One-sentence conclusion: the most important takeaway, under 20 words"},
                         },
-                        "required": ["index", "title_zh", "summary_zh", "summary_en"]
+                        "required": ["index", "title_zh", "summary_zh", "summary_en", "conclusion_zh", "conclusion_en"]
                     }
                 }
             },
@@ -244,6 +328,10 @@ def analyze_brief_batch(papers):
     prompt = f"""Provide brief bilingual summaries for these {len(papers)} AI papers. Be plain and accessible.
 
 {paper_list}
+
+For each paper include:
+- summary_zh/en: 2-3 plain sentences explaining what the paper does
+- conclusion_zh/en: ONE key takeaway sentence (the "so what")
 
 Call brief_summaries with summaries for all {len(papers)} papers."""
 

@@ -2,10 +2,9 @@ name: Daily AI Paper Report
 
 on:
   schedule:
-    # 6:00 AM PDT (UTC-7) = 13:00 UTC  [summer: Mar-Nov]
-    # 6:00 AM PST (UTC-8) = 14:00 UTC  [winter: Nov-Mar]
-    # Run at both to cover DST transitions; script is idempotent
-    - cron: '0 13 * * *'
+    # Target: 6:00 AM PDT (UTC-7). GitHub Actions can be 30-90min late.
+    # Schedule at 4:00 AM PDT = 11:00 UTC to ensure delivery by 6 AM.
+    - cron: '0 11 * * *'
   workflow_dispatch:  # Allow manual trigger from GitHub UI
 
 jobs:

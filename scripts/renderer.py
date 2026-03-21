@@ -408,6 +408,61 @@ footer a:hover { color: var(--accent); }
   .section-header { padding: 0 16px; }
 }
 
+/* RANK 4 */
+.card-stripe.rank-4 { background: linear-gradient(to right, #10b981, #06b6d4); }
+.rank-4 { background: #f0fdf4; color: #059669; border: 1.5px solid #a7f3d0; }
+
+/* SUMMARY TABLE */
+.summary-table {
+  width: calc(100% - 40px);
+  margin: 16px 20px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.summary-table thead tr { background: var(--accent-light); }
+.summary-table th {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 12px;
+  text-align: left;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.summary-table td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.65;
+}
+.summary-table td.dim-label {
+  width: 90px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--bg3);
+  white-space: nowrap;
+}
+.summary-table .cell-zh { font-size: 15px; color: var(--text); display: block; }
+.summary-table .cell-en { font-size: 13px; color: var(--text2); display: block; margin-top: 3px; }
+.summary-table .link-row td { background: var(--bg3); }
+.summary-table .link-row a { color: var(--accent); font-weight: 600; font-size: 14px; }
+
+/* CONCLUSION BANNER (quick cards) */
+.quick-conclusion {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #eef0ff, #f5f0ff);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+}
+.quick-conclusion .zh { color: var(--text); font-weight: 600; }
+.quick-conclusion .en { color: var(--text2); margin-top: 2px; font-size: 13px; }
+
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -417,7 +472,7 @@ footer a:hover { color: var(--accent); }
 
 
 def _rank_stripe(rank):
-    classes = {1: 'rank-1', 2: 'rank-2', 3: 'rank-3'}
+    classes = {1: 'rank-1', 2: 'rank-2', 3: 'rank-3', 4: 'rank-4'}
     return f'<div class="card-stripe {classes.get(rank, "")}"></div>'
 
 
@@ -513,17 +568,55 @@ def build_featured_card(rank, paper, analysis, figures):
     <div class="en">{analysis.get('one_liner_en', '')}</div>
   </div>
 
+  <!-- Summary Table: quick-glance overview -->
+  <table class="summary-table">
+    <thead>
+      <tr>
+        <th>维度</th>
+        <th>中文</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-label">❓ 待解决<br>的问题</td>
+        <td><span class="cell-zh">{analysis.get('problem_zh', '')}</span></td>
+        <td><span class="cell-en">{analysis.get('problem_en', '')}</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">💡 解决<br>的亮点</td>
+        <td><span class="cell-zh">{analysis.get('highlights_zh', '')}</span></td>
+        <td><span class="cell-en">{analysis.get('highlights_en', '')}</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">🧪 实验<br>内容</td>
+        <td><span class="cell-zh">{analysis.get('experiment_zh', '')}</span></td>
+        <td><span class="cell-en">{analysis.get('experiment_en', '')}</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">📊 实验<br>结果</td>
+        <td><span class="cell-zh">{analysis.get('results_zh', '')}</span></td>
+        <td><span class="cell-en">{analysis.get('results_en', '')}</span></td>
+      </tr>
+      <tr>
+        <td class="dim-label">🏁 结论</td>
+        <td><span class="cell-zh">{analysis.get('conclusion_zh', '')}</span></td>
+        <td><span class="cell-en">{analysis.get('conclusion_en', '')}</span></td>
+      </tr>
+      <tr class="link-row">
+        <td class="dim-label">🔗 论文<br>链接</td>
+        <td colspan="2">
+          <a href="{paper['arxiv_url']}" target="_blank">arXiv: {paper['id']}</a>
+          &nbsp;·&nbsp;
+          <a href="{paper['pdf_url']}" target="_blank">📥 PDF</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
   <div class="content-sections">
     <div class="content-section">
-      <h4>❓ Problem · 解决什么问题</h4>
-      <div class="bilingual">
-        <span class="zh">{analysis.get('problem_zh', '')}</span>
-        <span class="en">{analysis.get('problem_en', '')}</span>
-      </div>
-    </div>
-
-    <div class="content-section">
-      <h4>⚙️ Method · 方法</h4>
+      <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
         <span class="zh">{analysis.get('method_zh', '')}</span>
         <span class="en">{analysis.get('method_en', '')}</span>
@@ -531,14 +624,6 @@ def build_featured_card(rank, paper, analysis, figures):
     </div>
 
     {formulas_html}
-
-    <div class="content-section">
-      <h4>📊 Results · 结果</h4>
-      <div class="bilingual">
-        <span class="zh">{analysis.get('results_zh', '')}</span>
-        <span class="en">{analysis.get('results_en', '')}</span>
-      </div>
-    </div>
 
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
@@ -583,6 +668,10 @@ def build_quick_card(paper, summary):
     <div class="quick-summary">
       <div class="zh">{summary.get('summary_zh', '')}</div>
       <div class="en">{summary.get('summary_en', '')}</div>
+    </div>
+    <div class="quick-conclusion">
+      <div class="zh">🏁 结论：{summary.get('conclusion_zh', '')}</div>
+      <div class="en">{summary.get('conclusion_en', '')}</div>
     </div>
     <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 {authors_str}</p>
   </div>

@@ -18,16 +18,29 @@ def build_email_html(date_str, featured_papers, brief_papers):
 
     # Featured paper cards for email
     featured_html = ''
-    rank_emojis = ['🥇', '🥈', '🥉']
-    rank_colors = ['#5b5ef4', '#06b6d4', '#f59e0b']
+    rank_emojis = ['🥇', '🥈', '🥉', '4️⃣']
+    rank_colors = ['#5b5ef4', '#06b6d4', '#f59e0b', '#10b981']
 
     for i, result in enumerate(featured_papers):
         paper = result['paper']
         analysis = result['analysis']
-        color = rank_colors[i]
-        emoji = rank_emojis[i]
+        color = rank_colors[i] if i < len(rank_colors) else '#8888aa'
+        emoji = rank_emojis[i] if i < len(rank_emojis) else f'#{i+1}'
         tags = ' · '.join(paper.get('topic_tags_zh', [])[:3])
         score = paper.get('importance_score', 8)
+
+        def _cell(label_zh, label_en, val_zh, val_en, c=color):
+            return f"""
+      <tr>
+        <td style="padding:10px 12px;border-top:1px solid #e2e4f0;background:#f8f9ff;
+                   width:90px;font-size:11px;font-weight:800;color:{c};white-space:nowrap;
+                   vertical-align:top">{label_zh}</td>
+        <td style="padding:10px 12px;border-top:1px solid #e2e4f0;font-size:14px;
+                   color:#1a1a2e;line-height:1.65;vertical-align:top">
+          <span style="display:block">{val_zh}</span>
+          <span style="display:block;font-size:12px;color:#8888aa;margin-top:3px">{val_en}</span>
+        </td>
+      </tr>"""
 
         featured_html += f"""
 <div style="background:#ffffff;border:1.5px solid #e2e4f0;border-radius:16px;
@@ -53,7 +66,7 @@ def build_email_html(date_str, featured_papers, brief_papers):
     </div>
 
     <div style="background:#eef0ff;border-left:4px solid {color};
-                border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:14px">
+                border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:16px">
       <div style="font-size:17px;font-weight:700;color:#1a1a2e;margin-bottom:4px">
         🎯 {analysis.get('one_liner_zh', '')}
       </div>
@@ -62,76 +75,43 @@ def build_email_html(date_str, featured_papers, brief_papers):
       </div>
     </div>
 
-    <table style="width:100%;border-collapse:collapse">
-      <tr>
-        <td style="width:50%;padding-right:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">❓ 解决了什么问题</div>
-          <div style="font-size:15px;color:#1a1a2e;line-height:1.7;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('problem_zh', '')}
-          </div>
-        </td>
-        <td style="width:50%;padding-left:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">❓ Problem</div>
-          <div style="font-size:14px;color:#555577;line-height:1.65;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('problem_en', '')}
-          </div>
-        </td>
-      </tr>
-      <tr><td colspan="2" style="height:10px"></td></tr>
-      <tr>
-        <td style="width:50%;padding-right:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">⚙️ 怎么解决的</div>
-          <div style="font-size:15px;color:#1a1a2e;line-height:1.7;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('method_zh', '')}
-          </div>
-        </td>
-        <td style="width:50%;padding-left:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">⚙️ Method</div>
-          <div style="font-size:14px;color:#555577;line-height:1.65;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('method_en', '')}
-          </div>
-        </td>
-      </tr>
-      <tr><td colspan="2" style="height:10px"></td></tr>
-      <tr>
-        <td style="width:50%;padding-right:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">📊 效果如何</div>
-          <div style="font-size:15px;color:#1a1a2e;line-height:1.7;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('results_zh', '')}
-          </div>
-        </td>
-        <td style="width:50%;padding-left:8px;vertical-align:top">
-          <div style="font-size:11px;font-weight:800;color:{color};text-transform:uppercase;
-                      letter-spacing:0.08em;margin-bottom:6px">📊 Results</div>
-          <div style="font-size:14px;color:#555577;line-height:1.65;
-                      background:#f5f6fa;padding:10px 12px;border-radius:10px">
-            {analysis.get('results_en', '')}
-          </div>
-        </td>
-      </tr>
+    <!-- Summary table -->
+    <table style="width:100%;border-collapse:collapse;border:1.5px solid #e2e4f0;
+                  border-radius:10px;overflow:hidden">
+      <thead>
+        <tr style="background:#eef0ff">
+          <th style="padding:8px 12px;font-size:11px;font-weight:800;color:{color};
+                     text-align:left;letter-spacing:0.06em;text-transform:uppercase;
+                     width:90px">维度</th>
+          <th style="padding:8px 12px;font-size:11px;font-weight:800;color:{color};
+                     text-align:left;letter-spacing:0.06em;text-transform:uppercase">
+            中文 / English</th>
+        </tr>
+      </thead>
+      <tbody>
+        {_cell('❓ 待解决<br>的问题', 'Problem', analysis.get('problem_zh',''), analysis.get('problem_en',''))}
+        {_cell('💡 解决<br>的亮点', 'Highlights', analysis.get('highlights_zh',''), analysis.get('highlights_en',''))}
+        {_cell('🧪 实验<br>内容', 'Experiment', analysis.get('experiment_zh',''), analysis.get('experiment_en',''))}
+        {_cell('📊 实验<br>结果', 'Results', analysis.get('results_zh',''), analysis.get('results_en',''))}
+        {_cell('🏁 结论', 'Conclusion', analysis.get('conclusion_zh',''), analysis.get('conclusion_en',''))}
+        <tr>
+          <td style="padding:10px 12px;border-top:1px solid #e2e4f0;background:#f8f9ff;
+                     font-size:11px;font-weight:800;color:{color};white-space:nowrap;
+                     vertical-align:top">🔗 论文<br>链接</td>
+          <td style="padding:10px 12px;border-top:1px solid #e2e4f0;vertical-align:top">
+            <a href="{paper['arxiv_url']}" style="color:{color};font-weight:700;
+               text-decoration:none;font-size:14px">📄 arXiv: {paper['id']}</a>
+            &nbsp;·&nbsp;
+            <a href="{paper['pdf_url']}" style="color:#555577;font-size:13px;
+               text-decoration:none">📥 PDF</a>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
-    <div style="margin-top:16px;padding-top:14px;border-top:1px solid #e2e4f0;
-                display:flex;gap:10px;flex-wrap:wrap">
-      <a href="{paper['arxiv_url']}" style="background:linear-gradient(135deg,#5b5ef4,#a855f7);
-         color:white;text-decoration:none;padding:8px 18px;border-radius:10px;
-         font-size:14px;font-weight:700">📄 arXiv 原文</a>
-      <a href="{paper['pdf_url']}" style="background:#f5f6fa;color:#555577;text-decoration:none;
-         padding:8px 18px;border-radius:10px;font-size:14px;font-weight:600;
-         border:1.5px solid #e2e4f0">📥 PDF</a>
-      <a href="{SITE_URL}" style="background:#f5f6fa;color:#5b5ef4;text-decoration:none;
-         padding:8px 18px;border-radius:10px;font-size:14px;font-weight:600;
-         border:1.5px solid #e2e4f0">🌐 查看图文版（含论文截图）</a>
+    <div style="margin-top:14px;text-align:right">
+      <a href="{SITE_URL}" style="color:#5b5ef4;font-size:13px;
+         text-decoration:none;font-weight:600">🌐 查看图文版（含论文截图）→</a>
     </div>
   </div>
 </div>"""
@@ -155,8 +135,16 @@ def build_email_html(date_str, featured_papers, brief_papers):
   <div style="font-size:15px;color:#1a1a2e;line-height:1.65;margin-bottom:4px">
     {summary.get('summary_zh', '')}
   </div>
-  <div style="font-size:14px;color:#8888aa;line-height:1.6;margin-bottom:10px">
+  <div style="font-size:14px;color:#8888aa;line-height:1.6;margin-bottom:8px">
     {summary.get('summary_en', '')}
+  </div>
+  <div style="background:linear-gradient(135deg,#eef0ff,#f5f0ff);
+              border-left:3px solid #5b5ef4;border-radius:0 8px 8px 0;
+              padding:8px 12px;margin-bottom:10px;font-size:14px">
+    <span style="color:#1a1a2e;font-weight:600">🏁 结论：{summary.get('conclusion_zh', '')}</span>
+    <span style="display:block;color:#8888aa;font-size:13px;margin-top:2px">
+      {summary.get('conclusion_en', '')}
+    </span>
   </div>
   <a href="{paper['arxiv_url']}" style="color:#5b5ef4;font-size:13px;font-weight:600;
      text-decoration:none">📄 {paper['id']} →</a>
