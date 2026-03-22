@@ -386,6 +386,61 @@ footer a:hover { color: var(--accent); }
   .section-header { padding: 0 16px; }
 }
 
+/* RANK 4 */
+.card-stripe.rank-4 { background: linear-gradient(to right, #10b981, #06b6d4); }
+.rank-4 { background: #f0fdf4; color: #059669; border: 1.5px solid #a7f3d0; }
+
+/* SUMMARY TABLE */
+.summary-table {
+  width: calc(100% - 40px);
+  margin: 16px 20px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.summary-table thead tr { background: var(--accent-light); }
+.summary-table th {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 12px;
+  text-align: left;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.summary-table td {
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.65;
+}
+.summary-table td.dim-label {
+  width: 90px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent);
+  background: var(--bg3);
+  white-space: nowrap;
+}
+.summary-table .cell-zh { font-size: 15px; color: var(--text); display: block; }
+.summary-table .cell-en { font-size: 13px; color: var(--text2); display: block; margin-top: 3px; }
+.summary-table .link-row td { background: var(--bg3); }
+.summary-table .link-row a { color: var(--accent); font-weight: 600; font-size: 14px; }
+
+/* CONCLUSION BANNER (quick cards) */
+.quick-conclusion {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #eef0ff, #f5f0ff);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+}
+.quick-conclusion .zh { color: var(--text); font-weight: 600; }
+.quick-conclusion .en { color: var(--text2); margin-top: 2px; font-size: 13px; }
+
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -411,6 +466,11 @@ footer a:hover { color: var(--accent); }
 </div>
 <div class="archive-grid">
 <div class="archive-item">
+  <a href="2026-03-22.html">
+    <div class="archive-date">📅 2026-03-22</div>
+    <div class="archive-count">9 papers</div>
+  </a>
+</div><div class="archive-item">
   <a href="2026-03-21.html">
     <div class="archive-date">📅 2026-03-21</div>
     <div class="archive-count">8 papers</div>
