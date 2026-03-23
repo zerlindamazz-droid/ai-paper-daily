@@ -210,17 +210,20 @@ Title: {paper['title']}
 Authors: {', '.join(paper['authors'])}
 Abstract: {paper['abstract']}
 
-Call the paper_analysis tool with your analysis.
-- importance_score: rate 1-10 for significance to AI/ML community
-- highlights_zh/en: bullet-point style KEY innovations (what's novel/clever), not just the method
-- experiment_zh/en: describe what experiments were done (datasets used, baselines compared, how evaluated) — NOT the numbers, just the setup
-- results_zh/en: must include specific numbers, benchmark names, % improvements
-- conclusion_zh/en: what was ultimately proven/concluded; the paper's core contribution in 1-2 sentences
-Both Chinese and English content must be complete and informative."""
+Call the paper_analysis tool with your analysis. ALL fields are REQUIRED — do not leave any field empty.
+
+Field guidance:
+- highlights_zh/en: KEY innovations (what's novel/clever about the approach), bullet-point style
+- experiment_zh/en: what experiments were done — datasets, baselines, evaluation setup (NOT the numbers)
+- results_zh/en: specific numbers, benchmark names, % improvements — must have concrete figures
+- conclusion_zh/en: 【必须填写】what was ultimately proven; the paper's final contribution in 1-2 sentences
+- why_it_matters_zh/en: 【必须填写】why this matters to the AI/ML field; broader impact in 2 sentences
+
+Both Chinese and English for EVERY field must be complete. Conclusion and why_it_matters are especially important."""
 
     resp = client.messages.create(
         model='claude-sonnet-4-6',
-        max_tokens=2000,
+        max_tokens=4000,
         tools=[tool],
         tool_choice={"type": "any"},
         messages=[{'role': 'user', 'content': prompt}]
