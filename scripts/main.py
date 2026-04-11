@@ -20,6 +20,7 @@ from renderer import save_report
 from pdf_generator import generate_pdf
 from send_email import send_email
 from dedup import load_sent_ids, save_sent_ids, filter_unsent
+from quality_monitor import run_quality_check, load_adaptive_hints
 
 
 def get_la_date():
@@ -51,6 +52,11 @@ def main():
     print(f'\n{"="*60}')
     print(f'AI Paper Daily - {date_str}')
     print(f'{"="*60}\n')
+
+    # ── Step 0: Load adaptive hints from past quality runs ────────
+    adaptive_hints = load_adaptive_hints()
+    if adaptive_hints:
+        print('🧠 Loaded adaptive hints from quality history')
 
     # ── Step 1: Load dedup history ─────────────────────────────
     sent_ids = load_sent_ids()
@@ -127,7 +133,7 @@ def main():
     for i, paper in enumerate(featured_papers_raw):
         print(f'   [{i+1}/{len(featured_papers_raw)}] {paper["title"][:70]}')
         try:
-            analysis = analyze_featured(paper)
+            analysis = analyze_featured(paper, adaptive_hints=adaptive_hints)
             # analyze_featured now returns importance_score and topic_tags —
             # override whatever was set by alphaXiv/select_and_rank
             paper['importance_score'] = analysis.get('importance_score', paper.get('importance_score', 8))
@@ -172,6 +178,9 @@ def main():
                             'summary_zh': '', 'summary_en': '',
                             'conclusion_zh': '', 'conclusion_en': ''}
         brief_results.append({'paper': paper, 'summary': summary_data})
+
+    # ── Step 8b: Quality check + self-evolution ───────────────
+    run_quality_check(featured_results, brief_results, date_str)
 
     # ── Step 9: Render HTML ────────────────────────────────────
     print('\n🎨 Rendering HTML report...')

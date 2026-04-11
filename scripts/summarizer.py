@@ -148,8 +148,10 @@ Call paper_selection with your choices."""
     raise ValueError('No tool_use response from select_and_rank')
 
 
-def analyze_featured(paper):
-    """Deep bilingual analysis using tool_use for guaranteed JSON output."""
+def analyze_featured(paper, adaptive_hints=''):
+    """Deep bilingual analysis using tool_use for guaranteed JSON output.
+    adaptive_hints: string from quality_monitor.load_adaptive_hints() injected into prompt.
+    """
     tool = {
         "name": "paper_analysis",
         "description": "Submit bilingual analysis of an AI paper",
@@ -219,7 +221,7 @@ Field guidance:
 - conclusion_zh/en: 【必须填写】what was ultimately proven; the paper's final contribution in 1-2 sentences
 - why_it_matters_zh/en: 【必须填写】why this matters to the AI/ML field; broader impact in 2 sentences
 
-Both Chinese and English for EVERY field must be complete. Conclusion and why_it_matters are especially important."""
+Both Chinese and English for EVERY field must be complete. Conclusion and why_it_matters are especially important.{adaptive_hints}"""
 
     resp = client.messages.create(
         model='claude-sonnet-4-6',
@@ -332,15 +334,18 @@ def analyze_brief_batch(papers):
 
 {paper_list}
 
-For each paper include:
-- summary_zh/en: 2-3 plain sentences explaining what the paper does
-- conclusion_zh/en: ONE key takeaway sentence (the "so what")
+ALL fields are REQUIRED for every paper — do not leave any field empty:
+- title_zh: Chinese translation of the title
+- summary_zh: 2-3 plain Chinese sentences explaining what the paper does and how
+- summary_en: 2-3 plain English sentences (same content)
+- conclusion_zh: 【必须填写】ONE sentence — the most important takeaway in Chinese (10-20 chars)
+- conclusion_en: 【必须填写】ONE sentence — the most important takeaway in English
 
-Call brief_summaries with summaries for all {len(papers)} papers."""
+Call brief_summaries with complete summaries for all {len(papers)} papers."""
 
     resp = client.messages.create(
         model='claude-sonnet-4-6',
-        max_tokens=2000,
+        max_tokens=3500,
         tools=[tool],
         tool_choice={"type": "any"},
         messages=[{'role': 'user', 'content': prompt}]
@@ -351,3 +356,9 @@ Call brief_summaries with summaries for all {len(papers)} papers."""
             return block.input['summaries']
 
     raise ValueError('No tool_use response from analyze_brief_batch')
+
+
+def analyze_single_brief(paper):
+    """Analyze one brief paper individually (used by quality monitor for re-analysis)."""
+    results = analyze_brief_batch([paper])
+    return results[0] if results else {}
