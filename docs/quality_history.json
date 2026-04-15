@@ -20,7 +20,25 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-04-15",
+      "score_before": 57,
+      "score_after": 66,
+      "issues": [
+        "  Brief \"Learning Versatile Humanoid Manipulation with Touc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Tree Learning: A Multi-Skill Continual Learning Fr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Cycle-Consistent Search: Question Reconstructabili\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Adaptive Data Dropout: Towards Self-Regulated Lear\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Always include all four required fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)' in every paper brief without exception.",
+        "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints."
+      ]
     }
   ],
-  "accumulated_hints": []
+  "accumulated_hints": [
+    "Always include all four required fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)' in every paper brief without exception.",
+    "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints."
+  ]
 }
