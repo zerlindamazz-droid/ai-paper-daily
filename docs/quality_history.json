@@ -35,6 +35,13 @@
         "Always include all four required fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)' in every paper brief without exception.",
         "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints."
       ]
+    },
+    {
+      "date": "2026-04-16",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
