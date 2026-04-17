@@ -42,10 +42,27 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-04-17",
+      "score_before": 57,
+      "score_after": 83,
+      "issues": [
+        "  Brief \"Abstract Sim2Real through Approximate Information \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"LLMs Gaming Verifiers: RLVR can Lead to Reward Hac\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before finalizing any paper brief, explicitly verify all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)'.",
+        "Treat missing bilingual abstract or conclusion as a critical failure; complete these sections before any other content.",
+        "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief."
+      ]
     }
   ],
   "accumulated_hints": [
     "Always include all four required fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)' in every paper brief without exception.",
-    "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints."
+    "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints.",
+    "Before finalizing any paper brief, explicitly verify all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)'.",
+    "Treat missing bilingual abstract or conclusion as a critical failure; complete these sections before any other content.",
+    "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief."
   ]
 }
