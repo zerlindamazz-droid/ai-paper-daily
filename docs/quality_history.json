@@ -56,6 +56,13 @@
         "Treat missing bilingual abstract or conclusion as a critical failure; complete these sections before any other content.",
         "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief."
       ]
+    },
+    {
+      "date": "2026-04-18",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
