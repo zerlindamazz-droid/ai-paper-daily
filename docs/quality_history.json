@@ -91,6 +91,13 @@
         "Never omit bilingual abstract or conclusion fields regardless of paper complexity; these four fields are mandatory in every single brief.",
         "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content."
       ]
+    },
+    {
+      "date": "2026-04-22",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
