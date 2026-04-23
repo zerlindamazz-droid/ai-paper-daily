@@ -98,6 +98,19 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-04-23",
+      "score_before": 64,
+      "score_after": 93,
+      "issues": [
+        "  Brief \"Near-Future Policy Optimization\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
+        "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
+        "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present."
+      ]
     }
   ],
   "accumulated_hints": [
@@ -108,6 +121,9 @@
     "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief.",
     "After drafting each brief, run a final structural check confirming all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' before submitting.",
     "Never omit bilingual abstract or conclusion fields regardless of paper complexity; these four fields are mandatory in every single brief.",
-    "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content."
+    "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content.",
+    "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
+    "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
+    "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present."
   ]
 }
