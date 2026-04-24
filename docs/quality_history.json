@@ -111,6 +111,19 @@
         "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
         "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present."
       ]
+    },
+    {
+      "date": "2026-04-24",
+      "score_before": 64,
+      "score_after": 93,
+      "issues": [
+        "  Brief \"Temporal Taskification in Streaming Continual Lear\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Draft '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as the very first step before writing any other section of a brief.",
+        "Never submit a brief without explicitly confirming all four bilingual fields exist; missing any one is an automatic failure requiring immediate correction.",
+        "If a brief feels complete but any of the four required bilingual fields is absent, stop and add the missing field before finalizing."
+      ]
     }
   ],
   "accumulated_hints": [
@@ -124,6 +137,9 @@
     "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content.",
     "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
     "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
-    "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present."
+    "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present.",
+    "Draft '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as the very first step before writing any other section of a brief.",
+    "Never submit a brief without explicitly confirming all four bilingual fields exist; missing any one is an automatic failure requiring immediate correction.",
+    "If a brief feels complete but any of the four required bilingual fields is absent, stop and add the missing field before finalizing."
   ]
 }
