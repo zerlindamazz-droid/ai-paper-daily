@@ -124,6 +124,13 @@
         "Never submit a brief without explicitly confirming all four bilingual fields exist; missing any one is an automatic failure requiring immediate correction.",
         "If a brief feels complete but any of the four required bilingual fields is absent, stop and add the missing field before finalizing."
       ]
+    },
+    {
+      "date": "2026-04-25",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
