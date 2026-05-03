@@ -180,6 +180,20 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-05-03",
+      "score_before": 64,
+      "score_after": 86,
+      "issues": [
+        "  Brief \"Dreaming Across Towns: Semantic Rollout and Town-A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Cost-Aware Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "After drafting each brief, run an explicit four-field checklist: confirm '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' are all present before any other content.",
+        "If any of the four required bilingual fields is missing at submission time, immediately add it—do not finalize incomplete briefs.",
+        "Treat the four bilingual fields as mandatory headers; write them as labeled placeholders first, then populate, never skipping or deferring them."
+      ]
     }
   ],
   "accumulated_hints": [
@@ -199,6 +213,9 @@
     "If a brief feels complete but any of the four required bilingual fields is absent, stop and add the missing field before finalizing.",
     "Before writing any other content, output all four required fields as placeholders: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)', then fill them in.",
     "Treat absence of any required bilingual field as a critical failure; perform an explicit four-field checklist scan before every submission.",
-    "If a brief is unusually short or feels complete, that is a signal to double-check all four bilingual fields are present—not a sign to finalize."
+    "If a brief is unusually short or feels complete, that is a signal to double-check all four bilingual fields are present—not a sign to finalize.",
+    "After drafting each brief, run an explicit four-field checklist: confirm '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' are all present before any other content.",
+    "If any of the four required bilingual fields is missing at submission time, immediately add it—do not finalize incomplete briefs.",
+    "Treat the four bilingual fields as mandatory headers; write them as labeled placeholders first, then populate, never skipping or deferring them."
   ]
 }
