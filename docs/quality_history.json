@@ -215,12 +215,22 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-05-06",
+      "score_before": 64,
+      "score_after": 93,
+      "issues": [
+        "  Brief \"Flow Sampling: Learning to Sample from Unnormalize\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any content, output the four field headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as empty placeholders, then fill each one.",
+        "Treat all four bilingual fields as a hard prerequisite; if any is absent, the brief is incomplete and must not be submitted.",
+        "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief.",
-    "After drafting each brief, run a final structural check confirming all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' before submitting.",
-    "Never omit bilingual abstract or conclusion fields regardless of paper complexity; these four fields are mandatory in every single brief.",
     "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content.",
     "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
     "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
@@ -237,6 +247,9 @@
     "Before finalizing any brief, explicitly list all four field names—'摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'—and verify each is populated.",
     "Treat missing bilingual fields as a blocking error; never mark a brief complete until all four fields are confirmed present.",
     "Write all four bilingual fields as labeled headers first, then fill in other sections; never defer or skip them.",
-    "Run a mandatory four-field checklist scan as the absolute last step before submission, regardless of how complete the brief appears."
+    "Run a mandatory four-field checklist scan as the absolute last step before submission, regardless of how complete the brief appears.",
+    "Before writing any content, output the four field headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as empty placeholders, then fill each one.",
+    "Treat all four bilingual fields as a hard prerequisite; if any is absent, the brief is incomplete and must not be submitted.",
+    "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing."
   ]
 }
