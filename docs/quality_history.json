@@ -228,12 +228,23 @@
         "Treat all four bilingual fields as a hard prerequisite; if any is absent, the brief is incomplete and must not be submitted.",
         "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing."
       ]
+    },
+    {
+      "date": "2026-05-07",
+      "score_before": 64,
+      "score_after": 86,
+      "issues": [
+        "  Brief \"When Life Gives You BC, Make Q-functions: Extracti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"LineRides: Line-Guided Reinforcement Learning for \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief content, output all four field headers as empty placeholders: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)', then fill each.",
+        "After completing each brief, perform an explicit count of the four bilingual fields; if count < 4, immediately add missing fields before proceeding.",
+        "Never submit a brief without confirming all four bilingual fields are populated; treat any missing field as a hard blocking error."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content.",
-    "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
-    "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
     "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present.",
     "Draft '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as the very first step before writing any other section of a brief.",
     "Never submit a brief without explicitly confirming all four bilingual fields exist; missing any one is an automatic failure requiring immediate correction.",
@@ -250,6 +261,9 @@
     "Run a mandatory four-field checklist scan as the absolute last step before submission, regardless of how complete the brief appears.",
     "Before writing any content, output the four field headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as empty placeholders, then fill each one.",
     "Treat all four bilingual fields as a hard prerequisite; if any is absent, the brief is incomplete and must not be submitted.",
-    "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing."
+    "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing.",
+    "Before writing any brief content, output all four field headers as empty placeholders: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)', then fill each.",
+    "After completing each brief, perform an explicit count of the four bilingual fields; if count < 4, immediately add missing fields before proceeding.",
+    "Never submit a brief without confirming all four bilingual fields are populated; treat any missing field as a hard blocking error."
   ]
 }
