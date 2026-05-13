@@ -285,12 +285,22 @@
         "If any bilingual field is missing when the checklist is written, immediately insert and populate it before continuing.",
         "Treat the four bilingual fields as the first content written per brief, not optional additions added at the end."
       ]
+    },
+    {
+      "date": "2026-05-13",
+      "score_before": 57,
+      "score_after": 91,
+      "issues": [
+        "  Brief \"World Action Models: The Next Frontier in Embodied\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief, output all four bilingual headers as placeholders first, then fill each one before adding any other content.",
+        "After completing each brief, write an explicit checklist: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)'; halt if any are missing.",
+        "Treat missing bilingual fields as hard blocking errors—never finalize or move to the next brief until all four are populated and verified."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If a brief is unusually short or feels complete, that is a signal to double-check all four bilingual fields are present—not a sign to finalize.",
-    "After drafting each brief, run an explicit four-field checklist: confirm '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' are all present before any other content.",
-    "If any of the four required bilingual fields is missing at submission time, immediately add it—do not finalize incomplete briefs.",
     "Treat the four bilingual fields as mandatory headers; write them as labeled placeholders first, then populate, never skipping or deferring them.",
     "Before finalizing any brief, explicitly list all four field names—'摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'—and verify each is populated.",
     "Treat missing bilingual fields as a blocking error; never mark a brief complete until all four fields are confirmed present.",
@@ -307,6 +317,9 @@
     "If any of the four bilingual fields is missing at submission time, halt and insert the missing field immediately; never skip this check.",
     "After finishing each brief, write a checklist line: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' confirming all four are present.",
     "If any bilingual field is missing when the checklist is written, immediately insert and populate it before continuing.",
-    "Treat the four bilingual fields as the first content written per brief, not optional additions added at the end."
+    "Treat the four bilingual fields as the first content written per brief, not optional additions added at the end.",
+    "Before writing any brief, output all four bilingual headers as placeholders first, then fill each one before adding any other content.",
+    "After completing each brief, write an explicit checklist: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)'; halt if any are missing.",
+    "Treat missing bilingual fields as hard blocking errors—never finalize or move to the next brief until all four are populated and verified."
   ]
 }
