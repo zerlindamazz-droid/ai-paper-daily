@@ -298,6 +298,19 @@
         "After completing each brief, write an explicit checklist: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)'; halt if any are missing.",
         "Treat missing bilingual fields as hard blocking errors—never finalize or move to the next brief until all four are populated and verified."
       ]
+    },
+    {
+      "date": "2026-05-14",
+      "score_before": 64,
+      "score_after": 93,
+      "issues": [
+        "  Brief \"Learning Responsibility-Attributed Adversarial Sce\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief, output all four bilingual headers as placeholders first, then fill each one before adding any other content.",
+        "Treat missing bilingual fields as hard blocking errors—never finalize or move to the next brief until all four are populated and verified.",
+        "After completing each brief, write an explicit checklist: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)'; halt if any are missing."
+      ]
     }
   ],
   "accumulated_hints": [
