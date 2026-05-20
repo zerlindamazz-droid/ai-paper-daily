@@ -4,6 +4,8 @@ import time
 import requests
 import feedparser
 
+from quality_signals import enrich_papers
+
 ARXIV_API = 'http://export.arxiv.org/api/query'
 HEADERS = {
     'User-Agent': (
@@ -108,4 +110,7 @@ def fetch_alphaxiv_hot(top_n=8):
     print(f'  alphaXiv HOT candidate IDs: {top_ids}')
     papers = _fetch_arxiv_details(top_ids)
     print(f'  Fetched {len(papers)} papers from arXiv')
+    # Attach stars / code_url so featured papers carry the same signals as the
+    # brief pool when rendered / chosen.
+    enrich_papers(papers, max_lookups=len(papers))
     return papers

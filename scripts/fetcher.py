@@ -3,14 +3,19 @@ import feedparser
 import requests
 import time
 
+from quality_signals import enrich_papers
+
 CATEGORIES = ['cs.LG', 'cs.AI', 'cs.CL', 'stat.ML', 'cs.RO']
 
 
-def fetch_papers(days=30, max_per_cat=40):
+def fetch_papers(days=30, max_per_cat=40, enrich=True, enrich_top_n=80):
     """
     Fetch the most recent papers across AI/ML categories.
     Deduplication against previously-sent papers is handled by dedup.py.
     Returns a deduplicated list sorted by submission date (newest first).
+
+    When `enrich` is True, the top `enrich_top_n` candidates by recency are
+    augmented with GitHub stars and a quality_score (see quality_signals.py).
     """
     all_papers = []
     seen_ids = set()
@@ -65,4 +70,8 @@ def fetch_papers(days=30, max_per_cat=40):
 
     all_papers.sort(key=lambda x: x['published'], reverse=True)
     print(f'  Total unique candidates: {len(all_papers)} papers')
+
+    if enrich:
+        enrich_papers(all_papers, max_lookups=enrich_top_n)
+
     return all_papers

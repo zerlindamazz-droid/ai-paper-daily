@@ -81,7 +81,13 @@ def main():
         needed = 4 - len(featured_papers_raw)
         print(f'⚠️  alphaXiv only provided {len(featured_papers_raw)} papers. '
               f'Filling {needed} from arXiv via Claude...')
-        candidates_for_fill = arxiv_papers[:40]
+        # Surface the highest-quality candidates (by GitHub stars / code presence)
+        # ahead of pure recency so the fallback prefers well-known work.
+        candidates_for_fill = sorted(
+            arxiv_papers,
+            key=lambda p: (p.get('quality_score', 0.0), p.get('published', '')),
+            reverse=True,
+        )[:40]
         try:
             ranking = select_and_rank(candidates_for_fill)
             for meta in ranking['featured'][:needed]:
@@ -105,7 +111,16 @@ def main():
 
     # ── Step 5: Select 5 brief papers (ML/RL/Robotics focus) ──
     print('🧠 Selecting 5 brief papers (ML / RL / Robotics priority)...')
-    brief_candidates = arxiv_papers[:60]
+    # Mix high-quality (starred) and recent: take top-40 by quality_score, then
+    # backfill with newest unseen so Claude still sees fresh work.
+    by_quality = sorted(
+        arxiv_papers,
+        key=lambda p: (p.get('quality_score', 0.0), p.get('published', '')),
+        reverse=True,
+    )[:40]
+    seen = {p['id'] for p in by_quality}
+    by_recency = [p for p in arxiv_papers if p['id'] not in seen][:20]
+    brief_candidates = by_quality + by_recency
     try:
         brief_selection = select_brief(brief_candidates)
         brief_papers_raw = []

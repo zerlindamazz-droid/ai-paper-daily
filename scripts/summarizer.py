@@ -66,10 +66,20 @@ def _call_with_retry(prompt, max_tokens=1000, expect_array=False, retries=2):
     raise ValueError(f'JSON parse failed after {retries+1} attempts: {last_err}')
 
 
+def _format_signals(p):
+    stars = p.get('stars')
+    parts = []
+    if stars and stars > 0:
+        parts.append(f'★{stars}')
+    if p.get('code_url'):
+        parts.append('code✓')
+    return f' [{" | ".join(parts)}]' if parts else ''
+
+
 def select_and_rank(papers):
     """Select and rank papers using tool_use for guaranteed structured output."""
     paper_list = '\n\n'.join([
-        f'[{i+1}] ID: {p["id"]}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:400]}'
+        f'[{i+1}] ID: {p["id"]}{_format_signals(p)}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:400]}'
         for i, p in enumerate(papers)
     ])
 
@@ -125,6 +135,10 @@ Quality criteria (prioritize papers that):
 - Show strong empirical results with specific numbers
 - Come from reputable labs or have strong methodology
 - Would be widely cited or discussed in the AI community
+- Have a public code release with notable GitHub traction — the "★N" tag
+  next to a paper ID is its GitHub star count. Treat ≥500 stars as a strong
+  popularity signal, ≥2000 as a very strong one. "code✓" alone means a repo
+  exists but is new / unstarred.
 
 Diversity: cover LLMs, fine-tuning/PEFT, training efficiency, architecture, RLHF/alignment, multimodal, diffusion, optimization, distributed training, VLA/robotics/embodied AI.
 
@@ -266,7 +280,7 @@ def select_brief(papers):
     }
 
     paper_list = '\n\n'.join([
-        f'[{i+1}] ID: {p["id"]}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:300]}'
+        f'[{i+1}] ID: {p["id"]}{_format_signals(p)}\nTitle: {p["title"]}\nCategories: {", ".join(p["categories"][:3])}\nAbstract: {p["abstract"][:300]}'
         for i, p in enumerate(papers)
     ])
 
@@ -276,6 +290,9 @@ PRIORITY: Papers related to Machine Learning, Reinforcement Learning (RL), or Ro
 - Prefer papers from cs.LG, cs.RO, cs.AI categories
 - Prefer novel methods, strong results, or practical impact
 - Cover diverse sub-topics (don't pick 5 similar papers)
+- The "★N" tag is the GitHub star count of the paper's code release; prefer
+  papers with strong traction (≥500 stars is notable, ≥2000 is excellent).
+  "code✓" alone means a repo exists but is new.
 
 Papers:
 {paper_list}

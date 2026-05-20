@@ -541,7 +541,9 @@ def build_featured_card(rank, paper, analysis, figures):
 
     code_btn = ''
     if paper.get('code_url'):
-        code_btn = f'<a href="{paper["code_url"]}" target="_blank" class="btn">💻 Code</a>'
+        stars = paper.get('stars')
+        star_suffix = f' · ★{stars:,}' if stars and stars > 0 else ''
+        code_btn = f'<a href="{paper["code_url"]}" target="_blank" class="btn">💻 Code{star_suffix}</a>'
 
     return f"""<article class="paper-card" id="paper-{safe_id}">
   {_rank_stripe(rank)}
@@ -658,7 +660,9 @@ def build_quick_card(paper, summary):
 
     code_btn = ''
     if paper.get('code_url'):
-        code_btn = f'<a href="{paper["code_url"]}" target="_blank" class="btn" style="font-size:11px">💻 Code</a>'
+        stars = paper.get('stars')
+        star_suffix = f' · ★{stars:,}' if stars and stars > 0 else ''
+        code_btn = f'<a href="{paper["code_url"]}" target="_blank" class="btn" style="font-size:11px">💻 Code{star_suffix}</a>'
 
     return f"""<div class="quick-card">
   <div>
