@@ -1,4 +1,5 @@
 """Generate beautiful bilingual HTML report from processed paper data."""
+import base64
 import json
 from datetime import datetime
 from pathlib import Path
@@ -805,16 +806,40 @@ def build_archive_index(reports):
 def save_report(date_str, featured_papers, brief_papers, docs_dir='docs'):
     docs = Path(docs_dir)
     archive_dir = docs / 'archive'
+    images_dir = docs / 'images'
     archive_dir.mkdir(parents=True, exist_ok=True)
+    images_dir.mkdir(parents=True, exist_ok=True)
 
+    # Decode inline base64 images → save as PNG files → replace data_uri with file path.
+    # This keeps index.html small so browsers and AI tools can parse it.
+    for fp in featured_papers:
+        for fig in fp.get('figures', []):
+            uri = fig.get('data_uri', '')
+            if uri.startswith('data:image'):
+                try:
+                    b64 = uri.split(',', 1)[1]
+                    safe_id = fp['paper']['id'].replace('/', '_').replace('.', '_')
+                    fname = f"{date_str}_{safe_id}_p{fig['page']}.png"
+                    (images_dir / fname).write_bytes(base64.b64decode(b64))
+                    fig['_file'] = fname
+                except Exception as e:
+                    print(f'  Warning: could not save figure: {e}')
+
+    # Write index.html — images referenced as images/FNAME (relative to docs/)
+    for fp in featured_papers:
+        for fig in fp.get('figures', []):
+            if '_file' in fig:
+                fig['data_uri'] = f"images/{fig['_file']}"
     html = build_full_page(date_str, featured_papers, brief_papers)
-    archive_html = build_full_page(date_str, featured_papers, brief_papers, is_archive_copy=True)
-
-    # Write index.html (latest)
     (docs / 'index.html').write_text(html, encoding='utf-8')
     print(f'  Saved docs/index.html')
 
-    # Write archive copy
+    # Write archive copy — images referenced as ../images/FNAME (relative to docs/archive/)
+    for fp in featured_papers:
+        for fig in fp.get('figures', []):
+            if '_file' in fig:
+                fig['data_uri'] = f"../images/{fig['_file']}"
+    archive_html = build_full_page(date_str, featured_papers, brief_papers, is_archive_copy=True)
     archive_file = archive_dir / f'{date_str}.html'
     archive_file.write_text(archive_html, encoding='utf-8')
     print(f'  Saved docs/archive/{date_str}.html')
@@ -822,7 +847,7 @@ def save_report(date_str, featured_papers, brief_papers, docs_dir='docs'):
     # Update archive index
     existing = []
     for f in archive_dir.glob('????-??-??.html'):
-        count = featured_papers.__len__() + brief_papers.__len__() if f.stem == date_str else 0
+        count = len(featured_papers) + len(brief_papers) if f.stem == date_str else 0
         existing.append({'date': f.stem, 'count': count or 8})
 
     archive_index = build_archive_index(existing)
