@@ -4,27 +4,54 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-# Tag color mapping
-TAG_COLORS = {
-    'LLM': '#818cf8', 'Large Language Model': '#818cf8', 'Language Model': '#818cf8',
-    'Fine-tuning': '#f472b6', 'PEFT': '#f472b6', 'LoRA': '#f472b6',
-    'Training': '#34d399', 'Pretraining': '#34d399', 'Pre-training': '#34d399',
-    'RLHF': '#fb923c', 'Reinforcement Learning': '#fb923c', 'RL': '#fb923c',
-    'Alignment': '#fbbf24', 'Safety': '#fbbf24',
-    'Multimodal': '#a78bfa', 'Vision-Language': '#a78bfa',
-    'Diffusion': '#38bdf8', 'Diffusion Model': '#38bdf8',
-    'Optimization': '#4ade80', 'Gradient': '#4ade80',
-    'Architecture': '#60a5fa', 'Transformer': '#60a5fa', 'Attention': '#60a5fa',
-    'Efficiency': '#f97316', 'Compression': '#f97316', 'Quantization': '#f97316',
-    'Distributed': '#e879f9', 'Parallel': '#e879f9',
-    'Reasoning': '#fde047', 'Chain-of-Thought': '#fde047',
+# Tag color + icon mapping
+TAG_META = {
+    'LLM':                   ('#818cf8', '🧠'),
+    'Large Language Model':  ('#818cf8', '🧠'),
+    'Language Model':        ('#818cf8', '🧠'),
+    'Fine-tuning':           ('#f472b6', '🎯'),
+    'PEFT':                  ('#f472b6', '🎯'),
+    'LoRA':                  ('#f472b6', '🎯'),
+    'Training':              ('#34d399', '🏋️'),
+    'Pretraining':           ('#34d399', '🏋️'),
+    'Pre-training':          ('#34d399', '🏋️'),
+    'RLHF':                  ('#fb923c', '🦮'),
+    'Reinforcement Learning':('#fb923c', '🎮'),
+    'RL':                    ('#fb923c', '🎮'),
+    'Alignment':             ('#fbbf24', '⚖️'),
+    'Safety':                ('#fbbf24', '🛡️'),
+    'Multimodal':            ('#a78bfa', '👁️'),
+    'Vision-Language':       ('#a78bfa', '👁️'),
+    'Vision':                ('#a78bfa', '📷'),
+    'Diffusion':             ('#38bdf8', '🎨'),
+    'Diffusion Model':       ('#38bdf8', '🎨'),
+    'Generation':            ('#38bdf8', '🎨'),
+    'Optimization':          ('#4ade80', '⚡'),
+    'Gradient':              ('#4ade80', '⚡'),
+    'Architecture':          ('#60a5fa', '🏗️'),
+    'Transformer':           ('#60a5fa', '🔗'),
+    'Attention':             ('#60a5fa', '🔗'),
+    'Efficiency':            ('#f97316', '🚀'),
+    'Compression':           ('#f97316', '📦'),
+    'Quantization':          ('#f97316', '📦'),
+    'Distributed':           ('#e879f9', '🌐'),
+    'Parallel':              ('#e879f9', '🌐'),
+    'Reasoning':             ('#fde047', '💡'),
+    'Chain-of-Thought':      ('#fde047', '💡'),
+    'Robotics':              ('#10b981', '🦾'),
+    'Robot':                 ('#10b981', '🦾'),
+    'Embodied':              ('#10b981', '🤖'),
+    'Agent':                 ('#06b6d4', '🕵️'),
 }
 
-def tag_color(tag):
-    for k, v in TAG_COLORS.items():
+def tag_meta(tag):
+    for k, (color, icon) in TAG_META.items():
         if k.lower() in tag.lower():
-            return v
-    return '#94a3b8'
+            return color, icon
+    return '#94a3b8', '🏷️'
+
+def tag_color(tag):
+    return tag_meta(tag)[0]
 
 
 SHARED_CSS = """
@@ -464,6 +491,54 @@ footer a:hover { color: var(--accent); }
 .quick-conclusion .zh { color: var(--text); font-weight: 600; }
 .quick-conclusion .en { color: var(--text2); margin-top: 2px; font-size: 13px; }
 
+/* ANALOGY BUBBLE */
+.analogy-bubble {
+  margin: 14px 20px 0;
+  padding: 14px 16px 14px 54px;
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1.5px solid #fcd34d;
+  border-radius: 16px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.analogy-bubble::before {
+  content: '💬';
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-size: 24px;
+  line-height: 1;
+}
+.analogy-bubble .robot {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  font-size: 26px;
+  line-height: 1;
+}
+.analogy-bubble .zh {
+  color: #92400e;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+.analogy-bubble .en {
+  color: #b45309;
+  font-size: 14px;
+  display: block;
+  font-style: italic;
+}
+.analogy-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 5px;
+  display: block;
+}
+
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -494,11 +569,11 @@ def build_featured_card(rank, paper, analysis, figures):
     tags_en = paper.get('topic_tags_en', [])
     tags_zh = paper.get('topic_tags_zh', [])
 
-    # Tags HTML
+    # Tags HTML (with topic icons)
     tags_html = ''
     for t_en, t_zh in zip(tags_en[:4], tags_zh[:4]):
-        color = tag_color(t_en)
-        tags_html += f'<span class="tag" style="border-color:{color}33;color:{color}">{t_en} · {t_zh}</span>'
+        color, icon = tag_meta(t_en)
+        tags_html += f'<span class="tag" style="border-color:{color}33;color:{color}">{icon} {t_en} · {t_zh}</span>'
 
     # Figure HTML
     fig_html = ''
@@ -568,6 +643,8 @@ def build_featured_card(rank, paper, analysis, figures):
     <div class="zh">🎯 {analysis.get('one_liner_zh', '')}</div>
     <div class="en">{analysis.get('one_liner_en', '')}</div>
   </div>
+
+  {'<div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">' + analysis.get('analogy_zh', '') + '</span><span class="en">' + analysis.get('analogy_en', '') + '</span></div>' if analysis.get('analogy_zh') else ''}
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -650,8 +727,8 @@ def build_quick_card(paper, summary):
     tags_zh = paper.get('topic_tags_zh', [])
     tags_html = ''
     for t_en, t_zh in zip(tags_en[:3], tags_zh[:3]):
-        color = tag_color(t_en)
-        tags_html += f'<span class="tag" style="border-color:{color}33;color:{color}">{t_en} · {t_zh}</span>'
+        color, icon = tag_meta(t_en)
+        tags_html += f'<span class="tag" style="border-color:{color}33;color:{color}">{icon} {t_en} · {t_zh}</span>'
 
     authors_str = ', '.join(paper['authors'][:3])
     if len(paper['authors']) > 3:

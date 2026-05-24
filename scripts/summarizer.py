@@ -181,6 +181,8 @@ def analyze_featured(paper, adaptive_hints=''):
                 "conclusion_en": {"type": "string", "description": "Conclusion: What did this paper ultimately prove? Key contribution and impact on the field. 1-2 sentences."},
                 "why_it_matters_zh": {"type": "string", "description": "Why does this paper matter to the AI field? Chinese, 2 sentences"},
                 "why_it_matters_en": {"type": "string", "description": "Why does this paper matter? 2 sentences"},
+                "analogy_zh": {"type": "string", "description": "用一个生活中的比喻或故事来解释这篇论文的核心贡献，让完全不懂AI的人也能秒懂，1-2句，要生动有趣"},
+                "analogy_en": {"type": "string", "description": "Use a simple everyday analogy or story to explain the core idea — like explaining to a curious 12-year-old. 1-2 sentences, fun and vivid, zero jargon"},
                 "key_formulas": {
                     "type": "array",
                     "description": "Key formulas from the abstract, empty array if none",
@@ -202,11 +204,12 @@ def analyze_featured(paper, adaptive_hints=''):
                          "experiment_zh", "experiment_en",
                          "results_zh", "results_en",
                          "conclusion_zh", "conclusion_en",
-                         "why_it_matters_zh", "why_it_matters_en", "key_formulas"]
+                         "why_it_matters_zh", "why_it_matters_en",
+                         "analogy_zh", "analogy_en", "key_formulas"]
         }
     }
 
-    prompt = f"""Analyze this AI paper for a bilingual daily digest targeting ML/RL/Robotics researchers. Use plain, accessible language.
+    prompt = f"""Analyze this AI paper for a bilingual daily digest. Write for a GENERAL audience — imagine explaining to a smart but non-expert friend or a curious high school student. Avoid jargon; use plain words and real-world comparisons.
 
 Title: {paper['title']}
 Authors: {', '.join(paper['authors'])}
@@ -214,14 +217,18 @@ Abstract: {paper['abstract']}
 
 Call the paper_analysis tool with your analysis. ALL fields are REQUIRED — do not leave any field empty.
 
-Field guidance:
-- highlights_zh/en: KEY innovations (what's novel/clever about the approach), bullet-point style
+Field guidance (PLAIN LANGUAGE FIRST):
+- problem_zh/en: What everyday problem does this solve? Use simple words. "Existing AI models struggle with X, like when you try to Y..."
+- highlights_zh/en: What's clever/novel? Bullet-point style, but in plain terms anyone can understand
+- method_zh/en: HOW does it solve the problem? Use an analogy if helpful. Avoid technical jargon.
 - experiment_zh/en: what experiments were done — datasets, baselines, evaluation setup (NOT the numbers)
 - results_zh/en: specific numbers, benchmark names, % improvements — must have concrete figures
-- conclusion_zh/en: 【必须填写】what was ultimately proven; the paper's final contribution in 1-2 sentences
-- why_it_matters_zh/en: 【必须填写】why this matters to the AI/ML field; broader impact in 2 sentences
+- conclusion_zh/en: 【必须填写】what was ultimately proven; the paper's final contribution in 1-2 simple sentences
+- why_it_matters_zh/en: 【必须填写】why does this matter to real-world AI products or society? 2 sentences, non-expert friendly
+- analogy_zh: 【必须填写】用一个生活中的比喻帮助理解，例如"就像用地图导航一样..."，让完全不懂AI的人秒懂，生动有趣
+- analogy_en: 【必须填写】a vivid everyday analogy, e.g. "Think of it like a GPS that learns shortcuts..." — zero jargon, fun and memorable
 
-Both Chinese and English for EVERY field must be complete. Conclusion and why_it_matters are especially important.{adaptive_hints}"""
+Both Chinese and English for EVERY field must be complete. analogy fields are especially important for accessibility.{adaptive_hints}"""
 
     resp = client.messages.create(
         model='claude-sonnet-4-6',
