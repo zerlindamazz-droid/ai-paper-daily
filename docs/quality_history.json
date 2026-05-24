@@ -443,12 +443,22 @@
         "Never begin a new brief until the previous one contains all four bilingual fields with non-empty content.",
         "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any."
       ]
+    },
+    {
+      "date": "2026-05-24",
+      "score_before": 57,
+      "score_after": 91,
+      "issues": [
+        "  Brief \"Symmetries Here and There, Combined Everywhere: Cr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "After filling each field, tick it off an internal checklist; only proceed to the next brief when all four fields are explicitly marked complete.",
+        "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
+        "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Never finalize or advance to the next brief until all four bilingual fields are explicitly populated and verified present.",
-    "Treat missing bilingual fields as hard blocking errors requiring immediate insertion before any other content is written.",
-    "After each brief, output the checklist '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' confirming all four fields exist.",
     "Before writing any brief, output a labeled scaffold with all four fields: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—fill each immediately, never skip.",
     "After completing each brief, verify all four bilingual fields exist before proceeding; treat any missing field as a hard blocker requiring immediate insertion.",
     "Never finalize a brief without outputting the explicit checklist: ✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN).",
@@ -465,6 +475,9 @@
     "Treat missing bilingual fields as hard blockers: do not advance to the next brief until all four fields contain non-empty content.",
     "After drafting each brief, run an explicit 4-field check; if any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is missing, insert it immediately before continuing.",
     "Never begin a new brief until the previous one contains all four bilingual fields with non-empty content.",
-    "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any."
+    "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any.",
+    "After filling each field, tick it off an internal checklist; only proceed to the next brief when all four fields are explicitly marked complete.",
+    "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
+    "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them."
   ]
 }
