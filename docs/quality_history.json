@@ -456,6 +456,13 @@
         "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
         "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them."
       ]
+    },
+    {
+      "date": "2026-05-25",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
