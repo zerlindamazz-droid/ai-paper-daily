@@ -240,17 +240,10 @@ def run_quality_check(featured_results, brief_results, date_str):
     """
     print('\n🔍 Quality check...')
 
-    # Score before fixes
+    # Score only — re-analysis fix pass disabled to control API costs
     score_before = _quality_score(featured_results, brief_results)
-    print(f'   Quality score before fix: {score_before}/100')
-
-    # Fix pass 1
-    feat_fixed = _fix_featured(featured_results)
-    brief_fixed = _fix_brief(brief_results)
-
-    # Score after fixes
-    score_after = _quality_score(featured_results, brief_results)
-    print(f'   Quality score after fix:  {score_after}/100  (fixed {feat_fixed}f + {brief_fixed}b)')
+    score_after = score_before
+    print(f'   Quality score: {score_before}/100')
 
     # Collect remaining issues for evolution
     remaining_issues = _collect_run_issues(featured_results, brief_results)
