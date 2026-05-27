@@ -478,12 +478,26 @@
         "  Brief \"DiscoverPhysics: Benchmarking LLMs for Out-of-the-\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
+    },
+    {
+      "date": "2026-05-27",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"FineVLA: Fine-Grained Instruction Alignment for St\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"BASIS: Batchwise Advantage Estimation from Single-\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Alignment Tampering: How Reinforcement Learning fr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Symbolic Regression via Latent Iterative Refinemen\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"From Scores to Gibbs Correctors: Accelerating Unif\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
+        "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
+        "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Before writing any brief, output a labeled scaffold with all four fields: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—fill each immediately, never skip.",
-    "After completing each brief, verify all four bilingual fields exist before proceeding; treat any missing field as a hard blocker requiring immediate insertion.",
-    "Never finalize a brief without outputting the explicit checklist: ✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN).",
     "All four bilingual fields are mandatory structural requirements—absence of any single field means the brief is incomplete and must not advance.",
     "Before writing content, output a rigid 4-slot scaffold labeled 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) and fill each slot before proceeding.",
     "After completing each brief, output the verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' or halt and insert missing fields.",
@@ -500,6 +514,9 @@
     "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any.",
     "After filling each field, tick it off an internal checklist; only proceed to the next brief when all four fields are explicitly marked complete.",
     "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
-    "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them."
+    "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them.",
+    "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
+    "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
+    "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing."
   ]
 }
