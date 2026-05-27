@@ -764,11 +764,11 @@ footer a:hover { color: var(--accent); }
     <span class="importance-score">★ 8/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#60a5fa33;color:#60a5fa">🏗️ 3D Reconstruction · 三维重建</span><span class="tag" style="border-color:#10b98133;color:#10b981">🤖 Simulation · 仿真</span><span class="tag" style="border-color:#a78bfa33;color:#a78bfa">📷 Vision · 视觉</span></div>
 
   <div class="paper-title">
     <span class="title-en">TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction</span>
-    <span class="title-zh">TriSplat: Simulation-Ready Feed-Forward 3D Scene Reconstruction</span>
+    <span class="title-zh">TriSplat：仿真就绪的前向传播三维场景重建</span>
   </div>
   <p class="paper-authors">🧑‍🔬 Weijie Wang, Zimu Li, Jinchuan Shi, Zeyu Zhang et al.</p>
 
@@ -778,11 +778,15 @@ footer a:hover { color: var(--accent); }
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 暂无中文摘要</div>
-    <div class="en">Analysis unavailable</div>
+    <div class="zh">🎯 用三角面片代替高斯球，单次推理直接输出可用于物理仿真的3D网格</div>
+    <div class="en">Replaces Gaussian blobs with triangle meshes — outputs simulation-ready 3D scenes in one forward pass, no conversion needed.</div>
   </div>
 
   
+
+  
+
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">就像3D打印机直接打出可以拼装的零件，而不是打出一堆沙子让你自己再成型——TriSplat直接输出物理引擎能用的三角网格。</span><span class="en">Like a 3D printer that outputs finished snap-together parts instead of loose powder you'd have to mold yourself — TriSplat skips the messy conversion step.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -796,28 +800,28 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">现有三维重建方法输出高斯球基元，要转成物理仿真用的网格还需要昂贵的后处理，破坏了端到端承诺，无位姿场景下尤其困难。</span></td>
+        <td><span class="cell-en">Existing feed-forward 3D methods output Gaussian primitives that need expensive post-processing to become physics-engine-ready meshes — especially hard without known camera poses.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">直接预测三角面片基元，单次前向传播输出仿真就绪网格；联合估计相机位姿；单目法线自举策略稳定训练；透明度调度逐步锐化表面。</span></td>
+        <td><span class="cell-en">Predicts oriented triangle primitives for direct mesh output; jointly estimates camera poses; mono-normal bootstrap stabilizes training; opacity scheduling sharpens surface representation.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">在RealEstate10K和DL3DV数据集上测试，与高斯前向传播基线对比，评估几何重建保真度和新视角渲染质量。</span></td>
+        <td><span class="cell-en">Tested on RealEstate10K and DL3DV against Gaussian feed-forward baselines, evaluating geometry faithfulness and novel-view synthesis quality.</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">比高斯基线具有更高几何保真度，同时保持有竞争力的新视角渲染质量；输出可直接被物理引擎、碰撞检测器和标准渲染管线使用。</span></td>
+        <td><span class="cell-en">More geometry-faithful than Gaussian baselines while maintaining competitive novel-view rendering; output directly ingestible by physics engines and collision detectors without any conversion.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">三角面片基元使前向传播三维重建直接具备仿真就绪能力，渲染原语本身即成为可用的仿真资产。</span></td>
+        <td><span class="cell-en">Triangle primitives enable feed-forward 3D reconstruction that is directly usable by physics engines — the rendering primitive itself becomes a simulation-ready asset.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
@@ -834,8 +838,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh"></span>
-        <span class="en"></span>
+        <span class="zh">给定稀疏输入图像，网络预测局部三维点图，构建几何法线后经图像条件法线头精炼，转换为稳定局部坐标系用于三角面片参数化。透明度和模糊度调度策略逐步锐化表面，最终实现直接网格提取。</span>
+        <span class="en">Given sparse input images, the network predicts local 3D point maps, derives geometry normals, refines with an image-conditioned normal head, and converts to stable local frames for triangle parameterization. Opacity and blur scheduling progressively sharpens the surface for direct mesh extraction.</span>
       </div>
     </div>
 
@@ -844,8 +848,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh"></span>
-        <span class="en"></span>
+        <span class="zh">让三维重建直接服务于机器人和具身AI仿真场景，消除网格转换瓶颈，是面向仿真应用三维感知的重要突破。</span>
+        <span class="en">Enables 3D reconstruction to directly serve robotics, embodied AI, and physics simulation pipelines — eliminating the long-standing mesh conversion bottleneck.</span>
       </div>
     </div>
   </div>
@@ -866,11 +870,11 @@ footer a:hover { color: var(--accent); }
     <span class="importance-score">★ 8/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#818cf833;color:#818cf8">🧠 Audio-Language · 音频语言模型</span><span class="tag" style="border-color:#fb923c33;color:#fb923c">🦮 RLHF · 强化学习对齐</span><span class="tag" style="border-color:#34d39933;color:#34d399">💬 Speech · 语音</span></div>
 
   <div class="paper-title">
     <span class="title-en">StepAudio 2.5 Technical Report</span>
-    <span class="title-zh">StepAudio 2.5 Technical Report</span>
+    <span class="title-zh">StepAudio 2.5 技术报告</span>
   </div>
   <p class="paper-authors">🧑‍🔬 Bin Lin, Bo Zhao, Boyong Wu, Chao Yan et al.</p>
 
@@ -880,11 +884,15 @@ footer a:hover { color: var(--accent); }
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 暂无中文摘要</div>
-    <div class="en">Analysis unavailable</div>
+    <div class="zh">🎯 统一音频语言模型通过RLHF同时达到语音识别、合成和实时对话的最优水平</div>
+    <div class="en">A single audio-language model that matches specialized ASR, TTS, and realtime speech systems — all unified via RLHF-centric alignment.</div>
   </div>
 
   
+
+  
+
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">就像一个演员既能做同声传译（ASR）、能讲有声书（TTS）、又能即兴脱口秀（实时对话），StepAudio 2.5用一个模型干了三个专业系统的活。</span><span class="en">Like an actor who can simultaneously transcribe speeches, narrate audiobooks, and improvise live conversation — one model doing the work of three specialist systems.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -898,28 +906,28 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">统一音频语言模型虽能同时处理语音识别、合成和实时对话，但在各任务上始终难以媲美专业系统，这一鸿沟长期未被弥合。</span></td>
+        <td><span class="cell-en">Unified audio-language models promise to bring LLM reasoning to speech, but have consistently fallen short of specialized ASR, TTS, and realtime dialogue systems.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">以RLHF为核心对齐机制统一三个任务；ASR采用可验证多token解码；TTS通过偏好RLHF实现可控合成；实时对话用生成奖励建模降低延迟并保持人格一致性。</span></td>
+        <td><span class="cell-en">RLHF-centric alignment unifies all three tasks; ASR uses verifiable multi-token decoding; TTS uses preference-based RLHF for expressive synthesis; Realtime uses generative reward modeling for low-latency persona-consistent dialogue.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">在ASR、TTS和实时交互标准基准上与专业系统对比，分别评估转录准确率、合成表现力和对话延迟，验证统一模型能否全面超越专业方案。</span></td>
+        <td><span class="cell-en">Benchmarked against specialized systems on standard ASR, TTS, and Realtime tasks, measuring transcription accuracy, synthesis expressiveness, and dialogue latency.</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">在ASR、TTS和实时交互三大能力上均达到最新最优（State-of-the-Art），全面媲美或超越各领域专业系统。</span></td>
+        <td><span class="cell-en">Achieves state-of-the-art results across all three capabilities — matching or exceeding specialized systems on ASR, TTS, and Realtime benchmarks.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh"></span></td>
-        <td><span class="cell-en"></span></td>
+        <td><span class="cell-zh">单一音频语言基础模型可同时内化语音理解、生成和实时交互三种不同部署目标，终结了统一模型与专业系统间的性能权衡困境。</span></td>
+        <td><span class="cell-en">A unified audio-language model can internalize the distinct objectives of speech understanding, generation, and live interaction — ending the tradeoff between unification and specialization.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
@@ -936,8 +944,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh"></span>
-        <span class="en"></span>
+        <span class="zh">共享骨干网络在后训练阶段分化为三种模式：ASR分支采用可验证多token解码提升转录效率；TTS分支通过偏好RLHF和富上下文监督实现可控合成；实时分支在RLHF框架内用生成奖励建模实现低延迟人格一致对话。</span>
+        <span class="en">A shared backbone is specialized into three modes via post-training: ASR uses verifiable multi-token decoding; TTS uses preference-based RLHF with context-rich supervision; Realtime uses generative reward modeling within RLHF for low-latency persona-consistent dialogue.</span>
       </div>
     </div>
 
@@ -946,8 +954,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh"></span>
-        <span class="en"></span>
+        <span class="zh">证明统一模型路线在不牺牲专业性能前提下可大幅简化语音AI系统架构，对工业界部署具有重要意义。</span>
+        <span class="en">Proves unified models can match specialized systems across all speech tasks, dramatically simplifying deployment and opening the door to general-purpose audio-language AI.</span>
       </div>
     </div>
   </div>
