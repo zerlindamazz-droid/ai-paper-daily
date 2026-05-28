@@ -495,13 +495,27 @@
         "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
         "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing."
       ]
+    },
+    {
+      "date": "2026-05-28",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Beyond Binary: Sim-to-Real Dexterous Manipulation \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"PEFT-Arena: Understanding Parameter-Efficient Fine\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Imitation Learning for Robot Assistance in Open Su\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"How VLAs Fail Differently: Black-Box Action Monito\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Extrapolative Weight Averaging Reveals Correctness\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
+        "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
+        "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
+        "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding."
+      ]
     }
   ],
   "accumulated_hints": [
-    "All four bilingual fields are mandatory structural requirements—absence of any single field means the brief is incomplete and must not advance.",
-    "Before writing content, output a rigid 4-slot scaffold labeled 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) and fill each slot before proceeding.",
-    "After completing each brief, output the verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' or halt and insert missing fields.",
-    "Treat all four bilingual fields as hard blockers: never advance to the next brief if any single field is absent or empty.",
     "Run an explicit four-field presence check immediately after drafting each brief; insert any missing field before writing anything else.",
     "Before drafting any brief, instantiate all four fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as labeled placeholders, then fill each one sequentially without skipping.",
     "Treat any brief missing one or more bilingual fields as malformed; halt output, insert missing fields immediately, then resume.",
@@ -517,6 +531,10 @@
     "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them.",
     "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
     "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
-    "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing."
+    "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing.",
+    "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
+    "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
+    "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
+    "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding."
   ]
 }
