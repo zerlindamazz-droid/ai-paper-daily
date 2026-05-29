@@ -513,12 +513,26 @@
         "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
         "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding."
       ]
+    },
+    {
+      "date": "2026-05-29",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"DynaFLIP: Rethinking Robotics Perception via Tri-M\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TriSearch: Learning to Optimize Triangulations via\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"BORA: Bridging Offline Reinforcement Learning and \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Mean-Field Diffuser: Scaling Offline MARL to Thous\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"HPO: Hysteretic Policy Optimization for Stable and\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
+        "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
+        "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Run an explicit four-field presence check immediately after drafting each brief; insert any missing field before writing anything else.",
-    "Before drafting any brief, instantiate all four fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as labeled placeholders, then fill each one sequentially without skipping.",
-    "Treat any brief missing one or more bilingual fields as malformed; halt output, insert missing fields immediately, then resume.",
     "After writing each brief, output the mandatory checklist '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding to the next brief.",
     "Before drafting each brief, explicitly instantiate all four labeled placeholders—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—then fill sequentially; never skip or omit any placeholder.",
     "After completing each brief, output verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding; halt and insert missing fields if any are absent.",
@@ -535,6 +549,9 @@
     "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
     "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
     "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
-    "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding."
+    "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding.",
+    "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
+    "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
+    "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text."
   ]
 }
