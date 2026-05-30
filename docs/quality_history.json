@@ -530,13 +530,27 @@
         "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
         "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text."
       ]
+    },
+    {
+      "date": "2026-05-30",
+      "score_before": 57,
+      "score_after": 57,
+      "issues": [
+        "  Brief \"RoboWits: Unexpected Challenges for Robotic Creati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"In-Context Reward Adaptation for Robust Preference\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"How's it going? Reinforcement learning in language\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Active Continual Learning with Metaplastic Binary \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Reasoning with Sampling: Cutting at Decision Point\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
+        "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
+        "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
+        "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction."
+      ]
     }
   ],
   "accumulated_hints": [
-    "After writing each brief, output the mandatory checklist '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding to the next brief.",
-    "Before drafting each brief, explicitly instantiate all four labeled placeholders—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—then fill sequentially; never skip or omit any placeholder.",
-    "After completing each brief, output verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding; halt and insert missing fields if any are absent.",
-    "Treat missing bilingual fields as hard blockers: do not advance to the next brief until all four fields contain non-empty content.",
     "After drafting each brief, run an explicit 4-field check; if any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is missing, insert it immediately before continuing.",
     "Never begin a new brief until the previous one contains all four bilingual fields with non-empty content.",
     "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any.",
@@ -552,6 +566,10 @@
     "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding.",
     "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
     "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
-    "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text."
+    "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text.",
+    "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
+    "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
+    "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
+    "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction."
   ]
 }
