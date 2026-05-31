@@ -548,13 +548,27 @@
         "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
         "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction."
       ]
+    },
+    {
+      "date": "2026-05-31",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"A Heterogeneous Architecture for Robot RL Beyond G\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Gaze2Act: Gaze-Conditioned Vision-Language-Action \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Efficient Test-Time Finetuning of LLMs via Convex \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Uncertainty-driven 3D Gaussian Splatting Active Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Self-Trained Verification for Training- and Test-T\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
+        "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
+        "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
+        "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief."
+      ]
     }
   ],
   "accumulated_hints": [
-    "After drafting each brief, run an explicit 4-field check; if any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is missing, insert it immediately before continuing.",
-    "Never begin a new brief until the previous one contains all four bilingual fields with non-empty content.",
-    "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any.",
-    "After filling each field, tick it off an internal checklist; only proceed to the next brief when all four fields are explicitly marked complete.",
     "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
     "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them.",
     "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
@@ -570,6 +584,10 @@
     "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
     "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
     "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
-    "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction."
+    "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction.",
+    "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
+    "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
+    "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
+    "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief."
   ]
 }
