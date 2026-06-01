@@ -566,13 +566,27 @@
         "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
         "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief."
       ]
+    },
+    {
+      "date": "2026-06-01",
+      "score_before": 57,
+      "score_after": 57,
+      "issues": [
+        "  Brief \"Skill Reuse as Compression in Agentic RL\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Dreaming Of Others: Latent Teammate Modeling In Wo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Answer-Set-Programming-based Abstractions for Rein\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Positional versus Symbolic Attention Heads: Learni\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"GPU Forecasters: Language Models as Selective Surr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief, output a mandatory header: '=== REQUIRED FIELDS: 摘要✓ Summary✓ 结论✓ Conclusion✓ ===' and verify all four are populated before closing.",
+        "Treat all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a single atomic block; never mark a brief complete until all four contain substantive text.",
+        "Immediately after drafting each brief, run a self-check: list each required field name and confirm it is non-empty before proceeding to the next brief.",
+        "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
-    "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them.",
-    "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
-    "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
     "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing.",
     "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
     "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
@@ -588,6 +602,10 @@
     "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
     "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
     "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
-    "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief."
+    "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief.",
+    "Before writing any brief, output a mandatory header: '=== REQUIRED FIELDS: 摘要✓ Summary✓ 结论✓ Conclusion✓ ===' and verify all four are populated before closing.",
+    "Treat all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a single atomic block; never mark a brief complete until all four contain substantive text.",
+    "Immediately after drafting each brief, run a self-check: list each required field name and confirm it is non-empty before proceeding to the next brief.",
+    "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing."
   ]
 }
