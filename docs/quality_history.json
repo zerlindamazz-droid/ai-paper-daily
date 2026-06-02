@@ -584,6 +584,13 @@
         "Immediately after drafting each brief, run a self-check: list each required field name and confirm it is non-empty before proceeding to the next brief.",
         "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing."
       ]
+    },
+    {
+      "date": "2026-06-02",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
