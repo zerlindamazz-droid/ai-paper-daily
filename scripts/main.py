@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from fetcher import fetch_papers
 from alphaxiv_fetcher import fetch_alphaxiv_hot
+from huggingface_fetcher import fetch_hf_hot
 from summarizer import select_and_rank, select_brief, analyze_featured, analyze_brief_batch
 from extractor import extract_figures
 from renderer import save_report
@@ -62,12 +63,28 @@ def main():
     sent_ids = load_sent_ids()
     print(f'📋 {len(sent_ids)} papers previously sent (will deduplicate)\n')
 
-    # ── Step 2: Fetch alphaXiv HOT for featured papers ─────────
+    # ── Step 2: Fetch alphaXiv HOT + HuggingFace trending ──────
     print('🔥 Fetching alphaXiv HOT papers...')
-    alphaxiv_papers = fetch_alphaxiv_hot(top_n=10)  # fetch 10 for dedup buffer
-    alphaxiv_papers = filter_unsent(alphaxiv_papers, sent_ids)
-    featured_papers_raw = alphaxiv_papers[:4]        # take top 4 unsent
-    print(f'   alphaXiv: {len(featured_papers_raw)} unsent featured papers\n')
+    alphaxiv_papers = fetch_alphaxiv_hot(top_n=10)
+    print('🤗 Fetching HuggingFace trending papers (upvotes ≥5)...')
+    hf_papers = fetch_hf_hot(min_upvotes=5, top_n=12)
+
+    # Merge: alphaXiv first (strongest signal), then HF sorted by upvotes; dedup by ID
+    merged_ids: set = set()
+    merged_pool = []
+    for p in alphaxiv_papers:
+        if p['id'] not in merged_ids:
+            merged_ids.add(p['id'])
+            merged_pool.append(p)
+    for p in hf_papers:  # already sorted by upvotes desc
+        if p['id'] not in merged_ids:
+            merged_ids.add(p['id'])
+            merged_pool.append(p)
+
+    merged_pool = filter_unsent(merged_pool, sent_ids)
+    featured_papers_raw = merged_pool[:4]
+    print(f'   Pool: {len(alphaxiv_papers)} alphaXiv + {len(hf_papers)} HF → '
+          f'{len(featured_papers_raw)} unsent featured papers\n')
 
     # ── Step 3: Fetch arXiv pool for brief + featured fallback ─
     print('📥 Fetching papers from arXiv (last 30 days)...')
