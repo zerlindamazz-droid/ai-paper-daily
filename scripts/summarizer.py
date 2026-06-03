@@ -52,7 +52,7 @@ def _call_with_retry(prompt, max_tokens=1000, expect_array=False, retries=2):
         full_prompt = f"{instruction}\n\n{prompt}" if attempt == 0 else f"{instruction}\n\nIMPORTANT: Your previous response had a JSON syntax error. Return ONLY the JSON, nothing else.\n\n{prompt}"
 
         resp = client.messages.create(
-            model='claude-sonnet-4-6',
+            model='claude-opus-4-8',
             max_tokens=max_tokens,
             messages=[{'role': 'user', 'content': full_prompt}]
         )
@@ -134,7 +134,7 @@ Papers:
 Call paper_selection with your choices."""
 
     resp = client.messages.create(
-        model='claude-sonnet-4-6',
+        model='claude-opus-4-8',
         max_tokens=1000,
         tools=[tool],
         tool_choice={"type": "any"},
@@ -231,7 +231,7 @@ Field guidance (PLAIN LANGUAGE FIRST):
 Both Chinese and English for EVERY field must be complete. analogy fields are especially important for accessibility.{adaptive_hints}"""
 
     resp = client.messages.create(
-        model='claude-sonnet-4-6',
+        model='claude-opus-4-8',
         max_tokens=4000,
         tools=[tool],
         tool_choice={"type": "any"},
@@ -290,7 +290,7 @@ Papers:
 Call brief_selection with your 5 chosen papers."""
 
     resp = client.messages.create(
-        model='claude-sonnet-4-6',
+        model='claude-opus-4-8',
         max_tokens=600,
         tools=[tool],
         tool_choice={"type": "any"},
@@ -351,7 +351,7 @@ ALL fields are REQUIRED for every paper — do not leave any field empty:
 Call brief_summaries with complete summaries for all {len(papers)} papers."""
 
     resp = client.messages.create(
-        model='claude-sonnet-4-6',
+        model='claude-opus-4-8',
         max_tokens=3500,
         tools=[tool],
         tool_choice={"type": "any"},
