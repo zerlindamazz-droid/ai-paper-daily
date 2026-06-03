@@ -182,7 +182,7 @@ Respond with a JSON array of strings only. Example:
 ["Always write at least 2 sentences for conclusion_zh.", "Experiment section must name specific datasets used."]"""
 
     resp = client.messages.create(
-        model='claude-opus-4-8',
+        model='claude-sonnet-4-6',
         max_tokens=400,
         messages=[{'role': 'user', 'content': prompt}]
     )
