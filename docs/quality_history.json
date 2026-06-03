@@ -591,6 +591,18 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-06-03",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Humanoid-GPT: Scaling Data and Structure for Zero-\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"KVarN: Variance-Normalized KV-Cache Quantization M\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"World Models Meet Language Models: On the Compleme\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"TRON: Targeted Rule-Verifiable Online Environments\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']"
+      ],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
