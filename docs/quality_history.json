@@ -603,13 +603,27 @@
         "  Featured \"TRON: Targeted Rule-Verifiable Online Environments\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']"
       ],
       "new_hints": []
+    },
+    {
+      "date": "2026-06-04",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Reinforcement Learning from Rich Feedback with Dis\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Scenario Generation for Risk-Aware Reinforcement L\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Bayesian learning for the stochastic shortest path\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Learning Empirically Admissible Neural Heuristics \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Dynamic Multi-Pair Trading Strategy in Cryptocurre\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before starting each brief, declare a checklist: '摘要（中文）☐ Summary (EN)☐ 结论（中文）☐ Conclusion (EN)☐' and check off each field only after writing substantive content.",
+        "Never close a brief without outputting a final verification line confirming all four bilingual fields are populated with non-empty text.",
+        "Treat the four bilingual fields as one atomic unit; complete all four in immediate succession before any other output or transition.",
+        "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section."
+      ]
     }
   ],
   "accumulated_hints": [
-    "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing.",
-    "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
-    "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
-    "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
     "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding.",
     "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
     "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
@@ -625,6 +639,10 @@
     "Before writing any brief, output a mandatory header: '=== REQUIRED FIELDS: 摘要✓ Summary✓ 结论✓ Conclusion✓ ===' and verify all four are populated before closing.",
     "Treat all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a single atomic block; never mark a brief complete until all four contain substantive text.",
     "Immediately after drafting each brief, run a self-check: list each required field name and confirm it is non-empty before proceeding to the next brief.",
-    "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing."
+    "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing.",
+    "Before starting each brief, declare a checklist: '摘要（中文）☐ Summary (EN)☐ 结论（中文）☐ Conclusion (EN)☐' and check off each field only after writing substantive content.",
+    "Never close a brief without outputting a final verification line confirming all four bilingual fields are populated with non-empty text.",
+    "Treat the four bilingual fields as one atomic unit; complete all four in immediate succession before any other output or transition.",
+    "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section."
   ]
 }
