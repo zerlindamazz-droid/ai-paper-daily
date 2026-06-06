@@ -628,13 +628,27 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-06-06",
+      "score_before": 57,
+      "score_after": 57,
+      "issues": [
+        "  Brief \"HANDOFF: Humanoid Agentic Task-Space Whole-Body Co\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TempoVLA: Learning Speed-Controllable Vision-Langu\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Maximising the Set-Piece Return: Optimising Footba\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TailLoR: Protecting Principal Components in Parame\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Plug-and-Play Guidance for Discrete Diffusion Mode\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief, output a numbered checklist '1.摘要 2.Summary 3.结论 4.Conclusion' and tick each only after writing substantive content.",
+        "Complete all four bilingual fields consecutively as one uninterruptible block before outputting any other content or transitioning to the next brief.",
+        "If output limits approach, stop starting new briefs entirely; fully complete the current brief's four required fields first.",
+        "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding.",
-    "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
-    "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
-    "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text.",
     "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
     "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
     "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
@@ -650,6 +664,10 @@
     "Before starting each brief, declare a checklist: '摘要（中文）☐ Summary (EN)☐ 结论（中文）☐ Conclusion (EN)☐' and check off each field only after writing substantive content.",
     "Never close a brief without outputting a final verification line confirming all four bilingual fields are populated with non-empty text.",
     "Treat the four bilingual fields as one atomic unit; complete all four in immediate succession before any other output or transition.",
-    "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section."
+    "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section.",
+    "Before writing any brief, output a numbered checklist '1.摘要 2.Summary 3.结论 4.Conclusion' and tick each only after writing substantive content.",
+    "Complete all four bilingual fields consecutively as one uninterruptible block before outputting any other content or transitioning to the next brief.",
+    "If output limits approach, stop starting new briefs entirely; fully complete the current brief's four required fields first.",
+    "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding."
   ]
 }
