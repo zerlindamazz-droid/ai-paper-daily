@@ -646,13 +646,27 @@
         "If output limits approach, stop starting new briefs entirely; fully complete the current brief's four required fields first.",
         "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding."
       ]
+    },
+    {
+      "date": "2026-06-07",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Flow-based Policy Adaptation without Policy Update\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Regret Minimization with Adaptive Opponents in Rep\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Ensuring Interaction Safety in Multitask Exoskelet\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MLEvolve: A Self-Evolving Framework for Automated \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RiskFlow: Fast and Faithful Safety-Critical Traffi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing each brief, output the literal headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as placeholders, then fill each immediately.",
+        "Treat all four bilingual fields as mandatory blocking requirements; never transition to a new brief until all four contain substantive content.",
+        "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
+        "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
-    "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
-    "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
-    "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction.",
     "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
     "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
     "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
@@ -668,6 +682,10 @@
     "Before writing any brief, output a numbered checklist '1.摘要 2.Summary 3.结论 4.Conclusion' and tick each only after writing substantive content.",
     "Complete all four bilingual fields consecutively as one uninterruptible block before outputting any other content or transitioning to the next brief.",
     "If output limits approach, stop starting new briefs entirely; fully complete the current brief's four required fields first.",
-    "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding."
+    "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding.",
+    "Before writing each brief, output the literal headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as placeholders, then fill each immediately.",
+    "Treat all four bilingual fields as mandatory blocking requirements; never transition to a new brief until all four contain substantive content.",
+    "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
+    "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line."
   ]
 }
