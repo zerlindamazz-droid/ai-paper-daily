@@ -664,12 +664,26 @@
         "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
         "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line."
       ]
+    },
+    {
+      "date": "2026-06-08",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Affordance-Based Hierarchical Reinforcement Learni\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Rapid co-design of Buoyancy-assisted robots for Ch\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Spline Policy: A Structured Representation for Rob\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RhinoVLA Technical Report\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Self-evolving LLM agents with in-distribution Opti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before starting each brief, mentally verify all four fields exist: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN). Never skip or defer any.",
+        "Treat the four bilingual fields as a single atomic block; output all four consecutively before writing any other section or transitioning.",
+        "If nearing output limits, halt new briefs immediately and complete all four required fields for the current brief first."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
-    "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
-    "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
     "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief.",
     "Before writing any brief, output a mandatory header: '=== REQUIRED FIELDS: 摘要✓ Summary✓ 结论✓ Conclusion✓ ===' and verify all four are populated before closing.",
     "Treat all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a single atomic block; never mark a brief complete until all four contain substantive text.",
@@ -686,6 +700,9 @@
     "Before writing each brief, output the literal headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as placeholders, then fill each immediately.",
     "Treat all four bilingual fields as mandatory blocking requirements; never transition to a new brief until all four contain substantive content.",
     "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
-    "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line."
+    "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line.",
+    "Before starting each brief, mentally verify all four fields exist: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN). Never skip or defer any.",
+    "Treat the four bilingual fields as a single atomic block; output all four consecutively before writing any other section or transitioning.",
+    "If nearing output limits, halt new briefs immediately and complete all four required fields for the current brief first."
   ]
 }
