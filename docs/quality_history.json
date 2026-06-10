@@ -699,13 +699,27 @@
         "If approaching output limits mid-brief, prioritize completing the four bilingual fields over starting any new content or brief.",
         "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately."
       ]
+    },
+    {
+      "date": "2026-06-10",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"TacForeSight: Force-Guided Tactile World Model for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RoboNaldo: Accurate, Stable and Powerful Humanoid \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Test-Time Gradient Guidance of Flow Policies in Re\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Generation of Diverse and Functional Robot Designs\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"When to Align, When to Predict: A Phase Diagram fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before closing any brief, run an explicit 4-field check: output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one uninterruptible block.",
+        "Never begin a new brief or section until the previous brief's four bilingual fields are fully written with substantive content.",
+        "If output limits approach, immediately complete all four bilingual fields for the current brief before stopping; never leave them empty.",
+        "Treat the four bilingual fields as the highest-priority content in each brief—write them before optional sections like methodology details."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing.",
-    "Before starting each brief, declare a checklist: '摘要（中文）☐ Summary (EN)☐ 结论（中文）☐ Conclusion (EN)☐' and check off each field only after writing substantive content.",
-    "Never close a brief without outputting a final verification line confirming all four bilingual fields are populated with non-empty text.",
-    "Treat the four bilingual fields as one atomic unit; complete all four in immediate succession before any other output or transition.",
     "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section.",
     "Before writing any brief, output a numbered checklist '1.摘要 2.Summary 3.结论 4.Conclusion' and tick each only after writing substantive content.",
     "Complete all four bilingual fields consecutively as one uninterruptible block before outputting any other content or transitioning to the next brief.",
@@ -721,6 +735,10 @@
     "After completing each brief's main content, immediately output all four bilingual fields as one atomic block before any section break or new brief begins.",
     "Use a strict per-brief checklist: output '摘要（中文）→Summary (EN)→结论（中文）→Conclusion (EN)' in sequence; never mark a brief complete until all four are substantively filled.",
     "If approaching output limits mid-brief, prioritize completing the four bilingual fields over starting any new content or brief.",
-    "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately."
+    "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately.",
+    "Before closing any brief, run an explicit 4-field check: output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one uninterruptible block.",
+    "Never begin a new brief or section until the previous brief's four bilingual fields are fully written with substantive content.",
+    "If output limits approach, immediately complete all four bilingual fields for the current brief before stopping; never leave them empty.",
+    "Treat the four bilingual fields as the highest-priority content in each brief—write them before optional sections like methodology details."
   ]
 }
