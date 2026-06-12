@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-11",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-12",
       "score_before": 100,
       "score_after": 100,
@@ -735,12 +728,26 @@
         "If output limits approach, stop starting new briefs entirely and complete only the four bilingual fields for the current brief.",
         "Hard rule: a brief is not complete until all four bilingual fields contain substantive text—never skip or defer them."
       ]
+    },
+    {
+      "date": "2026-06-12",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Mana: Dexterous Manipulation of Articulated Tools\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"$\\texttt{WEAVER}$, Better, Faster, Longer: An Effe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Multi-Agent Reinforcement Learning from Delayed Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MaskWAM: Unifying Mask Prompting and Prediction fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"The Stable Recovery Manifold: Geometric Principles\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Write 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as the very first four fields after each brief's title—no exceptions, no deferral.",
+        "Treat any brief missing these four fields as critically incomplete; halt all other output and backfill them immediately before proceeding.",
+        "Never transition to a new brief until explicitly confirming all four bilingual fields contain substantive text in the previous brief."
+      ]
     }
   ],
   "accumulated_hints": [
-    "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding.",
-    "Before writing each brief, output the literal headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as placeholders, then fill each immediately.",
-    "Treat all four bilingual fields as mandatory blocking requirements; never transition to a new brief until all four contain substantive content.",
     "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
     "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line.",
     "Before starting each brief, mentally verify all four fields exist: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN). Never skip or defer any.",
@@ -757,6 +764,9 @@
     "Before starting any new brief, verify the previous brief contains all four bilingual fields; treat incomplete briefs as unfinished work.",
     "Output 摘要（中文）→Summary (EN)→结论（中文）→Conclusion (EN) immediately after the title/authors block, before any other content.",
     "If output limits approach, stop starting new briefs entirely and complete only the four bilingual fields for the current brief.",
-    "Hard rule: a brief is not complete until all four bilingual fields contain substantive text—never skip or defer them."
+    "Hard rule: a brief is not complete until all four bilingual fields contain substantive text—never skip or defer them.",
+    "Write 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as the very first four fields after each brief's title—no exceptions, no deferral.",
+    "Treat any brief missing these four fields as critically incomplete; halt all other output and backfill them immediately before proceeding.",
+    "Never transition to a new brief until explicitly confirming all four bilingual fields contain substantive text in the previous brief."
   ]
 }
