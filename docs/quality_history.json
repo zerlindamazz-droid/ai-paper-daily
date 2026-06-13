@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-12",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-14",
       "score_before": 100,
       "score_after": 100,
@@ -745,6 +738,13 @@
         "Treat any brief missing these four fields as critically incomplete; halt all other output and backfill them immediately before proceeding.",
         "Never transition to a new brief until explicitly confirming all four bilingual fields contain substantive text in the previous brief."
       ]
+    },
+    {
+      "date": "2026-06-13",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
