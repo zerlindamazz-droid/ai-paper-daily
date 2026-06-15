@@ -1,21 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-15",
-      "score_before": 57,
-      "score_after": 66,
-      "issues": [
-        "  Brief \"Learning Versatile Humanoid Manipulation with Touc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Tree Learning: A Multi-Skill Continual Learning Fr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Cycle-Consistent Search: Question Reconstructabili\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Adaptive Data Dropout: Towards Self-Regulated Lear\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Always include all four required fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)' in every paper brief without exception.",
-        "Never skip bilingual abstract or conclusion sections regardless of paper length, complexity, or time constraints."
-      ]
-    },
-    {
       "date": "2026-04-16",
       "score_before": 100,
       "score_after": 100,
@@ -756,13 +741,27 @@
         "If token budget feels constrained, skip methodology details entirely and preserve space exclusively for the four bilingual fields of the current brief.",
         "Hard stop rule: detect any transition to a new brief and auto-insert missing bilingual fields for the previous brief before continuing."
       ]
+    },
+    {
+      "date": "2026-06-15",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Provably Safe, Yet Scalable Reinforcement Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Spatially Conditioned Diffusion Policy: Learning P\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"ORCA: A Platform for Open-Source Dexterity Researc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Learning Coordinated Preference for Multi-Objectiv\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TRACE: Trajectory-Routed Causal Memory for Delayed\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
+        "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
+        "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
+        "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If nearing output limits, halt new briefs immediately and complete all four required fields for the current brief first.",
-    "After completing each brief's main content, immediately output all four bilingual fields as one atomic block before any section break or new brief begins.",
-    "Use a strict per-brief checklist: output '摘要（中文）→Summary (EN)→结论（中文）→Conclusion (EN)' in sequence; never mark a brief complete until all four are substantively filled.",
-    "If approaching output limits mid-brief, prioritize completing the four bilingual fields over starting any new content or brief.",
     "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately.",
     "Before closing any brief, run an explicit 4-field check: output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one uninterruptible block.",
     "Never begin a new brief or section until the previous brief's four bilingual fields are fully written with substantive content.",
@@ -778,6 +777,10 @@
     "Before writing any section other than title/authors, output all four bilingual fields immediately—treat them as mandatory headers, not optional content.",
     "After completing each brief's four bilingual fields, insert a visible checkpoint marker before starting the next brief to enforce completion verification.",
     "If token budget feels constrained, skip methodology details entirely and preserve space exclusively for the four bilingual fields of the current brief.",
-    "Hard stop rule: detect any transition to a new brief and auto-insert missing bilingual fields for the previous brief before continuing."
+    "Hard stop rule: detect any transition to a new brief and auto-insert missing bilingual fields for the previous brief before continuing.",
+    "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
+    "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
+    "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
+    "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately."
   ]
 }
