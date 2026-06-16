@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-16",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-17",
       "score_before": 57,
       "score_after": 83,
@@ -759,6 +752,13 @@
         "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
         "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately."
       ]
+    },
+    {
+      "date": "2026-06-16",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
