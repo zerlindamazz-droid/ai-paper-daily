@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-17",
-      "score_before": 57,
-      "score_after": 83,
-      "issues": [
-        "  Brief \"Abstract Sim2Real through Approximate Information \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"LLMs Gaming Verifiers: RLVR can Lead to Reward Hac\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before finalizing any paper brief, explicitly verify all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', and 'Conclusion (EN)'.",
-        "Treat missing bilingual abstract or conclusion as a critical failure; complete these sections before any other content.",
-        "Use a mental checklist: CN abstract → EN abstract → CN conclusion → EN conclusion must all appear in every brief."
-      ]
-    },
-    {
       "date": "2026-04-18",
       "score_before": 100,
       "score_after": 100,
@@ -759,13 +745,27 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-06-17",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Visual Verification Enables Inference-time Steerin\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"EBench: Elemental Diagnosis of Generalist Mobile M\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Learning Fair Pareto-Optimal Policies in Multi-Obj\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"EAGG: Embodiment-Aligned Grasp Generation via Geom\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"From Reasoning Traces to Reusable Modules: Underst\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before outputting any content beyond title/authors, insert all four bilingual fields as a locked mandatory block—treat skipping any field as a critical failure.",
+        "After each bilingual field, write a self-check tag confirming it contains at least two substantive sentences before proceeding further.",
+        "If output length is constrained, omit methodology and experiments entirely; the four bilingual fields always take absolute priority over all other sections.",
+        "Never start a new brief without outputting a completion checkpoint confirming all four bilingual fields are present and substantive in the current brief."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately.",
-    "Before closing any brief, run an explicit 4-field check: output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one uninterruptible block.",
-    "Never begin a new brief or section until the previous brief's four bilingual fields are fully written with substantive content.",
-    "If output limits approach, immediately complete all four bilingual fields for the current brief before stopping; never leave them empty.",
     "Treat the four bilingual fields as the highest-priority content in each brief—write them before optional sections like methodology details.",
     "Before starting any new brief, verify the previous brief contains all four bilingual fields; treat incomplete briefs as unfinished work.",
     "Output 摘要（中文）→Summary (EN)→结论（中文）→Conclusion (EN) immediately after the title/authors block, before any other content.",
@@ -781,6 +781,10 @@
     "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
     "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
     "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
-    "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately."
+    "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately.",
+    "Before outputting any content beyond title/authors, insert all four bilingual fields as a locked mandatory block—treat skipping any field as a critical failure.",
+    "After each bilingual field, write a self-check tag confirming it contains at least two substantive sentences before proceeding further.",
+    "If output length is constrained, omit methodology and experiments entirely; the four bilingual fields always take absolute priority over all other sections.",
+    "Never start a new brief without outputting a completion checkpoint confirming all four bilingual fields are present and substantive in the current brief."
   ]
 }
