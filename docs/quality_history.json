@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-19",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-20",
       "score_before": 57,
       "score_after": 100,
@@ -774,13 +767,27 @@
         "After completing each brief, explicitly verify all four bilingual fields exist and contain two+ substantive sentences before starting the next brief.",
         "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding."
       ]
+    },
+    {
+      "date": "2026-06-19",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"MemoryWAM: Efficient World Action Modeling with Pe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Direct Advantage Estimation for Scalable and Sampl\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TaCauchy: An Extensible FEM Framework for Vision-B\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Generating Robot Hands from Human Demonstrations\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Fisher-Geometric Sharpness and the Implicit Bias o\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
+        "Treat any brief missing a bilingual field as a hard failure; verify all four fields exist before writing methodology, experiments, or any other section.",
+        "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
+        "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Hard rule: a brief is not complete until all four bilingual fields contain substantive text—never skip or defer them.",
-    "Write 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as the very first four fields after each brief's title—no exceptions, no deferral.",
-    "Treat any brief missing these four fields as critically incomplete; halt all other output and backfill them immediately before proceeding.",
-    "Never transition to a new brief until explicitly confirming all four bilingual fields contain substantive text in the previous brief.",
     "Before writing any section other than title/authors, output all four bilingual fields immediately—treat them as mandatory headers, not optional content.",
     "After completing each brief's four bilingual fields, insert a visible checkpoint marker before starting the next brief to enforce completion verification.",
     "If token budget feels constrained, skip methodology details entirely and preserve space exclusively for the four bilingual fields of the current brief.",
@@ -796,6 +803,10 @@
     "Before writing any other section, output all four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one uninterruptible block.",
     "If nearing output limits, delete methodology/experiments entirely—the four bilingual fields are mandatory and must never be sacrificed for other content.",
     "After completing each brief, explicitly verify all four bilingual fields exist and contain two+ substantive sentences before starting the next brief.",
-    "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding."
+    "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding.",
+    "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
+    "Treat any brief missing a bilingual field as a hard failure; verify all four fields exist before writing methodology, experiments, or any other section.",
+    "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
+    "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding."
   ]
 }
