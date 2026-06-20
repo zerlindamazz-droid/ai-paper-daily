@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-20",
-      "score_before": 57,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-21",
       "score_before": 64,
       "score_after": 86,
@@ -785,13 +778,27 @@
         "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
         "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding."
       ]
+    },
+    {
+      "date": "2026-06-20",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"CRAX: Fast Safe Reinforcement Learning Benchmarkin\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"On the Variance of Temporal Difference Learning an\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Sparsity, Superposition, and Forgetting: A Mechani\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Multi-Task Bayesian In-Context Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Robust $Q$-learning for mean-field control under W\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
+        "Treat any brief missing 摘要（中文）, Summary (EN), 结论（中文）, or Conclusion (EN) as a hard failure requiring immediate correction.",
+        "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
+        "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Before writing any section other than title/authors, output all four bilingual fields immediately—treat them as mandatory headers, not optional content.",
-    "After completing each brief's four bilingual fields, insert a visible checkpoint marker before starting the next brief to enforce completion verification.",
-    "If token budget feels constrained, skip methodology details entirely and preserve space exclusively for the four bilingual fields of the current brief.",
-    "Hard stop rule: detect any transition to a new brief and auto-insert missing bilingual fields for the previous brief before continuing.",
     "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
     "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
     "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
@@ -807,6 +814,10 @@
     "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
     "Treat any brief missing a bilingual field as a hard failure; verify all four fields exist before writing methodology, experiments, or any other section.",
     "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
-    "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding."
+    "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding.",
+    "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
+    "Treat any brief missing 摘要（中文）, Summary (EN), 结论（中文）, or Conclusion (EN) as a hard failure requiring immediate correction.",
+    "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
+    "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief."
   ]
 }
