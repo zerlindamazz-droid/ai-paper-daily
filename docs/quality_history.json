@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-21",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"Bounded Ratio Reinforcement Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Too Correct to Learn: Reinforcement Learning on Sa\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After drafting each brief, run a final structural check confirming all four fields exist: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' before submitting.",
-        "Never omit bilingual abstract or conclusion fields regardless of paper complexity; these four fields are mandatory in every single brief.",
-        "If time or length constraints arise, prioritize completing all four required bilingual fields over any optional supplementary content."
-      ]
-    },
-    {
       "date": "2026-04-22",
       "score_before": 100,
       "score_after": 100,
@@ -796,6 +782,13 @@
         "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
         "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief."
       ]
+    },
+    {
+      "date": "2026-06-21",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
