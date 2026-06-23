@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-23",
-      "score_before": 64,
-      "score_after": 93,
-      "issues": [
-        "  Brief \"Near-Future Policy Optimization\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before submitting any brief, scan for all four fields: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'; halt and complete missing ones immediately.",
-        "Treat these four bilingual fields as the skeleton of every brief—draft them first before writing any other section.",
-        "If a brief lacks any of the four required bilingual fields, it is incomplete; do not submit until all four are present."
-      ]
-    },
-    {
       "date": "2026-04-24",
       "score_before": 64,
       "score_after": 93,
@@ -789,13 +776,27 @@
       "score_after": 100,
       "issues": [],
       "new_hints": []
+    },
+    {
+      "date": "2026-06-23",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"CoorDex: Coordinating Body and Hand Priors for Con\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Learning Process Rewards via Success Visitation Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RECALL: Recovery Experience Collection for Active \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"AI Exposure Scores: what they measure, what they m\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"AutoDex: An Automated Real-World System for Dexter\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
+        "If output is truncated or length-constrained, drop methodology and experiments first—the four bilingual fields are always non-negotiable.",
+        "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
+        "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
-    "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
-    "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
-    "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately.",
     "Before outputting any content beyond title/authors, insert all four bilingual fields as a locked mandatory block—treat skipping any field as a critical failure.",
     "After each bilingual field, write a self-check tag confirming it contains at least two substantive sentences before proceeding further.",
     "If output length is constrained, omit methodology and experiments entirely; the four bilingual fields always take absolute priority over all other sections.",
@@ -811,6 +812,10 @@
     "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
     "Treat any brief missing 摘要（中文）, Summary (EN), 结论（中文）, or Conclusion (EN) as a hard failure requiring immediate correction.",
     "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
-    "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief."
+    "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief.",
+    "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
+    "If output is truncated or length-constrained, drop methodology and experiments first—the four bilingual fields are always non-negotiable.",
+    "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
+    "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive."
   ]
 }
