@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-24",
-      "score_before": 64,
-      "score_after": 93,
-      "issues": [
-        "  Brief \"Temporal Taskification in Streaming Continual Lear\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Draft '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as the very first step before writing any other section of a brief.",
-        "Never submit a brief without explicitly confirming all four bilingual fields exist; missing any one is an automatic failure requiring immediate correction.",
-        "If a brief feels complete but any of the four required bilingual fields is absent, stop and add the missing field before finalizing."
-      ]
-    },
-    {
       "date": "2026-04-25",
       "score_before": 100,
       "score_after": 100,
@@ -794,12 +781,26 @@
         "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
         "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive."
       ]
+    },
+    {
+      "date": "2026-06-24",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"InSight: Self-Guided Skill Acquisition via Steerab\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"World Value Models for Robotic Manipulation\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"LaGO: Latent Action Guidance for Online Reinforcem\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TACTFUL: Tactile-Driven Exploration For Object Loc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Beyond Monotonic Progress: Retry-Supervised Value \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Output all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as the very first block of every brief, before any other section.",
+        "If any of the four mandatory bilingual fields is absent, insert it immediately before continuing—never skip or defer these fields.",
+        "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Before outputting any content beyond title/authors, insert all four bilingual fields as a locked mandatory block—treat skipping any field as a critical failure.",
-    "After each bilingual field, write a self-check tag confirming it contains at least two substantive sentences before proceeding further.",
-    "If output length is constrained, omit methodology and experiments entirely; the four bilingual fields always take absolute priority over all other sections.",
     "Never start a new brief without outputting a completion checkpoint confirming all four bilingual fields are present and substantive in the current brief.",
     "Before writing any other section, output all four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one uninterruptible block.",
     "If nearing output limits, delete methodology/experiments entirely—the four bilingual fields are mandatory and must never be sacrificed for other content.",
@@ -816,6 +817,9 @@
     "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
     "If output is truncated or length-constrained, drop methodology and experiments first—the four bilingual fields are always non-negotiable.",
     "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
-    "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive."
+    "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive.",
+    "Output all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as the very first block of every brief, before any other section.",
+    "If any of the four mandatory bilingual fields is absent, insert it immediately before continuing—never skip or defer these fields.",
+    "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content."
   ]
 }
