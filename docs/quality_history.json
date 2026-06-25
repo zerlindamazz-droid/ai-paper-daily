@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-25",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-26",
       "score_before": 64,
       "score_after": 100,
@@ -798,12 +791,26 @@
         "If any of the four mandatory bilingual fields is absent, insert it immediately before continuing—never skip or defer these fields.",
         "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content."
       ]
+    },
+    {
+      "date": "2026-06-25",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Learning Action Priors for Cross-embodiment Robot \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"FORCE: Efficient VLA Reinforcement Fine-Tuning via\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Mixture-of-Experts RL for Fault-Tolerant Legged Lo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Hierarchical Reinforcement Learning for Neural Net\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"DeformGen: Dynamics-Based Topology Augmentation fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Output the four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one atomic block at the very start of every brief, before any other content.",
+        "If output length is constrained, drop methodology and experiments entirely—the four bilingual fields are always mandatory and must never be omitted.",
+        "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop."
+      ]
     }
   ],
   "accumulated_hints": [
-    "Never start a new brief without outputting a completion checkpoint confirming all four bilingual fields are present and substantive in the current brief.",
-    "Before writing any other section, output all four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one uninterruptible block.",
-    "If nearing output limits, delete methodology/experiments entirely—the four bilingual fields are mandatory and must never be sacrificed for other content.",
     "After completing each brief, explicitly verify all four bilingual fields exist and contain two+ substantive sentences before starting the next brief.",
     "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding.",
     "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
@@ -820,6 +827,9 @@
     "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive.",
     "Output all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as the very first block of every brief, before any other section.",
     "If any of the four mandatory bilingual fields is absent, insert it immediately before continuing—never skip or defer these fields.",
-    "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content."
+    "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content.",
+    "Output the four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one atomic block at the very start of every brief, before any other content.",
+    "If output length is constrained, drop methodology and experiments entirely—the four bilingual fields are always mandatory and must never be omitted.",
+    "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop."
   ]
 }
