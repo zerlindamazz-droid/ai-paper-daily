@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-26",
-      "score_before": 64,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-27",
       "score_before": 100,
       "score_after": 100,
@@ -808,13 +801,27 @@
         "If output length is constrained, drop methodology and experiments entirely—the four bilingual fields are always mandatory and must never be omitted.",
         "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop."
       ]
+    },
+    {
+      "date": "2026-06-26",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Scalable Behavior Cloning with Open Data, Training\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Reinforcement Learning without Ground-Truth Soluti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Bridging Performance and Generalization in Reinfor\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"E-TTS: A New Embodied Test-Time Scaling Framework \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"World Action Models Enable Continual Imitation Lea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one atomic block before ANY other content in every brief, no exceptions.",
+        "After finishing each brief, explicitly verify all four bilingual fields exist with 2+ sentences before starting the next brief.",
+        "If token budget is tight, delete methodology/experiments sections entirely—never sacrifice the four mandatory bilingual fields for any reason.",
+        "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output."
+      ]
     }
   ],
   "accumulated_hints": [
-    "After completing each brief, explicitly verify all four bilingual fields exist and contain two+ substantive sentences before starting the next brief.",
-    "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding.",
-    "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
-    "Treat any brief missing a bilingual field as a hard failure; verify all four fields exist before writing methodology, experiments, or any other section.",
     "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
     "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding.",
     "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
@@ -830,6 +837,10 @@
     "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content.",
     "Output the four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one atomic block at the very start of every brief, before any other content.",
     "If output length is constrained, drop methodology and experiments entirely—the four bilingual fields are always mandatory and must never be omitted.",
-    "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop."
+    "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop.",
+    "Output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one atomic block before ANY other content in every brief, no exceptions.",
+    "After finishing each brief, explicitly verify all four bilingual fields exist with 2+ sentences before starting the next brief.",
+    "If token budget is tight, delete methodology/experiments sections entirely—never sacrifice the four mandatory bilingual fields for any reason.",
+    "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output."
   ]
 }
