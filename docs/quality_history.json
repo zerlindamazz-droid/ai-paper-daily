@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-27",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-28",
       "score_before": 100,
       "score_after": 100,
@@ -819,13 +812,27 @@
         "If token budget is tight, delete methodology/experiments sections entirely—never sacrifice the four mandatory bilingual fields for any reason.",
         "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output."
       ]
+    },
+    {
+      "date": "2026-06-27",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"Learning to Fold: prizewinning solution at LeHome \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Continual Robot Policy Learning via Variational Ne\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Automating Potential-based Reward Shaping with Vis\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Autoregressive Boltzmann Generators\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Hallucination in World Models is Predictable and P\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before writing any brief content, output a labeled checklist: 摘要（中文）✓, Summary (EN)✓, 结论（中文）✓, Conclusion (EN)✓—then immediately fill each field.",
+        "The four bilingual fields are non-negotiable prerequisites; if they are missing at brief completion, regenerate them before any other output.",
+        "Hardcode the four bilingual fields as a fixed template header for every brief; populate them first, then append remaining sections.",
+        "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
-    "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding.",
-    "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
-    "Treat any brief missing 摘要（中文）, Summary (EN), 结论（中文）, or Conclusion (EN) as a hard failure requiring immediate correction.",
     "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
     "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief.",
     "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
@@ -841,6 +848,10 @@
     "Output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one atomic block before ANY other content in every brief, no exceptions.",
     "After finishing each brief, explicitly verify all four bilingual fields exist with 2+ sentences before starting the next brief.",
     "If token budget is tight, delete methodology/experiments sections entirely—never sacrifice the four mandatory bilingual fields for any reason.",
-    "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output."
+    "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output.",
+    "Before writing any brief content, output a labeled checklist: 摘要（中文）✓, Summary (EN)✓, 结论（中文）✓, Conclusion (EN)✓—then immediately fill each field.",
+    "The four bilingual fields are non-negotiable prerequisites; if they are missing at brief completion, regenerate them before any other output.",
+    "Hardcode the four bilingual fields as a fixed template header for every brief; populate them first, then append remaining sections.",
+    "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately."
   ]
 }
