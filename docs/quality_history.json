@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-28",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-04-30",
       "score_before": 100,
       "score_after": 100,
@@ -830,12 +823,26 @@
         "Hardcode the four bilingual fields as a fixed template header for every brief; populate them first, then append remaining sections.",
         "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately."
       ]
+    },
+    {
+      "date": "2026-06-28",
+      "score_before": 64,
+      "score_after": 64,
+      "issues": [
+        "  Brief \"RouterVLA: Turning Smoke Tests into Supervision fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"VibeAct: Vibration to Actions for Contact-Rich Rea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"BOWConnect: Parallel Bayesian Optimization over Wi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"PAMAE: Phase-Aware-MoE Action Experts Towards Reli\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"How Good Can Linear Models Be for Time-Series Fore\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": [
+        "Before outputting any brief section, write all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a mandatory fixed block.",
+        "Treat the four bilingual fields as a hard prerequisite; if any are absent at brief completion, insert them immediately before proceeding.",
+        "Never sacrifice bilingual fields for length—delete methodology or experiments sections first if token budget is constrained."
+      ]
     }
   ],
   "accumulated_hints": [
-    "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
-    "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief.",
-    "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
     "If output is truncated or length-constrained, drop methodology and experiments first—the four bilingual fields are always non-negotiable.",
     "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
     "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive.",
@@ -852,6 +859,9 @@
     "Before writing any brief content, output a labeled checklist: 摘要（中文）✓, Summary (EN)✓, 结论（中文）✓, Conclusion (EN)✓—then immediately fill each field.",
     "The four bilingual fields are non-negotiable prerequisites; if they are missing at brief completion, regenerate them before any other output.",
     "Hardcode the four bilingual fields as a fixed template header for every brief; populate them first, then append remaining sections.",
-    "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately."
+    "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately.",
+    "Before outputting any brief section, write all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a mandatory fixed block.",
+    "Treat the four bilingual fields as a hard prerequisite; if any are absent at brief completion, insert them immediately before proceeding.",
+    "Never sacrifice bilingual fields for length—delete methodology or experiments sections first if token budget is constrained."
   ]
 }
