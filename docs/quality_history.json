@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-04-30",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-05-01",
       "score_before": 60,
       "score_after": 87,
@@ -840,6 +833,23 @@
         "Treat the four bilingual fields as a hard prerequisite; if any are absent at brief completion, insert them immediately before proceeding.",
         "Never sacrifice bilingual fields for length—delete methodology or experiments sections first if token budget is constrained."
       ]
+    },
+    {
+      "date": "2026-06-29",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"PhysisForcing: Physics Reinforced World Simulator \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"LA4VLA: Learning to Act without Seeing via Languag\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Qwen-Image-2.0-RL Technical Report\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Ask, Don't Judge: Binary Questions for Interpretab\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"DexCompose: Reusing Dexterous Policies for Multi-T\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"WARP-RM: A Warp-Augmented Relative Progress Reward\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Surprises in Proper Positive-Only Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Which Nash Equilibrium? Solver-Dependent Selection\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Second-Order KKT Guarantees for Bregman ADMM in No\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
     }
   ],
   "accumulated_hints": [
