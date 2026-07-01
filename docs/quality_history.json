@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-02",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-05-03",
       "score_before": 64,
       "score_after": 86,
@@ -851,6 +844,21 @@
         "  Brief \"Self-Evolving World Models for LLM Agent Planning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"One-Step Gradient Delay is Not a Barrier for Large\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"GROW$^2$: Grounding Which and Where for Robot Tool\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-01",
+      "score_before": 32,
+      "score_after": 32,
+      "issues": [
+        "  Featured \"MOPD: Multi-Teacher On-Policy Distillation for Cap\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"ScaleAware-JEPA: Latent Representation for Discove\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"DVG-WM: Disentangled Video Generation Enables Effi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Z-1: Efficient Reinforcement Learning for Vision-L\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Adapting Generalist Robot Policies with Semantic R\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"CoDex: Learning Compositional Dexterous Functional\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"AdaJEPA: An Adaptive Latent World Model\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
