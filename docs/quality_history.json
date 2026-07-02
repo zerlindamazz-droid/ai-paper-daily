@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-03",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"Dreaming Across Towns: Semantic Rollout and Town-A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Cost-Aware Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After drafting each brief, run an explicit four-field checklist: confirm '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' are all present before any other content.",
-        "If any of the four required bilingual fields is missing at submission time, immediately add it—do not finalize incomplete briefs.",
-        "Treat the four bilingual fields as mandatory headers; write them as labeled placeholders first, then populate, never skipping or deferring them."
-      ]
-    },
-    {
       "date": "2026-05-04",
       "score_before": 64,
       "score_after": 93,
@@ -859,6 +845,23 @@
         "  Brief \"Adapting Generalist Robot Policies with Semantic R\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"CoDex: Learning Compositional Dexterous Functional\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"AdaJEPA: An Adaptive Latent World Model\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-02",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"OSWorld2.0: Benchmarking Computer Use Agents on Lo\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"TRIAGE: Role-Typed Credit Assignment for Agentic R\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Xiaomi-GUI-0 Technical Report\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"GEAR: Guided End-to-End AutoRegression for Image S\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Measuring the Gap Between Human and LLM Research I\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Is One Layer Enough? Training A Single Transformer\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Language-Critique Imitation Learning from Suboptim\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"AutoMem: Automated Learning of Memory as a Cogniti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Theoria: Rewrite-Acceptability Verification over I\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
