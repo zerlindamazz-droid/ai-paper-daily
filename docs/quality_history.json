@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-06",
-      "score_before": 64,
-      "score_after": 93,
-      "issues": [
-        "  Brief \"Flow Sampling: Learning to Sample from Unnormalize\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any content, output the four field headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as empty placeholders, then fill each one.",
-        "Treat all four bilingual fields as a hard prerequisite; if any is absent, the brief is incomplete and must not be submitted.",
-        "After completing a brief, count the four required bilingual fields explicitly—if the count is not 4, add the missing ones immediately before finalizing."
-      ]
-    },
-    {
       "date": "2026-05-07",
       "score_before": 64,
       "score_after": 86,
@@ -875,6 +862,23 @@
         "  Brief \"VT-WAM: Visual-Tactile World Action Model for Cont\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"DemoPSD: Disagreement-Modulated Policy Self-Distil\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Embodied.cpp: A Portable Inference Runtime of Embo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-05",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Next-Generation Agentic Reinforcement Learning Sys\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Representation Distribution Matching for One-Step \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Multi-Resolution Flow Matching: Training-Free Diff\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"AgenticDataBench: A Comprehensive Benchmark for Da\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Beyond Adam: SOAP and Muon for Faster, Label-Effic\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Controllable Sim Agents with Behavior Latents\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Towards Robustness against Typographic Attack with\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"G-RRM: Guiding Symbolic Solvers with Recurrent Rea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Visually Grounded Self-Reflection for Vision-Langu\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
