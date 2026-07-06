@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-07",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"When Life Gives You BC, Make Q-functions: Extracti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"LineRides: Line-Guided Reinforcement Learning for \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief content, output all four field headers as empty placeholders: '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)', then fill each.",
-        "After completing each brief, perform an explicit count of the four bilingual fields; if count < 4, immediately add missing fields before proceeding.",
-        "Never submit a brief without confirming all four bilingual fields are populated; treat any missing field as a hard blocking error."
-      ]
-    },
-    {
       "date": "2026-05-08",
       "score_before": 100,
       "score_after": 100,
@@ -879,6 +865,23 @@
         "  Brief \"Towards Robustness against Typographic Attack with\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"G-RRM: Guiding Symbolic Solvers with Recurrent Rea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Visually Grounded Self-Reflection for Vision-Langu\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-06",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"PointDiT: Pixel-Space Diffusion for Monocular Geom\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Denser $\\neq$ Better: Limits of On-Policy Self-Dis\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"WorldDirector: Building Controllable World Simulat\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Learning to Move Before Learning to Do: Task-Agnos\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Combating Textual Noise and Redundancy: Entropy-Aw\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"QuadRocket: An Aerial Robotic Testbed for Adaptive\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Audio-Based Understanding of Audiobook Narration A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Learning Agile Intruder Interception using Differe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"TestEvo-Bench: An Executable and Live Benchmark fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
