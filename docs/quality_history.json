@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-09",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-05-10",
       "score_before": 64,
       "score_after": 79,
@@ -892,6 +885,23 @@
         "  Brief \"Interpretable Human-Label-Free Deep Learning for R\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"LLM-as-a-Verifier: A General-Purpose Verification \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Deform360: A Massive Multi-view Visuotactile Datas\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-08",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"From Foundation to Application: Improving VLA Mode\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"InternVLA-A1.5: Unifying Understanding, Latent For\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Gemma 4 Technical Report\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"PixWorld: Unifying 3D Scene Generation and Reconst\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"ELSA3D: Elastic Semantic Anchoring for Unified 3D \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Lift3D-VLA: Lifting VLA Models to 3D Geometry and \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Embodied Human-Robot Interaction via Acoustics: A \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RynnWorld-4D: 4D Embodied World Models for Robotic\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RynnWorld-Teleop: An Action-Conditioned World Mode\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
