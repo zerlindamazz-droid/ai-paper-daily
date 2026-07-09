@@ -1,21 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-10",
-      "score_before": 64,
-      "score_after": 79,
-      "issues": [
-        "  Brief \"On the Implicit Reward Overfitting and the Low-ran\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Hedging Memory Horizons for Non-Stationary Predict\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Market-Alignment Risk in Pricing Agents: Trace Dia\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before generating any brief content, write all four bilingual headers as placeholders—'摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)'—then fill each immediately.",
-        "After completing each brief, explicitly verify all four bilingual fields exist and are non-empty before moving to the next brief.",
-        "If any of the four bilingual fields is missing at submission time, halt and insert the missing field immediately; never skip this check."
-      ]
-    },
-    {
       "date": "2026-05-12",
       "score_before": 64,
       "score_after": 86,
@@ -902,6 +887,23 @@
         "  Brief \"Embodied Human-Robot Interaction via Acoustics: A \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"RynnWorld-4D: 4D Embodied World Models for Robotic\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"RynnWorld-Teleop: An Action-Conditioned World Mode\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-09",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Scaling Mixture-of-Experts Video Pretraining for E\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Infinite Worlds with Versatile Interactions\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Vision as Unified Multimodal Generation\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"RoboDojo: A Unified Sim-and-Real Benchmark for Com\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Accurate, Interdisciplinary and Transparent Struct\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Co-LMLM: Continuous-Query Limited Memory Language \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"The Key to Going Linear: Analysis-Driven Transform\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"From Noisy Traces to Root Causes: Structural Traje\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Breaking Database Lock-in: Agentic Regeneration of\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
