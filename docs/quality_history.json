@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-12",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"HarmoWAM: Harmonizing Generalizable and Precise Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Revisiting Policy Gradients for Restricted Policy \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After finishing each brief, write a checklist line: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' confirming all four are present.",
-        "If any bilingual field is missing when the checklist is written, immediately insert and populate it before continuing.",
-        "Treat the four bilingual fields as the first content written per brief, not optional additions added at the end."
-      ]
-    },
-    {
       "date": "2026-05-13",
       "score_before": 57,
       "score_after": 91,
@@ -904,6 +890,23 @@
         "  Brief \"The Key to Going Linear: Analysis-Driven Transform\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"From Noisy Traces to Root Causes: Structural Traje\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Breaking Database Lock-in: Agentic Regeneration of\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-10",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Single-Rollout Asynchronous Optimization for Agent\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"CompactionRL: Reinforcement Learning with Context \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"DSpark: Confidence-Scheduled Speculative Decoding \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"LLM-as-a-Verifier: A General-Purpose Verification \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"UniClawBench: A Universal Benchmark for Proactive \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"OpenCoF: Learning to Reason Through Video Generati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Ideas Have Genomes: Benchmarking Scientific Lineag\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Score Accuracy Along the Forward Diffusion Does No\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MulTTiPop: A Multitrack Transcription Dataset for \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
