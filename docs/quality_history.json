@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-13",
-      "score_before": 57,
-      "score_after": 91,
-      "issues": [
-        "  Brief \"World Action Models: The Next Frontier in Embodied\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief, output all four bilingual headers as placeholders first, then fill each one before adding any other content.",
-        "After completing each brief, write an explicit checklist: '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)'; halt if any are missing.",
-        "Treat missing bilingual fields as hard blocking errors—never finalize or move to the next brief until all four are populated and verified."
-      ]
-    },
-    {
       "date": "2026-05-14",
       "score_before": 64,
       "score_after": 93,
@@ -907,6 +894,23 @@
         "  Brief \"Ideas Have Genomes: Benchmarking Scientific Lineag\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Score Accuracy Along the Forward Diffusion Does No\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"MulTTiPop: A Multitrack Transcription Dataset for \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-11",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"EmbodiedGen V2: An Agentic, Simulation-Ready 3D Wo\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Remember When It Matters: Proactive Memory Agent f\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Native Video-Action Pretraining for Generalizable \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Accurate, Interdisciplinary and Transparent Struct\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"SLORR: Simple and Efficient In-Training Low-Rank R\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"DexVerse: A Modular Benchmark for Multi-Task, Mult\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Using AI-based Learning Assistants in Higher Educa\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Dimensionality Reduction Meets Network Science: Se\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"AUTOPILOT VQA: Benchmarking Vision-Language Models\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
