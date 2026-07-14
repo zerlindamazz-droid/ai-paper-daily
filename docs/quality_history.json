@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-16",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-05-17",
       "score_before": 100,
       "score_after": 100,
@@ -916,6 +909,23 @@
         "  Brief \"Evolution of Accuracy and Visual-Cognitive Errors \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"VEXAIoT: Autonomous IoT Vulnerability EXploitation\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"ConceptSMILE: Auditing the Trustworthiness of Conc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-14",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Proxy Exploration and Reusable Guidance: A Modular\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Robustifying Vision-Language Models via Test-Time \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Qwen-Music Technical Report\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Xiaomi-Robotics-U0: Unified Embodied Synthesis wit\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Mixture of Frames Policy: Multi-Frame Action Denoi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Requential Coding: Pushing the Limits of Model Com\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Metacognition in LLMs: Foundations, Progress, and \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Invariant Learning Dynamics of Transformers in Ind\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"A Minimalist Retargeting-Guided Reinforcement Lear\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
