@@ -1,21 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-18",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"BAPR: Bayesian amnesic piecewise-robust reinforcem\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learn Where Outcomes Diverge: Efficient VLA RL via\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before starting any brief, output a numbered scaffold: 1)摘要（中文） 2)Summary (EN) 3)结论（中文） 4)Conclusion (EN) and fill each slot immediately.",
-        "Never finalize or advance to the next brief until all four bilingual fields are explicitly populated and verified present.",
-        "Treat missing bilingual fields as hard blocking errors requiring immediate insertion before any other content is written.",
-        "After each brief, output the checklist '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' confirming all four fields exist."
-      ]
-    },
-    {
       "date": "2026-05-19",
       "score_before": 64,
       "score_after": 93,
@@ -936,6 +921,23 @@
         "  Brief \"The Seriality Gap in Video Diffusion Models\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"TerraZero: Procedural Driving Simulation for Zero-\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"PalmClaw: A Native On-Device Agent Framework for M\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-16",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Ring-Zero: Scaling Zero RL to a Trillion Parameter\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Quantum States Prepared by Wormholes: Long-Wavelen\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"FlowWAM: Optical Flow as a Unified Action Represen\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"WanToFight: Real-Time Generative Game Engine for M\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Leveraging unlabelled data for generalizable neura\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Linear Independent Component Analysis via Optimal \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MetaPerch: Learning from metadata for bioacoustics\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Screening of Biosecurity Features in Metagenomic D\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Minimax Theory of Likelihood-Based Deep Learning f\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
