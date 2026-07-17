@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-19",
-      "score_before": 64,
-      "score_after": 93,
-      "issues": [
-        "  Brief \"Robo-Cortex: A Self-Evolving Embodied Agent via Du\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief, output a labeled scaffold with all four fields: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—fill each immediately, never skip.",
-        "After completing each brief, verify all four bilingual fields exist before proceeding; treat any missing field as a hard blocker requiring immediate insertion.",
-        "Never finalize a brief without outputting the explicit checklist: ✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN).",
-        "All four bilingual fields are mandatory structural requirements—absence of any single field means the brief is incomplete and must not advance."
-      ]
-    },
-    {
       "date": "2026-05-20",
       "score_before": 64,
       "score_after": 86,
@@ -938,6 +924,23 @@
         "  Brief \"MetaPerch: Learning from metadata for bioacoustics\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Screening of Biosecurity Features in Metagenomic D\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Minimax Theory of Likelihood-Based Deep Learning f\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-17",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"TRACE: Turn-level Reward Assignment via Credit Est\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Ring-Zero: Scaling Zero RL to a Trillion Parameter\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Video = World + Event Stream\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"VideoChat3: Fully Open Video MLLM for Efficient an\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Partition, Prompt, Aggregate: Statistical Self-Con\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"RoboTTT: Context Scaling for Robot Policies\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MeanFlowNFT: Bringing Forward-Process RL to Averag\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"SciDiagramEdit: Learning to Edit Scientific Diagra\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Online Neural Space Time Memory for Dynamic Novel \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
