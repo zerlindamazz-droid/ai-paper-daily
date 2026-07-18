@@ -1,21 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-20",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"Atoms of Thought: Universal EEG Representation Lea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"When Critics Disagree: Adaptive Reward Poisoning A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing content, output a rigid 4-slot scaffold labeled 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) and fill each slot before proceeding.",
-        "After completing each brief, output the verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' or halt and insert missing fields.",
-        "Treat all four bilingual fields as hard blockers: never advance to the next brief if any single field is absent or empty.",
-        "Run an explicit four-field presence check immediately after drafting each brief; insert any missing field before writing anything else."
-      ]
-    },
-    {
       "date": "2026-05-21",
       "score_before": 0,
       "score_after": 0,
@@ -941,6 +926,23 @@
         "  Brief \"MeanFlowNFT: Bringing Forward-Process RL to Averag\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"SciDiagramEdit: Learning to Edit Scientific Diagra\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Online Neural Space Time Memory for Dynamic Novel \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-18",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"T^2MLR: Transformer with Temporal Middle-Layer Rec\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"xHC: Expanded Hyper-Connections\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"SEED: Self-Evolving On-Policy Distillation for Age\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"DriftWorld: Fast World Modeling through Drifting\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Pretraining Data Can Be Poisoned through Computati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"SceneBind: Binding What and Where Across Vision, A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Beyond Success Rate: Cost-Aware Evaluation of Offe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Decoding Market Emotion from Blockchain Activity: \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"SearchOS-V1: Towards Robust Open-Domain Informatio\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
