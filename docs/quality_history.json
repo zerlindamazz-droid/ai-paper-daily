@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-21",
-      "score_before": 64,
-      "score_after": 93,
-      "issues": [
-        "  Brief \"DelTA: Discriminative Token Credit Assignment for \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before drafting any brief, instantiate all four fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as labeled placeholders, then fill each one sequentially without skipping.",
-        "Treat any brief missing one or more bilingual fields as malformed; halt output, insert missing fields immediately, then resume.",
-        "After writing each brief, output the mandatory checklist '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding to the next brief."
-      ]
-    },
-    {
       "date": "2026-05-22",
       "score_before": 57,
       "score_after": 83,
@@ -943,6 +930,23 @@
         "  Brief \"AutoSynthesis: An agentic system for automated met\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Mutable Low-Rank Sketches for Retrain-Free Recomme\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Beyond the Leaderboard: Design Lessons for Trustwo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-20",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Video = World + Event Stream\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Understanding Reasoning from Pretraining to Post-T\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Loop the Loopies!\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"T^2MLR: Transformer with Temporal Middle-Layer Rec\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Handroid: Bridging Dexterous Hand and Humanoid\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"PagedWeight: Efficient MoE LLM Serving with Dynami\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"A Blueprint for Equilibrium-Based Differentiable C\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Cluster-Aware Matching via Laplacian Optimal Trans\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Physics-enhanced reinforcement learning for real-t\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
