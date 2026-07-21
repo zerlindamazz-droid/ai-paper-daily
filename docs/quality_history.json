@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-22",
-      "score_before": 57,
-      "score_after": 83,
-      "issues": [
-        "  Brief \"Remember to be Curious: Episodic Context and Persi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Scout-Assisted Planning for Heterogeneous Robot Te\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before drafting each brief, explicitly instantiate all four labeled placeholders—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—then fill sequentially; never skip or omit any placeholder.",
-        "After completing each brief, output verification line '✓ 摘要（中文） ✓ Summary (EN) ✓ 结论（中文） ✓ Conclusion (EN)' before proceeding; halt and insert missing fields if any are absent.",
-        "Treat missing bilingual fields as hard blockers: do not advance to the next brief until all four fields contain non-empty content."
-      ]
-    },
-    {
       "date": "2026-05-23",
       "score_before": 64,
       "score_after": 86,
@@ -947,6 +933,23 @@
         "  Brief \"A Blueprint for Equilibrium-Based Differentiable C\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Cluster-Aware Matching via Laplacian Optimal Trans\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Physics-enhanced reinforcement learning for real-t\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-21",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Patch Policy: Efficient Embodied Control via Dense\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"FM-VLA: Force-based Memory for Vision-Language-Act\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"TimeLens2: Generalist Video Temporal Grounding wit\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Loop the Loopies!\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"The Many Senses of Visual Similarity: A Text-Promp\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Automated Discovery Has No Universally Superior Ha\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"It's Not What You Say, It's How You Say It: Evalua\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Simple Domain Generalization for Strong Pixel-Leve\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Logical Judgments Under Pressure: Diagnosing Syllo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
