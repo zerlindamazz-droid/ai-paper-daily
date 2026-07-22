@@ -1,20 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-23",
-      "score_before": 64,
-      "score_after": 86,
-      "issues": [
-        "  Brief \"Clipping Bottleneck: Stabilizing RLVR via Stochast\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"The Matching Principle: A Geometric Theory of Loss\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After drafting each brief, run an explicit 4-field check; if any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is missing, insert it immediately before continuing.",
-        "Never begin a new brief until the previous one contains all four bilingual fields with non-empty content.",
-        "Open every brief by writing all four labeled placeholders first, then fill each sequentially without skipping any."
-      ]
-    },
-    {
       "date": "2026-05-24",
       "score_before": 57,
       "score_after": 91,
@@ -950,6 +936,23 @@
         "  Brief \"It's Not What You Say, It's How You Say It: Evalua\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Simple Domain Generalization for Strong Pixel-Leve\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Logical Judgments Under Pressure: Diagnosing Syllo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-22",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"ABot-World-0: Infinite Interactive World Rollout o\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"LLM-as-a-Coach: Experiential Learning for Non-Veri\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Masked Visual Actions for Unified World Modeling\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Mage-Flow: An Efficient Native-Resolution Foundati\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Copy Less, Ground More: Overcoming Repetitive Copy\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Appearance Pointers -- Multimodal Region Control o\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"CodeRescue: Budget-Calibrated Recovery Routing for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Agents in the Wild: Where Research Meets Deploymen\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"1-Lipschitz Neural Networks on Hadamard Manifolds\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
