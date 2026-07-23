@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-24",
-      "score_before": 57,
-      "score_after": 91,
-      "issues": [
-        "  Brief \"Symmetries Here and There, Combined Everywhere: Cr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After filling each field, tick it off an internal checklist; only proceed to the next brief when all four fields are explicitly marked complete.",
-        "If any of 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) is empty after drafting, treat it as a blocker and fill it immediately.",
-        "Begin every brief by writing all four field labels as placeholders before inserting any content; never skip or reorder them."
-      ]
-    },
-    {
       "date": "2026-05-25",
       "score_before": 100,
       "score_after": 100,
@@ -953,6 +940,23 @@
         "  Brief \"CodeRescue: Budget-Calibrated Recovery Routing for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Agents in the Wild: Where Research Meets Deploymen\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"1-Lipschitz Neural Networks on Hadamard Manifolds\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-23",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Intelligence from Learnable Novelty\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"MoGe-3: Fine-Detail Monocular Geometry Estimation \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Robots Acquire Manipulation Skills in Seconds from\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"ISO: An RLVR-Native Optimization Stack\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"Lipschitzian SLLNs for random functions\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"LKValues: Aligning Large Language Models with Sri \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"SoftReason: A Fully Differentiable Neuro-Soft-Symb\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Towards Miniature Humanoid Tele-Loco-Manipulation \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Distributed Acoustic Localization Array Deployed U\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
