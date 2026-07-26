@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-27",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"FineVLA: Fine-Grained Instruction Alignment for St\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"BASIS: Batchwise Advantage Estimation from Single-\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Alignment Tampering: How Reinforcement Learning fr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Symbolic Regression via Latent Iterative Refinemen\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"From Scores to Gibbs Correctors: Accelerating Unif\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After writing each brief's title, immediately output all four field labels (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as empty placeholders before inserting any content.",
-        "Treat all four bilingual fields as mandatory blockers; never advance to the next brief until every field contains non-empty text.",
-        "After completing each brief, output a verification line confirming all four fields are present; halt and fill any missing fields before continuing."
-      ]
-    },
-    {
       "date": "2026-05-28",
       "score_before": 64,
       "score_after": 64,
@@ -969,6 +952,23 @@
         "  Brief \"Surprisal Theory is Tautological (without Rational\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Beyond Sufficiency: Time Series Explanation with C\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"Beyond Episodic Evaluation: Memory Architectural B\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
+      ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-26",
+      "score_before": 0,
+      "score_after": 0,
+      "issues": [
+        "  Featured \"Agentic Context Management: Solving Agent Memory a\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Strategic Plan for Neutral Atom Quantum Computatio\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Context-weighted Discrete Flow Matching\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Featured \"Visual Contrastive Self-Distillation\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
+        "  Brief \"MedGame: Storytelling Gamification Empowered by La\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Graph Learning on Ensembles of Cyclic Peptides: An\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Unsupervised Consensus-Based Anomaly Detection for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"Beyond Sycophancy: Structured Resistance and Compl\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
+        "  Brief \"MIRROR: Learning from the Other View for Multi-Mod\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
       "new_hints": []
     }
