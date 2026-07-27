@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-30",
-      "score_before": 57,
-      "score_after": 57,
-      "issues": [
-        "  Brief \"RoboWits: Unexpected Challenges for Robotic Creati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"In-Context Reward Adaptation for Robust Preference\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"How's it going? Reinforcement learning in language\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Active Continual Learning with Metaplastic Binary \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Reasoning with Sampling: Cutting at Decision Point\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before starting each brief, output a numbered checklist of all four required fields; do not write any content until the checklist is visible.",
-        "After filling each field, mark it complete inline (e.g., '摘要✓'); never move to the next brief unless all four checkmarks appear.",
-        "If any of the four bilingual fields is empty after drafting, stop immediately, fill it, then re-verify before continuing.",
-        "Treat 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) as mandatory; omitting any single field is a critical failure requiring immediate correction."
-      ]
-    },
-    {
       "date": "2026-05-31",
       "score_before": 64,
       "score_after": 64,
@@ -946,6 +928,13 @@
     },
     {
       "date": "2026-07-26",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-27",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
