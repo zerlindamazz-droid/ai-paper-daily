@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-28",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Beyond Binary: Sim-to-Real Dexterous Manipulation \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"PEFT-Arena: Understanding Parameter-Efficient Fine\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Imitation Learning for Robot Assistance in Open Su\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"How VLAs Fail Differently: Black-Box Action Monito\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Extrapolative Weight Averaging Reveals Correctness\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any content, output all four field labels as numbered checklist items; check off each only after filling with non-empty text.",
-        "After completing each brief, output 'FIELDS COMPLETE: 摘要✓ Summary✓ 结论✓ Conclusion✓' before starting the next; halt if any field is unchecked.",
-        "Treat the four bilingual fields as a single atomic unit; never submit a brief unless all four contain substantive content simultaneously.",
-        "If a field label appears with no following content, stop all other work and fill that field immediately before proceeding."
-      ]
-    },
-    {
       "date": "2026-05-29",
       "score_before": 64,
       "score_after": 64,
@@ -970,6 +952,13 @@
         "  Brief \"Beyond Sycophancy: Structured Resistance and Compl\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"MIRROR: Learning from the Other View for Multi-Mod\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-26",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
       "new_hints": []
     }
   ],
