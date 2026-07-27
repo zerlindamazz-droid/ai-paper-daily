@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-29",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"DynaFLIP: Rethinking Robotics Perception via Tri-M\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TriSearch: Learning to Optimize Triangulations via\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"BORA: Bridging Offline Reinforcement Learning and \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Mean-Field Diffuser: Scaling Offline MARL to Thous\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"HPO: Hysteretic Policy Optimization for Stable and\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing content for any brief, output all four field labels as a numbered checklist; only mark each complete after inserting substantive text.",
-        "After finishing each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is empty, fill it immediately before continuing.",
-        "Treat the four bilingual fields as one atomic unit; never begin the next brief unless all four fields in the current brief contain non-empty text."
-      ]
-    },
-    {
       "date": "2026-05-30",
       "score_before": 57,
       "score_after": 57,
@@ -952,6 +935,13 @@
         "  Brief \"Beyond Sycophancy: Structured Resistance and Compl\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
         "  Brief \"MIRROR: Learning from the Other View for Multi-Mod\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
       ],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-26",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
       "new_hints": []
     },
     {

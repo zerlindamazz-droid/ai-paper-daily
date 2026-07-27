@@ -535,7 +535,7 @@ footer a:hover { color: var(--accent); }
 </div>
 
 <div class="featured-grid">
-<article class="paper-card" id="paper-2607_21461">
+<article class="paper-card" id="paper-2607_21461v2">
   <div class="card-stripe rank-1"></div>
   <div class="card-header">
     <span class="rank-badge rank-1">#1</span>
@@ -545,25 +545,25 @@ footer a:hover { color: var(--accent); }
     <span class="importance-score">★ 8/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#818cf833;color:#818cf8">🧠 LLM · 大语言模型</span><span class="tag" style="border-color:#06b6d433;color:#06b6d4">🕵️ Agentic AI · 智能体AI</span><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 Reinforcement Learning · 强化学习</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Web Search · 网络搜索</span></div>
 
   <div class="paper-title">
     <span class="title-en">AREX: Towards a Recursively Self-Improving Agent for Deep Research</span>
-    <span class="title-zh">AREX: Towards a Recursively Self-Improving Agent for Deep Research</span>
+    <span class="title-zh">AREX：面向深度研究的递归自我改进智能体</span>
   </div>
   <p class="paper-authors">🧑‍🔬 Shuqi Lu, Chaofan Li, Kun Luo, Zhang Zhang et al.</p>
 
   <div class="paper-figure">
-      <img src="../images/2026-07-26_2607_21461_p1.png" alt="Paper figure from page 1" loading="lazy">
+      <img src="../images/2026-07-26_2607_21461v2_p1.png" alt="Paper figure from page 1" loading="lazy">
       <p class="figure-caption">图 Figure · Page 1 of paper</p>
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 （AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-    <div class="en">Deep research requires agents to find answers that jointly satisfy multiple constraints</div>
+    <div class="zh">🎯 AREX是能递归自我改进、逐步验证并完善答案的深度研究AI智能体</div>
+    <div class="en">AREX is a self-improving AI research agent that iteratively verifies and refines its own answers to answer complex multi-constraint questions.</div>
   </div>
 
-  
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">AREX就像一个侦探：不是猜一次就完事，而是在形成初步判断后，逐条核对每一条线索，发现哪条对不上就专门回去调查那个环节，反复循环，直到每一条证据都完美吻合，才最终给出结论。</span><span class="en">Think of AREX like a detective who doesn't just guess a suspect once — after forming a theory, they go back and check each clue one by one, and if one clue doesn't fit, they go out and investigate specifically that part again, until every single piece of evidence lines up perfectly.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -577,35 +577,35 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">Deep research requires agents to find answers that jointly satisfy multiple constraints. Discovering such answers is costly, whereas verifying a candidate can often be decomposed into tractable constraint-wise checks. This discovery--verification asymmetry suggests that a research agent should do more than simply search longer: it should recursively improve its current answer by verifying intermediate results and using the partially verified state to guide subsequent refinement. We introduce AREX, a family of Recursively Self-Improving (RSI) deep research agents. AREX alternates between an inner research loop that gathers evidence and constructs a provisional answer, and an outer self-improvement loop that audits the answer constraint-wise, identifies unresolved claims, and launches targeted follow-up research. To sustain RSI over long horizons, AREX learns an autonomous context-update tool that compresses growing interaction history into a compact improvement state preserving verified evidence and unresolved constraints, without relying on an external model. We train AREX on verified synthetic tasks and high-quality trajectories through agentic mid-training and long-horizon reinforcement learning. To mitigate sparse final rewards during long horizon learning, we emphasize key steps where decisive evidence is acquired or erroneous research directions are corrected. We instantiate a dense 4B model and a 122B-A10B Mixture-of-Experts model. Across BrowseComp, WideSearch, DeepSearchQA, Humanity's Last Exam (HLE), and other reasoning and tool-use benchmarks, AREX substantially outperforms comparable-scale baselines and remains competitive with models using substantially more activated parameters.</span></td>
+        <td><span class="cell-zh">现有AI研究智能体在面对同时满足多个条件的复杂问题时表现很差——比如"找一个既获过诺贝尔奖、又出生在法国、还研究量子物理的人"。它们要么搜索太泛，要么过早放弃，无法判断自己答案的哪些部分已经正确、哪些还需要继续研究，导致深度研究既费钱又不可靠。</span></td>
+        <td><span class="cell-en">Existing AI research agents struggle when a question has many constraints that all need to be satisfied at once — like finding a person who is both a Nobel Prize winner, born in France, and worked in quantum physics. These agents either search too broadly or give up too early. They can't easily check which parts of their answer are already correct and which still need more work, making deep research expensive and unreliable.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">• 自我改进循环：AREX不是一次搜索就完事，而是逐条验证自己答案的每个约束条件，只对还未解决的部分重新搜索。 • 智能记忆压缩：内置工具将不断增长的研究历史压缩成一个紧凑的"改进状态"，避免遗忘已确认的信息。 • 高效训练方式：结合合成任务和高质量真实样本，用强化学习奖励"关键决定性步骤"而非仅奖励最终答案，解决了长时序稀疏奖励问题。</span></td>
+        <td><span class="cell-en">• Self-improvement loop: AREX doesn't just search once — it checks its own answer constraint by constraint, then re-searches only for the parts that are still wrong or unverified. • Smart memory compression: A built-in tool compresses the growing history of research into a compact "improvement state," so the agent doesn't forget what it's already confirmed. • Efficient training: Uses both synthetic tasks and real high-quality examples, plus a reinforcement learning trick that rewards the agent for key decisive steps, not just the final answer.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">团队在五个主要基准上测试了AREX：BrowseComp（复杂网页浏览问答）、WideSearch（广泛多跳搜索）、DeepSearchQA（深度多约束问答）、Humanity's Last Exam（HLE，极难专家级问题），以及通用推理和工具使用基准。他们将AREX与同等规模的最先进研究智能体和搜索增强大语言模型进行对比，使用两种模型规模：小型4B稠密模型和大型122B混合专家模型（激活参数10B）。</span></td>
+        <td><span class="cell-en">The team tested AREX on five major benchmarks: BrowseComp (complex web browsing questions), WideSearch (broad multi-hop search), DeepSearchQA (deep multi-constraint QA), Humanity's Last Exam (HLE, extremely hard expert-level questions), and general reasoning and tool-use benchmarks. They compared AREX against similarly sized state-of-the-art research agents and search-augmented LLMs, using two model sizes — a small 4B dense model and a large 122B Mixture-of-Experts model (with 10B active parameters).</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">AREX在所有测试基准上大幅超越同等规模的基线模型。在BrowseComp上，AREX在同等激活参数量的模型中达到最优水平。122B-A10B混合专家模型能与激活参数量远更大的模型竞争，充分说明AREX以小博大。在公认最难的AI基准HLE上，AREX与规模大得多的系统相比仍具竞争力。在WideSearch和DeepSearchQA上，相比之前的深度研究智能体均有明显提升，验证了递归自我改进方法在宽泛和深度研究任务上的普遍有效性。</span></td>
+        <td><span class="cell-en">AREX substantially outperforms comparable-scale baselines across all tested benchmarks. On BrowseComp, AREX achieves state-of-the-art results among models of similar activated parameter counts. The 122B-A10B MoE model remains competitive with models that use significantly more activated parameters — meaning AREX punches well above its weight class. On HLE (one of the hardest AI benchmarks), AREX scores competitively against much larger systems. On WideSearch and DeepSearchQA, it demonstrates clear improvements over prior deep research agents, validating the benefit of the recursive self-improvement approach across both broad and deep research tasks.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">AREX证明了一个递归自我改进的研究智能体——能审查自己的答案并有针对性地补充不足——可以大幅超越那些只是"搜索更久"的智能体，且即使在较小的模型规模下也能高效实现。这为AI驱动的深度研究确立了递归自我改进这一实用且强大的新范式。</span></td>
+        <td><span class="cell-en">AREX proves that a recursively self-improving research agent — one that audits its own answers and targets remaining gaps — can dramatically outperform agents that simply search longer, doing so efficiently even at modest model sizes. This establishes recursive self-improvement as a practical and powerful paradigm for AI-driven deep research.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
         <td colspan="2">
-          <a href="https://arxiv.org/abs/2607.21461" target="_blank">arXiv: 2607.21461</a>
+          <a href="https://arxiv.org/abs/2607.21461v2" target="_blank">arXiv: 2607.21461v2</a>
           &nbsp;·&nbsp;
-          <a href="https://arxiv.org/pdf/2607.21461" target="_blank">📥 PDF</a>
+          <a href="https://arxiv.org/pdf/2607.21461v2" target="_blank">📥 PDF</a>
         </td>
       </tr>
     </tbody>
@@ -615,29 +615,38 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">AREX通过两个嵌套循环工作，就像一个认真的学生：先写出草稿答案，再逐条对照要求检查，只修改不符合要求的部分。内循环负责上网搜索并构建初步答案；外循环像严格的编辑，逐条审查每个约束条件，标记未解决的部分，再派智能体针对性地继续搜索。为避免多轮研究后迷失，AREX自学了一个"上下文压缩工具"，把漫长的研究历史压缩成一份简洁的摘要，记录什么已确认、什么还悬而未决。整个系统先在精心设计的合成任务上训练，再用强化学习微调——奖励那些找到关键证据或纠正错误方向的决定性时刻。</span>
+        <span class="en">AREX works in two nested loops, like a diligent student who drafts an essay, checks each requirement against a rubric, then rewrites only the failing parts. The inner loop searches the web and builds a draft answer. The outer loop acts like a strict editor — it goes through each constraint, flags what's still unresolved, and sends the agent back to search specifically for those gaps. To avoid losing track of what's been done across many rounds, AREX uses a self-learned "context compression" tool that squeezes the long research history into a short summary of what's confirmed and what's still open. The whole system is trained first on carefully constructed synthetic problems, then fine-tuned with reinforcement learning that gives bonus credit for the moments when the agent finds a crucial piece of evidence or corrects a wrong direction.</span>
       </div>
     </div>
 
-    
+    <div class="formulas-section">
+      <h4>📐 Key Formulas · 关键公式</h4>
+      <div class="formula-block">
+        <div class="formula-math">\[\text{RSI Loop: } s_{t+1} = \text{Compress}(s_t, \text{Research}(q, s_t))\]</div>
+        <div class="formula-explain">
+          <span class="zh">💡 递归自我改进循环：每轮研究后，将当前状态与新证据压缩成下一轮的改进状态，持续迭代直到所有约束得到验证</span>
+          <span class="en">The recursive self-improvement loop: after each research round, the current state and new evidence are compressed into the next improvement state, iterating until all constraints are verified</span>
+        </div>
+      </div>
+    </div>
 
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">随着AI助手越来越多地用于复杂研究任务——如法律分析、科学文献综述、竞争情报——同时可靠地满足多个约束条件的能力至关重要。AREX展示了一条清晰路径：让AI智能体更像严谨的、能自我纠错的研究员，而不是一次性的答题机器。</span>
+        <span class="en">As AI assistants are increasingly used for complex research tasks — legal analysis, scientific literature review, competitive intelligence — the ability to reliably satisfy multiple constraints at once is critical. AREX shows a clear path toward AI agents that are more like thorough, self-correcting researchers rather than one-shot answer machines.</span>
       </div>
     </div>
   </div>
 
   <div class="card-footer">
-    <a href="https://arxiv.org/abs/2607.21461" target="_blank" class="btn btn-primary">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.21461" target="_blank" class="btn">📥 PDF</a>
-    <a href="https://github.com/VectorSpaceLab/arex-model" target="_blank" class="btn">💻 Code</a>
+    <a href="https://arxiv.org/abs/2607.21461v2" target="_blank" class="btn btn-primary">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.21461v2" target="_blank" class="btn">📥 PDF</a>
+    
   </div>
 </article>
-<article class="paper-card" id="paper-2607_21556">
+<article class="paper-card" id="paper-2607_21557v2">
   <div class="card-stripe rank-2"></div>
   <div class="card-header">
     <span class="rank-badge rank-2">#2</span>
@@ -647,25 +656,25 @@ footer a:hover { color: var(--accent); }
     <span class="importance-score">★ 8/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 Reinforcement Learning · 强化学习</span><span class="tag" style="border-color:#06b6d433;color:#06b6d4">🕵️ AI Agents · AI智能体</span><span class="tag" style="border-color:#818cf833;color:#818cf8">🧠 LLM · 大语言模型</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Tool Use · 工具调用</span></div>
 
   <div class="paper-title">
-    <span class="title-en">Visual Contrastive Self-Distillation</span>
-    <span class="title-zh">Visual Contrastive Self-Distillation</span>
+    <span class="title-en">OpenForgeRL: Train Harness-native Agents in Any Environment</span>
+    <span class="title-zh">OpenForgeRL：在任意环境中训练原生推理框架智能体</span>
   </div>
-  <p class="paper-authors">🧑‍🔬 Yijun Liang, Yunjie Tian, Yijiang Li, Yuqi Jia et al.</p>
+  <p class="paper-authors">🧑‍🔬 Xiao Yu, Baolin Peng, Ruize Xu, Hao Zou et al.</p>
 
   <div class="paper-figure">
-      <img src="../images/2026-07-26_2607_21556_p2.png" alt="Paper figure from page 2" loading="lazy">
-      <p class="figure-caption">图 Figure · Page 2 of paper</p>
+      <img src="../images/2026-07-26_2607_21557v2_p4.png" alt="Paper figure from page 4" loading="lazy">
+      <p class="figure-caption">图 Figure · Page 4 of paper</p>
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 （AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-    <div class="en">On-policy self-distillation (OPSD) is promising as it removes the external teacher required by on-policy distillation (OPD), yet it still needs asymmetric information between teacher and student to ensure that the self-teacher provides a…</div>
+    <div class="zh">🎯 开源框架让AI智能体直接在真实工具环境中端到端训练</div>
+    <div class="en">An open-source framework that trains AI agents end-to-end inside the real-world tools and environments they actually use.</div>
   </div>
 
-  
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">就像培训新员工：以前只能在教室用道具模拟练习，现在OpenForgeRL让他们直接在真实岗位上学习——用真实工具、做真实任务——同时有个聪明的教练在背后默默记录每一步操作，给出反馈帮助他们进步。</span><span class="en">Think of it like training a new employee: instead of making them practice with fake props in a classroom, OpenForgeRL lets them learn on the real job — real tools, real tasks — while a clever coach silently watches every move and gives feedback to help them improve.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -679,35 +688,35 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">On-policy self-distillation (OPSD) is promising as it removes the external teacher required by on-policy distillation (OPD), yet it still needs asymmetric information between teacher and student to ensure that the self-teacher provides a stronger learning signal than the student. Existing methods create this asymmetry either through privileged answers or visual evidence. We ask whether both can be removed, yielding a simpler form of OPSD driven purely by input conditioning. For this purpose, we propose Visual Contrastive Self-Distillation, namely VCSD, which converts image-content removal into an on-policy self-distillation signal. At each student-generated response prefix, the EMA teacher produces two next-token distributions under the same prompt and prefix -- one conditioned on the original image and the other on a content-erased control. Their token-wise log-probability difference highlights candidates whose likelihood is specifically increased by the instance-level visual content. We use this contrast to sharpen the teacher's original-image distribution within its plausible support, and distill the resulting full-distribution target into the student. Using ViRL39K dataset, VCSD consistently outperforms matched OPSD across Qwen3-VL and Qwen3.5 models. For example, on Qwen3-VL, it improves the seven-benchmark aggregate from 62.27% rightarrow 67.04% at 2B, 71.30% rightarrow 73.16% at 4B, and 72.51% rightarrow 76.26% at 8B. Furthermore, VCSD requires no external teacher, privileged answers, visual evidence signals, reasoning traces, or additional inference-time cost.</span></td>
+        <td><span class="cell-zh">现代AI智能体（比如代码助手或网页操控机器人）不是单独运行的，而是嵌套在复杂的"推理框架"（harness）中——这些框架帮助智能体使用工具、浏览网页或分步完成任务。问题在于，现有的AI训练系统无法与这些框架配合，研究人员无法在真实环境中直接训练和改进智能体。就像只能在停车场练车，却从没上过真正的赛道。</span></td>
+        <td><span class="cell-en">Modern AI agents like coding assistants or browser-controlling bots don't just run alone — they live inside complex "harnesses," special software wrappers that help them use tools, browse the web, or write code step by step. The problem is that today's AI training systems weren't built to work with these harnesses, so researchers can't easily improve agents while they're running in their real environments. It's like trying to train a race car driver only in a parking lot, never on an actual track.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">• OpenForgeRL是首个允许AI智能体在真实推理框架（如Claude Code、Codex）内直接进行强化学习训练的开源框架，无需重写框架代码。• 设计了一个轻量级"代理拦截器"，悄悄捕获框架发出的模型调用，记录为训练数据，无缝接入标准RL训练系统。• 基于Kubernetes的云端编排器为每个训练回合分配独立容器，使训练安全、可扩展、且与具体环境无关。</span></td>
+        <td><span class="cell-en">1. OpenForgeRL is the first open framework to let AI agents be trained with reinforcement learning directly inside real inference harnesses (like Claude Code or Codex), without needing to rewrite them. 2. A clever lightweight "proxy" quietly intercepts model calls from the harness, records them as training data, and feeds them to a standard RL training system — all invisibly. 3. A Kubernetes-based cloud orchestrator runs each training episode in its own isolated container, making training safe, scalable, and environment-agnostic.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">团队测试了两类智能体：工具/代码智能体（OpenForgeClaw）和图形界面/浏览器智能体（OpenForgeGUI）。工具智能体在ClawEval和QwenClawBench基准上测试，与开源基线对比。GUI智能体在OSWorld-Verified（电脑操作）、Online-Mind2Web（网页导航）和WebVoyager（网页浏览）上测试。所有模型仅用数百到数千个任务训练，与同等规模乃至更大规模的开源模型对比。还分析了不同框架选择（ZeroClaw、OpenClaw、Codex）如何影响强化学习的结果。</span></td>
+        <td><span class="cell-en">The team tested two types of agents: tool/code-use agents (OpenForgeClaw) and GUI/browser agents (OpenForgeGUI). For tool agents, they used benchmarks ClawEval and QwenClawBench, comparing against open-source baselines. For GUI agents, they tested on OSWorld-Verified (computer use), Online-Mind2Web (web navigation), and WebVoyager (web browsing). All models were trained on only a few hundred to a few thousand tasks, and compared against open-source models of similar and larger sizes. They also analyzed how different harness choices (ZeroClaw, OpenClaw, Codex) shape what RL actually learns.</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">OpenForgeClaw在ClawEval上达到31.7 pass³和55.9 pass@3，在QwenClawBench上达到33.7。OpenForgeGUI在OSWorld-Verified上达到37.7，在Online-Mind2Web上达到63.0，在WebVoyager上达到72.3。两个模型在几乎所有基准上均优于同等规模的开源基线。尤其值得注意的是，OpenForgeGUI仅用数百到数千个任务训练，却能媲美甚至超越体量大数倍的模型。</span></td>
+        <td><span class="cell-en">OpenForgeClaw achieves 31.7 pass³ and 55.9 pass@3 on ClawEval, and 33.7 on QwenClawBench. OpenForgeGUI achieves 37.7 on OSWorld-Verified, 63.0 on Online-Mind2Web, and 72.3 on WebVoyager. Both models outperform open-source baselines of similar size on nearly all benchmarks. Notably, OpenForgeGUI matches or surpasses models several times larger in the GUI setting — a strong efficiency win from training with only hundreds to a few thousand tasks.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">OpenForgeRL证明了AI智能体可以在真实推理框架中利用开源强化学习基础设施进行端到端训练，以极少量训练数据达到最先进的性能。它让智能体训练不再依赖专有工具，真正向研究社区开放。</span></td>
+        <td><span class="cell-en">OpenForgeRL proves that AI agents can be effectively trained end-to-end inside real-world inference harnesses using open-source reinforcement learning infrastructure, achieving state-of-the-art results with surprisingly small amounts of training data. It democratizes agent training by making it accessible to researchers without proprietary tools.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
         <td colspan="2">
-          <a href="https://arxiv.org/abs/2607.21556" target="_blank">arXiv: 2607.21556</a>
+          <a href="https://arxiv.org/abs/2607.21557v2" target="_blank">arXiv: 2607.21557v2</a>
           &nbsp;·&nbsp;
-          <a href="https://arxiv.org/pdf/2607.21556" target="_blank">📥 PDF</a>
+          <a href="https://arxiv.org/pdf/2607.21557v2" target="_blank">📥 PDF</a>
         </td>
       </tr>
     </tbody>
@@ -717,29 +726,38 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">OpenForgeRL在推理框架和AI模型之间插入一个聪明的"中间人"（轻量级代理）。每当框架请求模型思考或行动时，代理悄悄记录这段对话，并传递给标准强化学习训练系统（如veRL）。与此同时，云端编排系统（Kubernetes）为每个训练回合启动一个全新的隔离虚拟容器，让智能体在真实网页、终端或图形界面中交互，互不干扰。每轮结束后，记录的交互被转化为训练信号来改进模型。这样，训练与推理彻底解耦，但智能体始终在真实部署环境中接受训练。</span>
+        <span class="en">OpenForgeRL works by placing a smart "middleman" (a lightweight proxy) between the harness and the AI model. When the harness asks the model to think or act, the proxy silently records that conversation and passes it to a standard reinforcement learning training system (like veRL). Meanwhile, a cloud orchestration system (Kubernetes) spins up a fresh, isolated virtual container for every single training episode, so the agent can interact with real websites, terminals, or GUIs without one session interfering with another. After each episode, the recorded interactions are turned into training signals to improve the model. This way, training and inference are cleanly separated, yet the agent always trains in its true deployment environment.</span>
       </div>
     </div>
 
-    
+    <div class="formulas-section">
+      <h4>📐 Key Formulas · 关键公式</h4>
+      <div class="formula-block">
+        <div class="formula-math">\[\text{pass}^3 = \frac{1}{N}\sum_{i=1}^{N} \mathbf{1}[\text{all 3 attempts pass}]\]</div>
+        <div class="formula-explain">
+          <span class="zh">💡 pass³衡量模型在同一任务上连续3次尝试全部成功的比例，是对可靠性的严格考核</span>
+          <span class="en">pass³ measures the fraction of tasks where all 3 independent attempts succeed — a strict test of consistent reliability</span>
+        </div>
+      </div>
+    </div>
 
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">目前，最强大的AI智能体（如代码助手或电脑操控机器人）大多由大型科技公司用私有工具训练和改进。OpenForgeRL让所有人都能用开源、可扩展的方式在真实环境中训练智能体，有望加速各行业自主AI的突破。这意味着在软件开发、网页研究和日常电脑任务方面，AI可以进步得更快。</span>
+        <span class="en">Right now, the most capable AI agents (like coding assistants or computer-controlling bots) are mostly trained and improved by large tech companies with private tools. OpenForgeRL changes this by giving everyone an open, scalable way to train agents in their real environments — potentially accelerating breakthroughs in autonomous AI across industries. This could mean faster progress in AI that helps with software development, web research, and everyday computer tasks.</span>
       </div>
     </div>
   </div>
 
   <div class="card-footer">
-    <a href="https://arxiv.org/abs/2607.21556" target="_blank" class="btn btn-primary">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.21556" target="_blank" class="btn">📥 PDF</a>
-    <a href="https://github.com/joliang17/VCSD" target="_blank" class="btn">💻 Code</a>
+    <a href="https://arxiv.org/abs/2607.21557v2" target="_blank" class="btn btn-primary">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.21557v2" target="_blank" class="btn">📥 PDF</a>
+    
   </div>
 </article>
-<article class="paper-card" id="paper-2607_21072">
+<article class="paper-card" id="paper-2607_21522v1">
   <div class="card-stripe rank-3"></div>
   <div class="card-header">
     <span class="rank-badge rank-3">#3</span>
@@ -749,25 +767,25 @@ footer a:hover { color: var(--accent); }
     <span class="importance-score">★ 8/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 4D World Generation · 4D世界生成</span><span class="tag" style="border-color:#06b6d433;color:#06b6d4">🕵️ Multi-Agent Systems · 多智能体系统</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Generative AI · 生成式AI</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Physics Simulation · 物理仿真</span></div>
 
   <div class="paper-title">
-    <span class="title-en">Show, Don't Tell: Evaluating Spatial Cognition in Generative Pixels Rather Than LLM Text</span>
-    <span class="title-zh">Show, Don't Tell: Evaluating Spatial Cognition in Generative Pixels Rather Than LLM Text</span>
+    <span class="title-en">GS-Agent: Creating 4D Physical Worlds With Generative Simulation</span>
+    <span class="title-zh">GS-Agent：通过生成式仿真创建4D物理世界</span>
   </div>
-  <p class="paper-authors">🧑‍🔬 Xu Wang, Kaixiang Yao, Miao Pan, Xiaohe Zhou et al.</p>
+  <p class="paper-authors">🧑‍🔬 Hongxin Zhang, Chunru Lin, Junyan Li, Zhou Xian et al.</p>
 
   <div class="paper-figure">
-      <img src="../images/2026-07-26_2607_21072_p5.png" alt="Paper figure from page 5" loading="lazy">
-      <p class="figure-caption">图 Figure · Page 5 of paper</p>
+      <img src="../images/2026-07-26_2607_21522v1_p6.png" alt="Paper figure from page 6" loading="lazy">
+      <p class="figure-caption">图 Figure · Page 6 of paper</p>
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 （AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-    <div class="en">Spatial intelligence is essential for agents to move from static semantic understanding toward interacting with the physical world</div>
+    <div class="zh">🎯 用自然语言指令，AI自动生成真实物理动态的4D虚拟世界</div>
+    <div class="en">A multi-agent AI system that turns plain text descriptions into physically realistic, dynamic 4D worlds automatically.</div>
   </div>
 
-  
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">就像你告诉一个"全能工作室团队"——有道具师、灯光师、导演、特效组——你的剧本想法，他们各司其职自动把场景搭出来，你喝杯咖啡回来，电影场景已经拍好了。GS-Agent就是这个AI版全能团队，而且每一幕都遵守物理定律，水真的会流，球真的会弹。</span><span class="en">Think of it like hiring a full movie production crew — props master, lighting director, special effects team, and cinematographer — except they're all AI agents. You just whisper your scene idea, go grab a coffee, and come back to find a fully animated, physically realistic 4D world ready to go. The water actually flows, the rubber ball actually bounces — because real physics rules are baked in.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -781,35 +799,40 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">Spatial intelligence is essential for agents to move from static semantic understanding toward interacting with the physical world. Many spatial tasks are grounded in continuous visual scenes, where locations, regions, and paths are more naturally expressed by pointing, marking, or drawing than by reporting precise coordinates or discrete textual symbols. Yet existing spatial reasoning benchmarks usually require coordinates, options, or text, creating an answer-interface mismatch for image-generation models. This makes it difficult to evaluate image-generation models under the same task semantics as text-output VLMs, despite their ability to externalize spatial judgments directly in pixel space. We propose ProVisE (Protocolized Visual Evaluation), a benchmark-agnostic framework that elicits protocol-constrained visual answers from image-generation models and parses them into structured predictions compatible with original metrics. ProVisE also includes an Agentic builder that constructs and validates task-specific protocols for new benchmarks. We further introduce SpatialGen-Bench, a curated diagnostic benchmark of 470 samples across 14 spatial subtasks, four capability levels, and diverse answer forms. We evaluate representative text-output VLMs and image-generation models in a unified setting and validate Agentic protocol construction on six external spatial benchmarks. Results show that image-generation models are competitive when spatial answers can be externalized directly in pixel space, while text-output VLMs retain a clear advantage in compositional spatial reasoning. These findings reveal complementary strengths of pixel-space expression and text-based reasoning and establish a metric-compatible testbed for studying spatial cognition in image-generation models.</span></td>
+        <td><span class="cell-zh">想象一下，你只是说了一句"下雨天，一个球滚过泥地"，就能自动生成一个有雨水、泥浆、滚动球体的逼真动态3D动画——但现有的AI和传统方法都做不到这一点。传统电脑动画需要专业美术师手动调整材质、运动和灯光，费时费力；而现有的AI生成方法虽然能生成图像或视频，却很难保证物理真实性，比如液体流动、弹性物体变形等细节常常看起来很假。这个问题在游戏、电影、机器人训练等领域都是巨大的痛点。</span></td>
+        <td><span class="cell-en">Imagine telling a computer "a ball rolls through muddy ground in the rain" and instantly getting a realistic animated 4D scene with splashing water and deforming mud — but today's tools can't do that automatically. Traditional 3D animation requires skilled artists to manually fine-tune every material, motion, and light setting, which takes enormous effort. Existing AI methods can generate images or video clips, but they often produce physically unrealistic results — liquids don't flow right, soft objects don't squish properly, and nothing really obeys the laws of physics.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">• 首创"以代码驱动物理引擎"的多智能体框架，多个专属AI协作完成场景构建，无需人工干预
+• 将4D世界创建拆解为"实体管理"（资产获取、材质调整、位置摆放、运动控制）和"渲染配置"（相机和灯光）两大模块，分工明确
+• 内置物理引擎在循环中持续校验，确保液体、柔性体、刚体之间的交互符合真实物理规律
+• 支持电影级相机运镜和灯光控制，生成结果既逼真又可控</span></td>
+        <td><span class="cell-en">• First end-to-end multi-agent framework where specialized AI agents collaborate via code to build physically realistic 4D worlds from text — no human editing needed. 
+• Cleverly splits the hard task into "entity management" (finding 3D assets, setting materials, positioning, animating) and "rendering configuration" (camera angles, lighting), letting expert agents tackle each piece. 
+• A physics engine runs inside the loop at every step, acting as a reality check so liquids, soft objects, and rigid bodies all behave the way they should in the real world.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">研究团队设计了多种场景测试GS-Agent的能力，涵盖液体（如水流、倒液体）、柔性物体（如布料、橡皮）、刚体（如箱子、球）及它们之间的复杂交互。评估指标包括物理真实性、场景与文本描述的一致性、视觉质量，以及与现有方法（如纯生成式视频/图像方法）的对比。同时通过用户研究和自动化评测两种方式验证生成质量。</span></td>
+        <td><span class="cell-en">The team tested GS-Agent across a wide variety of scene types, including liquid interactions (water pouring, splashing), deformable objects (cloth, soft bodies), and rigid body dynamics (boxes, balls colliding), as well as complex mixed scenes with all three. They compared against existing generative methods that produce images or videos directly from text. Evaluation used both automatic metrics (physical plausibility, text-scene alignment, visual quality) and human user studies to judge realism and controllability.</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">GS-Agent在物理真实性、文本对齐度和视觉质量等维度上均显著优于现有纯生成式方法。用户研究显示，超过80%的评估者认为GS-Agent生成的场景在物理真实性上优于对比基线方法。系统能够生成包含液体、柔性体和刚体复杂交互的多样化4D场景，并支持电影级相机运镜（如推拉摇移）和动态灯光效果，而现有方法通常无法同时做到这几点。</span></td>
+        <td><span class="cell-en">GS-Agent significantly outperforms existing purely generative (image/video) methods in physical plausibility, text alignment, and visual quality. User studies showed that over 80% of evaluators preferred GS-Agent's outputs for physical realism compared to baseline methods. The system successfully generates diverse 4D scenes featuring complex interactions among liquids, soft bodies, and rigid objects, while also supporting cinematic camera movements and dynamic lighting — capabilities that existing baselines largely cannot combine in a single pipeline.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">本文证明了通过多智能体协作结合物理引擎，AI可以从自然语言自动生成既视觉逼真又物理可信的4D动态世界，为4D内容生成开辟了全新范式。这一框架有望成为创意内容创作和物理AI训练的重要基础工具。</span></td>
+        <td><span class="cell-en">This paper proves that a team of collaborating AI agents, guided by a physics engine, can automatically turn plain language into rich, physically realistic 4D animated worlds — establishing a new blueprint for how AI should generate dynamic content. GS-Agent sets the stage for a new era in automated creative production and training environments for physical AI systems.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
         <td colspan="2">
-          <a href="https://arxiv.org/abs/2607.21072" target="_blank">arXiv: 2607.21072</a>
+          <a href="https://arxiv.org/abs/2607.21522v1" target="_blank">arXiv: 2607.21522v1</a>
           &nbsp;·&nbsp;
-          <a href="https://arxiv.org/pdf/2607.21072" target="_blank">📥 PDF</a>
+          <a href="https://arxiv.org/pdf/2607.21522v1" target="_blank">📥 PDF</a>
         </td>
       </tr>
     </tbody>
@@ -819,8 +842,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">GS-Agent像一个由多位专家组成的"虚拟制片团队"。当用户输入一段自然语言描述时，系统会把任务分配给几个专属AI智能体：有的负责去网上找合适的3D模型资产，有的负责调整材质（比如让物体看起来像橡皮还是金属），有的负责控制物体运动，还有的专门处理相机和灯光。所有智能体都通过编写代码来驱动底层的物理仿真引擎（如Taichi和MPM），并实时获取渲染图像作为反馈，不断迭代修正，直到场景符合描述为止。整个流程完全自动化，用户只需输入文字。</span>
+        <span class="en">GS-Agent works like a team of specialized movie production experts, each handling one part of the job. When you type a scene description, the system assigns tasks to several AI agents: one hunts for the right 3D object assets online, another tunes materials (making things look like rubber or metal), another choreographs movements, and yet another controls camera shots and lighting. All agents write code to control a physics simulation engine under the hood, receive visual feedback from rendered images, and keep refining their work in a loop — like a director watching playback and calling for retakes — until the scene matches the original description.</span>
       </div>
     </div>
 
@@ -829,47 +852,47 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">这项研究让普通人只需打几个字就能创作出原本需要专业团队数周才能完成的动态3D动画场景，极大降低了影视、游戏、教育内容的创作门槛。同时，能生成物理真实的动态环境，对于训练机器人、自动驾驶等物理AI系统具有极高价值。</span>
+        <span class="en">This research could let anyone — not just Hollywood studios or game developers — create stunning, physically realistic animated scenes just by typing a description, dramatically lowering the barrier to creative content production. It also matters hugely for AI training: robots and self-driving cars need realistic virtual environments to practice in, and GS-Agent can generate exactly those kinds of physically accurate simulated worlds on demand.</span>
       </div>
     </div>
   </div>
 
   <div class="card-footer">
-    <a href="https://arxiv.org/abs/2607.21072" target="_blank" class="btn btn-primary">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.21072" target="_blank" class="btn">📥 PDF</a>
-    <a href="https://github.com/ZJU-OmniAI/ProVisE" target="_blank" class="btn">💻 Code</a>
+    <a href="https://arxiv.org/abs/2607.21522v1" target="_blank" class="btn btn-primary">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.21522v1" target="_blank" class="btn">📥 PDF</a>
+    
   </div>
 </article>
-<article class="paper-card" id="paper-2607_21553">
+<article class="paper-card" id="paper-2607_20911">
   <div class="card-stripe rank-4"></div>
   <div class="card-header">
     <span class="rank-badge rank-4">#4</span>
     <div class="importance-bar">
-      <div class="importance-fill" style="width:80%"></div>
+      <div class="importance-fill" style="width:70%"></div>
     </div>
-    <span class="importance-score">★ 8/10</span>
+    <span class="importance-score">★ 7/10</span>
   </div>
 
-  <div class="tags"></div>
+  <div class="tags"><span class="tag" style="border-color:#06b6d433;color:#06b6d4">🕵️ Coding Agents · 编程智能体</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Benchmark · 基准测试</span><span class="tag" style="border-color:#818cf833;color:#818cf8">🧠 LLM Evaluation · 大模型评估</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Software Engineering · 软件工程</span></div>
 
   <div class="paper-title">
-    <span class="title-en">SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation</span>
-    <span class="title-zh">SANA-Video 2.0: Hybrid Linear Attention with Attention Residuals for Efficient Video Generation</span>
+    <span class="title-en">Tencent WorkBuddy Bench: A Multi-Domain Coding-Agent Benchmark with Contamination-Resistant Task Construction</span>
+    <span class="title-zh">腾讯 WorkBuddy Bench：一个具备抗污染任务构建机制的多领域编程智能体基准</span>
   </div>
-  <p class="paper-authors">🧑‍🔬 Junsong Chen, Jincheng Yu, Yitong Li, Shuchen Xue et al.</p>
+  <p class="paper-authors">🧑‍🔬 Tencent WorkBuddy Bench Team, Siqi Cai, Shaopeng Chen, Xiang Fei et al.</p>
 
   <div class="paper-figure">
-      <img src="../images/2026-07-26_2607_21553_p1.png" alt="Paper figure from page 1" loading="lazy">
-      <p class="figure-caption">图 Figure · Page 1 of paper</p>
+      <img src="../images/2026-07-26_2607_20911_p2.png" alt="Paper figure from page 2" loading="lazy">
+      <p class="figure-caption">图 Figure · Page 2 of paper</p>
     </div>
 
   <div class="one-liner">
-    <div class="zh">🎯 （AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-    <div class="en">We introduce SANA-Video 2.0, a hybrid video diffusion transformer instantiated at 5B and 14B scales under a unified architecture</div>
+    <div class="zh">🎯 腾讯发布多领域编程智能体基准，从真实提交反向工程构建抗污染任务</div>
+    <div class="en">A contamination-resistant, multi-domain benchmark for evaluating AI coding agents across real work tasks.</div>
   </div>
 
-  
+  <div class="analogy-bubble"><span class="analogy-label">🗣️ 一句话比喻 · Plain-English Analogy</span><span class="zh">就像高考为了防止泄题，每年都要重新出卷——这个基准把真实的程序员工作（比如修复一个GitHub上的bug）改写成AI听不出来是"考题"的自然对话，让AI没办法靠"背过原题"来作弊，从而测出它的真实水平。</span><span class="en">Think of it like a driving test that, instead of using the same practice questions from the official booklet, makes you navigate a real unfamiliar neighborhood — so you can't just memorize the answers beforehand. This benchmark takes real coding tasks from actual workplaces and disguises them as casual chat requests, so AI can't cheat by recognizing problems it was trained on.</span></div>
 
   <!-- Summary Table: quick-glance overview -->
   <table class="summary-table">
@@ -883,35 +906,41 @@ footer a:hover { color: var(--accent); }
     <tbody>
       <tr>
         <td class="dim-label">❓ 待解决<br>的问题</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">We introduce SANA-Video 2.0, a hybrid video diffusion transformer instantiated at 5B and 14B scales under a unified architecture. Designed to generate high-quality video up to 720p on a single GPU, SANA-Video 2.0 matches full-softmax video DiTs in quality while retaining the favorable long-sequence scaling of linear attention. To avoid quadratic attention throughout, Hybrid Linear-Softmax Attention combines gated linear attention for O(N)-dominated mixing with periodic gated-softmax anchors at a 3:1 ratio, restoring the full-rank token interactions that pure linear attention lacks. To propagate these refreshed representations across depth, Block Attention Residuals (AttnRes) route completed block summaries into later linear layers, enabling anchor-feature reuse and boosting deep-layer effective rank by ~12%. Through from-scratch training, SANA-Video 2.0 learns the complete hybrid directly rather than linearizing pretrained models, with reduced-resolution proxy studies establishing 25% softmax as the optimal quality-efficiency trade-off. With 40-step sampling, SANA-Video 2.0 achieves a VBench score of 84.30 in 13.2s at 480p on a single H100, remaining competitive with far larger softmax video DiTs at a fraction of the latency. Its compiled DiT forward pass is 3.2x faster than a matched full-softmax baseline at 720p/60s, a gap that expands with video duration. Furthermore, full-stack Sol-Engine optimization (kernel fusion, caching, and sparse attention) accelerates this hardware-friendly backbone by a further 3.58x, bringing the 5B pipeline to 13.06s at 720p/5s and making it 120x faster than Wan 2.2-A14B on one H100. Overall, our hybrid design recovers softmax-level expressiveness at substantially reduced cost, unlocking scalable long, high resolution video generation.</span></td>
+        <td><span class="cell-zh">现有的AI编程智能体（能自动写代码的AI）越来越多，但我们缺乏一把公平、可靠的"尺子"来衡量它们的真实能力。现有的测试题目很多已经出现在网上，AI可能在训练时就"见过答案"，就像考试前泄题一样，导致测评结果虚高，无法反映AI的真正水平。更麻烦的是，现有测试往往只覆盖写代码这一类任务，而真实工作中的AI助手还需要处理网页开发、办公文档、网络安全等各种任务。</span></td>
+        <td><span class="cell-en">We have lots of AI "coding agents" that can write and fix code automatically, but we lack a fair, reliable way to test how good they really are. Most existing tests use problems scraped from the internet, which means the AI might have already seen the answers during training — like a student who memorized the answer key before the exam. This makes scores look better than the AI actually is. On top of that, real work involves much more than just writing code: it includes web development, office tasks, and cybersecurity, but most benchmarks only test one narrow area.</span></td>
       </tr>
       <tr>
         <td class="dim-label">💡 解决<br>的亮点</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">• 抗污染设计：每道题都从真实的代码提交（commit/PR）反向工程而来，并改写为口语化的角色扮演请求，无法通过网络搜索到原始问题，有效防止AI"背题"。
+• 四大工作领域全覆盖：涵盖代码工程、前端开发、办公/商业流程、红蓝队网络安全，模拟真实职场场景。
+• 完全开源可复现：任务目录、环境镜像、评测工具、测试用例和参考答案全部公开，任何第三方都可以独立重跑并审计。
+• 统一但灵活的评测框架：所有任务用同一格式打包、同一协议运行，但每个子集有各自适合的评分方式，不强行汇总成一个总分。</span></td>
+        <td><span class="cell-en">• Contamination-resistant by design: every task is reverse-engineered from a real code commit or pull request and rewritten in casual, role-played language — so the AI can't just Google the answer.
+• Four real-work domains covered: code engineering, front-end development, office/business workflows, and cybersecurity (red/blue team), mimicking actual workplace scenarios.
+• Fully open and reproducible: task files, environment images, test cases, and reference answers are all public, so anyone can re-run and audit results independently.
+• Unified yet flexible evaluation: all tasks share one format and protocol, but each domain uses its own scoring method suited to its nature — no fake single aggregate score.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🧪 实验<br>内容</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">实验在四个子集上分别进行：代码工程（仓库级别的修复与实现任务）、前端开发（网页UI任务）、办公/商业流程（文档、表格、自动化任务）、以及网络安全（红队攻击与蓝队防御任务）。测试对象是多个主流大语言模型，使用两种智能体框架（CodeBuddy Code 和 Claude Code）运行。每个子集的评分方式不同：如代码子集用测试用例通过率，前端子集用视觉/功能验证，安全子集用漏洞发现/防御成功率。最终发布了一个跨模型排行榜。</span></td>
+        <td><span class="cell-en">Experiments were conducted across four domain-specific subsets: repository-level code engineering, front-end web development, office and business workflow automation, and red/blue-team cybersecurity. Multiple major large language models were tested using two agent harnesses — CodeBuddy Code and Claude Code. Each subset uses its own verification style: code tasks use test-case pass rates, front-end tasks use visual/functional checks, and security tasks measure exploit or defense success. Results are reported as a cross-model leaderboard rather than a single combined score.</span></td>
       </tr>
       <tr>
         <td class="dim-label">📊 实验<br>结果</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">论文以排行榜形式报告多个模型家族的成绩，但由于四个子集的评分方式不同，无法跨子集直接比较，也没有给出一个套件整体的平均分。具体数字层面：论文未在摘要中披露每个模型的精确得分或百分比提升，排行榜详细数字见完整报告。总体来看，不同模型在不同领域的表现差异显著，说明没有一个模型能在所有真实工作场景下全面领先。</span></td>
+        <td><span class="cell-en">Results are presented as a cross-model leaderboard across several major model families, but because each of the four subsets uses a different scoring method, scores cannot be compared across domains and no single suite-wide average is reported. The abstract does not disclose exact per-model scores or percentage improvements; detailed leaderboard figures are available in the full report. The overall finding is that different models show significantly different strengths across domains, meaning no single model dominates all real-work scenarios.</span></td>
       </tr>
       <tr>
         <td class="dim-label">🏁 结论</td>
-        <td><span class="cell-zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span></td>
-        <td><span class="cell-en">See the paper’s original abstract in the "Problem / 背景" row above.</span></td>
+        <td><span class="cell-zh">本文构建了一个覆盖四大真实工作领域、具备抗数据污染能力的编程智能体评测基准，并通过完全开源的方式保证可复现性和可审计性。它为业界提供了一把更公平、更贴近真实工作的"量尺"，有助于推动AI编程助手的可信评估与健康发展。</span></td>
+        <td><span class="cell-en">This paper delivers a fair, reproducible, and contamination-resistant benchmark for evaluating AI coding agents across four realistic work domains. By open-sourcing everything and using reverse-engineered tasks, it provides a more trustworthy yardstick for measuring real-world AI coding capabilities.</span></td>
       </tr>
       <tr class="link-row">
         <td class="dim-label">🔗 论文<br>链接</td>
         <td colspan="2">
-          <a href="https://arxiv.org/abs/2607.21553" target="_blank">arXiv: 2607.21553</a>
+          <a href="https://arxiv.org/abs/2607.20911" target="_blank">arXiv: 2607.20911</a>
           &nbsp;·&nbsp;
-          <a href="https://arxiv.org/pdf/2607.21553" target="_blank">📥 PDF</a>
+          <a href="https://arxiv.org/pdf/2607.20911" target="_blank">📥 PDF</a>
         </td>
       </tr>
     </tbody>
@@ -921,8 +950,8 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>⚙️ Method · 方法详解</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">核心思路是"反向工程出题"：研究团队不是直接从网上找题，而是先找到真实的代码变更（比如GitHub上的一次代码提交或合并请求），再把这个变更的上下文改写成一个普通员工对AI助手说话的口吻，比如"帮我修一下这个按钮点击没反应的问题"。这样，即使有人搜索原始提交记录，也找不到和题目一模一样的描述，防止AI"作弊"。四个领域的题目分别打包成统一的"任务目录"格式，配套评测工具和环境镜像，在两个主流AI编程助手（CodeBuddy Code 和 Claude Code）上运行，采用各自领域适合的评分方式（如单元测试通过率、前端截图对比、安全漏洞发现数等）。数据集版本化发布，通过持续更新来保持抗污染性，而不是靠保密。</span>
+        <span class="en">The key idea is "reverse-engineering the questions." Instead of copying problems from the internet, the team starts with a real code change (like a GitHub commit or pull request), then rewrites the context as a casual, conversational request — the kind of thing a regular employee might say to an AI assistant, like "hey, can you fix the button that doesn't work?" This way, even if someone searches for the original commit, they won't find a matching test prompt, blocking the AI from "cheating." All four domain-specific task sets are packaged in a uniform folder format with evaluation tools and environment images, then run on two real-world AI coding agents (CodeBuddy Code and Claude Code). Each domain uses its own appropriate scoring method, and contamination resistance is maintained through ongoing dataset versioning rather than keeping secrets.</span>
       </div>
     </div>
 
@@ -931,15 +960,15 @@ footer a:hover { color: var(--accent); }
     <div class="content-section">
       <h4>🌟 Why It Matters · 为什么重要</h4>
       <div class="bilingual">
-        <span class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</span>
-        <span class="en">See the paper’s original abstract in the "Problem / 背景" row above.</span>
+        <span class="zh">随着AI编程助手越来越多地进入职场，我们迫切需要知道它们到底有多可靠——而不是依赖可能"泄题"的测试成绩。这个基准让开发者、企业和研究者能更诚实地比较不同AI工具的真实能力，从而做出更明智的技术选型决策。</span>
+        <span class="en">As AI coding assistants become more common in real workplaces, we urgently need honest, tamper-proof ways to measure how good they actually are. This benchmark gives developers, companies, and researchers a trustworthy testing ground to compare AI tools fairly — helping everyone make smarter choices about which AI to actually rely on at work.</span>
       </div>
     </div>
   </div>
 
   <div class="card-footer">
-    <a href="https://arxiv.org/abs/2607.21553" target="_blank" class="btn btn-primary">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.21553" target="_blank" class="btn">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.20911" target="_blank" class="btn btn-primary">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.20911" target="_blank" class="btn">📥 PDF</a>
     
   </div>
 </article>
@@ -953,106 +982,106 @@ footer a:hover { color: var(--accent); }
 <div class="quick-reads-list">
 <div class="quick-card">
   <div>
-    <div class="quick-title-en">SM4RT: Learning Structured Motion Geometry for 4D Reconstruction</div>
-    <div class="quick-title-zh">SM4RT: Learning Structured Motion Geometry for 4D Reconstruction</div>
-    <div class="quick-tags"></div>
+    <div class="quick-title-en">Robot-Factored World Models via Robot Rendering</div>
+    <div class="quick-title-zh">Robot-Factored World Models via Robot Rendering</div>
+    <div class="quick-tags"><span class="tag" style="border-color:#10b98133;color:#10b981">🦾 Robotics · 机器人</span><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 World Models · 世界模型</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Video Prediction · 视频预测</span></div>
     <div class="quick-summary">
       <div class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-      <div class="en">Geometry Foundation Models (GFMs) have substantially advanced monocular 3D reconstruction, yet extending this capability to 4D dynamic understanding remains a fundamental challenge. Most existing motion perception methods (e.g., sparse tracking, dense point-wise flow) treat motion as independent point-wise displacements, ignoring the structured nature of physical motion. However, real-world objects usually obey rigid-body kinematics, and points thus usually move collectively, not in isolation. Motion itself possesses geometric structure: physical objects undergo a set of rigid-body transformations governed by SE(3), rather than unstructured point-wise displacements. Building on this insight, we propose SM4RT, a Structured Motion 4D Reconstruction Transformer for end-to-end 3D reconstruction and structured motion perception. SM4RT introduces Structure-of-Motion to represent scene dynamics, where scene motion is decomposed into a compact set of motion bases, each represented as a temporal sequence of 6D twists in SE(3). Dense scene motion is then recovered by sparse, time-shared per-pixel assignment weights over these bases, ensuring points on the same object share a common rigid-body motion trajectory. SM4RT introduces a parallel motion geometry encoder and decoder that jointly infer 3D geometry, world-coordinate motion, and scene kinematic structure in a single forward pass from monocular RGB video. SM4RT achieves strong motion reconstruction performance while preserving the geometric structure of scene motion.</div>
+      <div class="en">Action-conditioned video world models predict future observations from an initial observation and an action signal. In robotics, actions influence future observations through two distinct processes: they are first realized into robot motion by the robot body and controller, and the scene then responds through contact and object motion. Conditioning directly on action commands asks the world model to learn the realization process itself, while conditioning on logged future states leaks the interaction outcomes it is meant to predict. We propose robot-factored world models, which move two robot-specific factors outside the world model. First, action realization: each command is rolled through the robot's own controller and kinematics into a deployment-available nominal trajectory, a middle signal that avoids both action-realization learning and future-state leakage. Second, robot rendering: this nominal trajectory is rendered through the robot URDF, factoring the robot's geometry, kinematics, and appearance out of the model and into explicit rendered robot geometry. To resolve depth ambiguity, we pair end-effector depth with scene depth, giving geometric cues for contact and occlusion beyond image-plane overlap. Together, camera-aware static RGB/depth context and rendered robot geometry form a shared visual world-model interface that stays consistent across viewpoints and robot embodiments, so the model sees the action only as visible robot geometry and learns how objects respond to it. Our experiments show that the rendered interface outperforms vector-conditioned baselines and generalizes to unseen robot embodiments at inference. We further demonstrate that our model generates robot manipulation videos from human demonstrations by retargeting and rendering the hand motion as robot geometry.</div>
     </div>
     <div class="quick-conclusion">
       <div class="zh">🏁 结论：（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
       <div class="en">See the paper’s original abstract in the "Problem / 背景" row above.</div>
     </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Shing Ho J. Lin, Wenzhao Zheng, Dong Zhuo et al.</p>
+    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Byungjun Kim, Taeksoo Kim, Hyunsoo Cha et al.</p>
   </div>
   <div class="quick-links">
-    <a href="https://arxiv.org/abs/2607.22534v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.22534v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.22535v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.22535v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
     
   </div>
 </div>
 <div class="quick-card">
   <div>
-    <div class="quick-title-en">Explainable Reinforcement Learning for assisting Air Traffic Controllers</div>
-    <div class="quick-title-zh">Explainable Reinforcement Learning for assisting Air Traffic Controllers</div>
-    <div class="quick-tags"></div>
+    <div class="quick-title-en">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</div>
+    <div class="quick-title-zh">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</div>
+    <div class="quick-tags"><span class="tag" style="border-color:#10b98133;color:#10b981">🦾 Robot Manipulation · 机器人操控</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Tactile Sensing · 触觉感知</span><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 World Models · 世界模型</span></div>
     <div class="quick-summary">
       <div class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-      <div class="en">To effectively integrate AI into high-stakes, critical environments such as healthcare, autonomous driving, and aviation--and to advance toward higher levels of automation and seamless human-AI collaboration--building trust in AI-driven solutions is essential. Trust, in turn, is closely linked to the explainability of AI systems. The rapid advancements in AI across various domains have underscored the challenges of establishing trust, raising increasing interest in AI explainability even more when applied to deep learning. In this context, the present work aims to explore the application of explainability techniques to Reinforcement Learning (RL) algorithms, specifically within the safety-critical domain of Air Traffic Control (ATC). Using a simplified ATC environment as an initial testbed, an intelligent agent is trained with a reinforcement learning algorithm to make decisions on alternative flight routes that avoid no-fly zones. As a preliminary explainability approach, a saliency map is employed, providing insights into the input features that most significantly influence the agent's decision-making process.</div>
+      <div class="en">Contact-rich robot manipulation requires physical interaction cues that are often invisible to cameras, making tactile sensing essential for robust control. However, scaling visuo-tactile robot learning remains difficult because real tactile interaction data are expensive to collect, hardware-dependent, and limited in task and scene diversity. We present ViTacWorld, an action-conditioned visuo-tactile world model for scalable contact-rich robot manipulation. ViTacWorld leverages public real tactile datasets and a constructed simulation environment to scale visuo-tactile-action data, exploiting the fact that tactile signals are directly grounded in physical contact and can exhibit a smaller simulation-to-real gap than purely visual observations. The model is first pretrained with large-scale real and simulated visuo-tactile trajectories, and then finetuned with real-world policy rollouts to better match downstream manipulation behaviors. Given robot actions, ViTacWorld predicts temporally aligned visual observations and tactile feedback, enabling visuo-tactile-action rollout generation. To the best of our knowledge, ViTacWorld is the first framework that uses a world model for robot visuo-tactile-action trajectory generation and policy evaluation. It serves two roles: synthesizing rollouts to improve downstream tactile policies, and evaluating policies by predicting action-conditioned visuo-tactile outcomes under controlled action sequences. Experiments on contact-rich manipulation tasks show that ViTacWorld generates physically meaningful rollouts, improves policy performance through scalable data augmentation, and enables action-conditioned policy evaluation. Project page: https://vitacworld.github.io/</div>
     </div>
     <div class="quick-conclusion">
       <div class="zh">🏁 结论：（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
       <div class="en">See the paper’s original abstract in the "Problem / 背景" row above.</div>
     </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Anduel Mehmeti, Gabriella Gigante, Salvatore Venticinque</p>
+    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Yunao Huang, Shiyu Sang, Haotao Lu et al.</p>
   </div>
   <div class="quick-links">
-    <a href="https://arxiv.org/abs/2607.22525v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.22525v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.22530v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.22530v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
     
   </div>
 </div>
 <div class="quick-card">
   <div>
-    <div class="quick-title-en">The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents</div>
-    <div class="quick-title-zh">The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents</div>
-    <div class="quick-tags"></div>
+    <div class="quick-title-en">Conformal Constraint Tightening for Chance-Constrained Motion Planning with Unknown Dynamics</div>
+    <div class="quick-title-zh">Conformal Constraint Tightening for Chance-Constrained Motion Planning with Unknown Dynamics</div>
+    <div class="quick-tags"><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Motion Planning · 运动规划</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Conformal Prediction · 共形预测</span><span class="tag" style="border-color:#10b98133;color:#10b981">🦾 Safe Robotics · 安全机器人</span></div>
     <div class="quick-summary">
       <div class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-      <div class="en">Adding procedural skills to an LLM agent is typically evaluated by average improvement in task success. However, this metric hides an important cost: skills can also make agents worse. We measure both sides by comparing agents with and without skills across nearly 6,000 runs spanning two office automation benchmarks and three model harness stacks. This allows us to distinguish two outcomes. A regression is a task solved without skills but failed after skills are added. A residual failure is a task that fails both with and without skills. We find that regressions are substantial enough that the best performing skills outperform others primarily by regressing less, not by gaining more. We identify three causes of regression: (i) skill description osmosis, a skill changes an agent's behavior simply by being present in context, even when it is never invoked; (ii) grounding displacement, a skill's prescribed procedure overrides how the agent interprets its inputs; and (iii) verification displacement, where the procedure suppresses checks the agent would otherwise perform on its outputs. Analysing persistent failures reveals the same underlying pattern. Existing skills overemphasize procedural guidance the stage least often responsible for failure while under supporting grounding and verification, the dominant sources of remaining errors. After correcting evaluation artifacts and studying traces, we find many regressions and persistent failures recoverable through better grounding and verification. Procedural skills should be evaluated by decomposing their net effect into gains and regressions, not by aggregate improvement alone. We identify three regression modes skills should avoid, and find that reliability depends more on grounding and verification than on procedural skill choice.</div>
+      <div class="en">Motion planning algorithms compute control sequences that drive autonomous robots to goal regions while avoiding unsafe states. Existing methods, from sampling-based planning to deep reinforcement learning, typically provide task-completion guarantees only with respect to a nominal model or simulator, which may be invalidated when the true dynamics are unknown or difficult to model accurately. This letter addresses this limitation for systems with unknown dynamics and an available approximate nominal model, contributing a planner-agnostic constraint-tightening procedure that equips existing planners with a probabilistic task-completion guarantee on the true system. We leverage conformal prediction to provide a probabilistic bound on the nominal-to-true trajectory deviation over a distribution of planning problems. We tighten the planning constraints using that bound, and show that solving the tightened problem under the nominal model is a sufficient condition for solving the original problem on the true system with a prescribed probability. We validate the theoretical guarantees empirically and demonstrate substantially improved task completion relative to nominal-model planning.</div>
     </div>
     <div class="quick-conclusion">
       <div class="zh">🏁 结论：（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
       <div class="en">See the paper’s original abstract in the "Problem / 背景" row above.</div>
     </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Darshan Tank, Baran Nama</p>
+    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Shubham Natraj, Bruno Sinopoli, Yiannis Kantaros</p>
   </div>
   <div class="quick-links">
-    <a href="https://arxiv.org/abs/2607.22520v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.22520v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.22409v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.22409v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
     
   </div>
 </div>
 <div class="quick-card">
   <div>
-    <div class="quick-title-en">Quantum Spectral Model: Data Reuploading with Input-Conditioned Frequency Support</div>
-    <div class="quick-title-zh">Quantum Spectral Model: Data Reuploading with Input-Conditioned Frequency Support</div>
-    <div class="quick-tags"></div>
+    <div class="quick-title-en">Integrated Order Dispatching and Routing for Last-Mile Pickup via Deep Reinforcement Learning</div>
+    <div class="quick-title-zh">Integrated Order Dispatching and Routing for Last-Mile Pickup via Deep Reinforcement Learning</div>
+    <div class="quick-tags"><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 Deep Reinforcement Learning · 深度强化学习</span><span class="tag" style="border-color:#4ade8033;color:#4ade80">⚡ Logistics Optimization · 物流优化</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Order Dispatching · 订单调度</span></div>
     <div class="quick-summary">
       <div class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-      <div class="en">A central design principle in modern machine learning and artificial intelligence is to align a model's inductive bias with the structure of its input data. For matrix-valued inputs, relevant matrix-level relationships can be characterised through spectral values and spectral subspaces; however, common coordinate-wise rotation-gate data-encoding unitaries used in most quantum machine learning models do not explicitly construct such a matrix-level representation. We introduce Quantum Spectral Models (QSMs), in which we construct the generator of the data-encoding unitary directly from each input matrix. We study three QSM variants based on symmetric, global block, and non-overlapping patch-local block Hamiltonians. Their outputs admit truncated Fourier representations in which input-dependent spectral gaps supply candidate phase carriers, while spectral subspaces help determine their coefficients. We evaluate the QSMs and comparison quantum models on two matrix representations of Pendigits and two controlled synthetic tasks defined by spectral statistics. At the largest evaluated circuit depth, QSM variants lead the tested quantum models in mean test accuracy across all four benchmarks. The patch-local QSM leads on Pendigits, whereas the global block-Hamiltonian QSM leads on the controlled spectral tasks. Ablations show a task-dependent reversal: subspace-preserving controls perform better on Pendigits, whereas spectral-value-only controls lead among the tested ablations on the synthetic tasks. Together, these results shed new light on quantum machine-learning model design by showing how input-conditioned spectral representations can provide an analysable inductive bias, while offering a broader perspective on structure-aware model design in machine learning and artificial intelligence.</div>
+      <div class="en">In recent years, the growing complexity of last-mile pickup operations has increased the need for fast and accurate decision-making on logistics platforms. This challenge is fundamentally driven by two key and tightly coupled decision-making processes: order dispatching and routing. Solving them separately overlooks their interdependence, while fully end-to-end learning can be unstable and costly on large, variable-scale instances due to sparse rewards. To solve this problem, we propose an integrated optimization framework which couples a learned routing oracle with real-time dispatching heuristics. For the routing subproblem, we develop a Dynamic-Residual Graph Attention Network encoder with a Look-Ahead Courier-Personalized decoder. For the dispatching subproblem, we develop a routing-oracle-guided dispatching heuristic with local search, where the oracle provides near-optimal solutions to select candidate couriers while retaining real-time scalability. Extensive experiments on real-world datasets from Cainiao Logistics are used to test the performance of our approach, including an offline evaluation and an online rolling-horizon simulation. The experimental results show that our approach outperforms other benchmarks regarding solution quality and solving time, indicating it can effectively support logistics companies in solving real-time and large-scale last-mile pickup problems.</div>
     </div>
     <div class="quick-conclusion">
       <div class="zh">🏁 结论：（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
       <div class="en">See the paper’s original abstract in the "Problem / 背景" row above.</div>
     </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Peiyong Wang, Udaya Parampalli, Casey R. Myers</p>
+    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Yida Xu, Zhaofang Mao, Yuheng Miao et al.</p>
   </div>
   <div class="quick-links">
-    <a href="https://arxiv.org/abs/2607.22516v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.22516v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.22356v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.22356v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
     
   </div>
 </div>
 <div class="quick-card">
   <div>
-    <div class="quick-title-en">Opaque Epistemic Mediation: How LLM Deployment Configurations Shape the Validation of Pseudo-Science</div>
-    <div class="quick-title-zh">Opaque Epistemic Mediation: How LLM Deployment Configurations Shape the Validation of Pseudo-Science</div>
-    <div class="quick-tags"></div>
+    <div class="quick-title-en">On the Identifiability of Controlled World Models</div>
+    <div class="quick-title-zh">On the Identifiability of Controlled World Models</div>
+    <div class="quick-tags"><span class="tag" style="border-color:#fb923c33;color:#fb923c">🎮 World Models · 世界模型</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Representation Learning · 表示学习</span><span class="tag" style="border-color:#94a3b833;color:#94a3b8">🏷️ Planning · 规划</span></div>
     <div class="quick-summary">
       <div class="zh">（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
-      <div class="en">Commercial large language models are increasingly used as knowledge references, yet their stance on contested scientific claims is neither stable nor transparent. We tested how four major LLM families (Claude, Grok, GPT, Gemini) evaluate ethnonationalist pseudo-science derived from Frank Salter's biosocial framework across four temporal snapshots (October 2025-February 2026), via both API and web interfaces. Grok's Fast versions (which power the default user experience on X) consistently assigned credibility scores of 70-75, two to five times higher than all other models (which scored 15-40). This pattern was absent from control prompts testing basic evolutionary consensus and refuted Lamarckian claims, where all models performed comparably. Three additional findings emerged: (1) a silent patch reversed Grok's behaviour from chaotic to stably high validation overnight, without any public documentation; (2) the same Grok model identifier produced radically divergent outputs via API (75) and web (5.5) three months later; (3) refusal to rate the pseudo-scientific claim, the most defensible response observed, appeared in two model families through different interfaces (Claude Opus 4.1 categorically via web, GPT-5.1 Chat intermittently via API) and eroded in the successor version of each. These results indicate that the epistemic stance of a commercial LLM is not a stable property of the model but a contingent effect of deployment configuration: system prompts, safety layers, interface routing, and silent updates. This remains opaque to users and researchers alike. We argue this constitutes a matter of public concern requiring new forms of epistemic accountability.</div>
+      <div class="en">Learning world models that infer environment dynamics from high-dimensional observations and predict outcomes under candidate actions is central to planning and control. Joint-Embedding Predictive Architectures (JEPAs) provide a compelling framework for learning such models in representation space. Recent action-conditioned extensions perform promisingly in visual control and latent-space planning, but leave a fundamental question unresolved: when does controlled latent prediction identify both the underlying state and the controlled dynamics? This is challenging under nonlinear observations and behavior policies with limited conditional action variation, where state-dependent evolution and action effects can be statistically confounded. We establish a joint identifiability theory for controlled world models with Gaussian latent states under state-dependent Gaussian behavior policies. We identify two policy-dependent conditions: spectral separation of the predictable signal governs representation identifiability, while non-degenerate conditional action variation governs transition identifiability. We prove that when both conditions hold, every global minimizer of the JEPA objective identifies the latent state and controlled transition up to an orthogonal transformation. We further derive quantitative bounds on representation and transition identifiability under approximate optimization. Finally, we construct predictor perturbations along weakly excited action directions whose counterfactual-to-on-policy error ratio is the inverse transition-identifiability margin, revealing the cost of limited action coverage. Experiments across nonlinear observation maps and behavior policies corroborate the theory and demonstrate implications for transition identifiability, counterfactual prediction, and goal-conditioned latent planning.</div>
     </div>
     <div class="quick-conclusion">
       <div class="zh">🏁 结论：（AI 中文深度分析暂不可用：Anthropic API 额度不足。英文栏为论文原文摘要，下方链接均可正常访问。）</div>
       <div class="en">See the paper’s original abstract in the "Problem / 背景" row above.</div>
     </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Davide Scarso, Hugo Noronha de Almeida, Joaquim Pina</p>
+    <p style="font-size:11px;color:var(--text3);margin-top:6px">🧑‍🔬 Xiangteng Zhang, Yang Guan, Bo Zhang et al.</p>
   </div>
   <div class="quick-links">
-    <a href="https://arxiv.org/abs/2607.22513v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
-    <a href="https://arxiv.org/pdf/2607.22513v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.22430v1" target="_blank" class="btn btn-primary" style="font-size:11px">📄 arXiv</a>
+    <a href="https://arxiv.org/pdf/2607.22430v1" target="_blank" class="btn" style="font-size:11px">📥 PDF</a>
     
   </div>
 </div>
