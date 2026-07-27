@@ -31,20 +31,53 @@ def get_la_date():
     return now.strftime('%Y-%m-%d')
 
 
+# Bilingual notice shown when the Claude API is unavailable (e.g. no credit
+# balance). Keeps every field non-blank at $0 API spend.
+_NOTICE_ZH = ('（AI 中文深度分析暂不可用：Anthropic API 额度不足。'
+              '英文栏为论文原文摘要，下方链接均可正常访问。）')
+_POINTER_EN = 'See the paper’s original abstract in the "Problem / 背景" row above.'
+
+
 def _empty_analysis(paper):
+    """
+    Zero-cost graceful fallback used when the Claude API call fails
+    (typically an exhausted credit balance). Instead of blank cards, surface
+    the paper's REAL arXiv abstract plus a clear bilingual notice, so the
+    report always delivers useful content and working links even at $0 API.
+    """
+    abstract = (paper.get('abstract') or '').strip()
+    if abstract:
+        first = abstract.split('. ')[0].strip()
+        one_liner_en = (first[:237].rstrip() + '…') if len(first) > 240 else first
+        abstract_en = abstract
+    else:
+        one_liner_en = 'Full analysis unavailable — see source links below.'
+        abstract_en = 'Abstract not available for this paper.'
+
     return {
         'importance_score': 7,
         'topic_tags_en': [], 'topic_tags_zh': [],
         'title_zh': paper['title'],
-        'one_liner_zh': '暂无中文摘要', 'one_liner_en': 'Analysis unavailable',
-        'problem_zh': '', 'problem_en': '',
-        'highlights_zh': '', 'highlights_en': '',
-        'method_zh': '', 'method_en': '',
-        'experiment_zh': '', 'experiment_en': '',
-        'results_zh': '', 'results_en': '',
-        'conclusion_zh': '', 'conclusion_en': '',
-        'why_it_matters_zh': '', 'why_it_matters_en': '',
+        'one_liner_zh': _NOTICE_ZH,      'one_liner_en': one_liner_en,
+        'problem_zh': _NOTICE_ZH,        'problem_en': abstract_en,
+        'highlights_zh': _NOTICE_ZH,     'highlights_en': _POINTER_EN,
+        'method_zh': _NOTICE_ZH,         'method_en': _POINTER_EN,
+        'experiment_zh': _NOTICE_ZH,     'experiment_en': _POINTER_EN,
+        'results_zh': _NOTICE_ZH,        'results_en': _POINTER_EN,
+        'conclusion_zh': _NOTICE_ZH,     'conclusion_en': _POINTER_EN,
+        'why_it_matters_zh': _NOTICE_ZH, 'why_it_matters_en': _POINTER_EN,
         'key_formulas': [],
+    }
+
+
+def _empty_brief(paper):
+    """Zero-cost fallback for a brief card: show the real abstract."""
+    abstract = (paper.get('abstract') or '').strip()
+    summary_en = abstract if abstract else 'Abstract not available for this paper.'
+    return {
+        'title_zh': paper['title'],
+        'summary_zh': _NOTICE_ZH, 'summary_en': summary_en,
+        'conclusion_zh': _NOTICE_ZH, 'conclusion_en': _POINTER_EN,
     }
 
 
@@ -181,19 +214,12 @@ def main():
         brief_summaries = analyze_brief_batch(brief_papers_raw)
     except Exception as e:
         print(f'   Brief analysis failed: {e}')
-        brief_summaries = [
-            {'index': i+1, 'title_zh': p['title'],
-             'summary_zh': '', 'summary_en': '',
-             'conclusion_zh': '', 'conclusion_en': ''}
-            for i, p in enumerate(brief_papers_raw)
-        ]
+        brief_summaries = [_empty_brief(p) for p in brief_papers_raw]
 
     brief_results = []
     for paper, summary_data in zip(brief_papers_raw, brief_summaries):
         if not isinstance(summary_data, dict):
-            summary_data = {'title_zh': paper['title'],
-                            'summary_zh': '', 'summary_en': '',
-                            'conclusion_zh': '', 'conclusion_en': ''}
+            summary_data = _empty_brief(paper)
         brief_results.append({'paper': paper, 'summary': summary_data})
 
     # ── Step 8b: Quality check + self-evolution ───────────────
