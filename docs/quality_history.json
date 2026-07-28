@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-05-31",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"A Heterogeneous Architecture for Robot RL Beyond G\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Gaze2Act: Gaze-Conditioned Vision-Language-Action \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Efficient Test-Time Finetuning of LLMs via Convex \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Uncertainty-driven 3D Gaussian Splatting Active Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Self-Trained Verification for Training- and Test-T\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before submitting any brief, explicitly verify all four fields—摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)—contain non-empty text; missing any single field is a critical failure.",
-        "Write all four bilingual fields consecutively as one uninterruptible block; never split them across separate steps or defer any field to later.",
-        "If token limits are approaching, prioritize completing current brief's four required fields over starting a new brief.",
-        "After each brief, output a completion stamp listing all four fields with checkmarks before proceeding to the next brief."
-      ]
-    },
-    {
       "date": "2026-06-01",
       "score_before": 57,
       "score_after": 57,
@@ -935,6 +917,13 @@
     },
     {
       "date": "2026-07-27",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-28",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
