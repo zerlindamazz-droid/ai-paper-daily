@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-01",
-      "score_before": 57,
-      "score_after": 57,
-      "issues": [
-        "  Brief \"Skill Reuse as Compression in Agentic RL\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Dreaming Of Others: Latent Teammate Modeling In Wo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Answer-Set-Programming-based Abstractions for Rein\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Positional versus Symbolic Attention Heads: Learni\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"GPU Forecasters: Language Models as Selective Surr\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief, output a mandatory header: '=== REQUIRED FIELDS: 摘要✓ Summary✓ 结论✓ Conclusion✓ ===' and verify all four are populated before closing.",
-        "Treat all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as a single atomic block; never mark a brief complete until all four contain substantive text.",
-        "Immediately after drafting each brief, run a self-check: list each required field name and confirm it is non-empty before proceeding to the next brief.",
-        "If any bilingual field is missing upon review, halt all other output, fill the missing field inline, then re-verify the complete set before continuing."
-      ]
-    },
-    {
       "date": "2026-06-02",
       "score_before": 100,
       "score_after": 100,
@@ -924,6 +906,13 @@
     },
     {
       "date": "2026-07-28",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-07-29",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
