@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-04",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Reinforcement Learning from Rich Feedback with Dis\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Scenario Generation for Risk-Aware Reinforcement L\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Bayesian learning for the stochastic shortest path\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learning Empirically Admissible Neural Heuristics \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Dynamic Multi-Pair Trading Strategy in Cryptocurre\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before starting each brief, declare a checklist: '摘要（中文）☐ Summary (EN)☐ 结论（中文）☐ Conclusion (EN)☐' and check off each field only after writing substantive content.",
-        "Never close a brief without outputting a final verification line confirming all four bilingual fields are populated with non-empty text.",
-        "Treat the four bilingual fields as one atomic unit; complete all four in immediate succession before any other output or transition.",
-        "If approaching output limits, finish all four required fields of the current brief before beginning any new brief or section."
-      ]
-    },
-    {
       "date": "2026-06-05",
       "score_before": 100,
       "score_after": 100,
@@ -908,6 +890,13 @@
     },
     {
       "date": "2026-07-31",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-01",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
