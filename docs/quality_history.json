@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-05",
-      "score_before": 100,
-      "score_after": 100,
-      "issues": [],
-      "new_hints": []
-    },
-    {
       "date": "2026-06-06",
       "score_before": 57,
       "score_after": 57,
@@ -897,6 +890,13 @@
     },
     {
       "date": "2026-08-01",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-02",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
