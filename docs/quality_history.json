@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-06",
-      "score_before": 57,
-      "score_after": 57,
-      "issues": [
-        "  Brief \"HANDOFF: Humanoid Agentic Task-Space Whole-Body Co\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TempoVLA: Learning Speed-Controllable Vision-Langu\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Maximising the Set-Piece Return: Optimising Footba\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TailLoR: Protecting Principal Components in Parame\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Plug-and-Play Guidance for Discrete Diffusion Mode\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief, output a numbered checklist '1.摘要 2.Summary 3.结论 4.Conclusion' and tick each only after writing substantive content.",
-        "Complete all four bilingual fields consecutively as one uninterruptible block before outputting any other content or transitioning to the next brief.",
-        "If output limits approach, stop starting new briefs entirely; fully complete the current brief's four required fields first.",
-        "After finishing each brief, output a one-line verification: 'Fields complete: 摘要✓ Summary✓ 结论✓ Conclusion✓' before proceeding."
-      ]
-    },
-    {
       "date": "2026-06-07",
       "score_before": 64,
       "score_after": 64,
@@ -897,6 +879,13 @@
     },
     {
       "date": "2026-08-02",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-03",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
