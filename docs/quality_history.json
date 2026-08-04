@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-07",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Flow-based Policy Adaptation without Policy Update\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Regret Minimization with Adaptive Opponents in Rep\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Ensuring Interaction Safety in Multitask Exoskelet\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"MLEvolve: A Self-Evolving Framework for Automated \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"RiskFlow: Fast and Faithful Safety-Critical Traffi\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing each brief, output the literal headers '摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)' as placeholders, then fill each immediately.",
-        "Treat all four bilingual fields as mandatory blocking requirements; never transition to a new brief until all four contain substantive content.",
-        "If any of the four bilingual fields is empty when a brief ends, insert the missing content immediately before outputting anything else.",
-        "After each brief, output 'VERIFIED: 摘要✓ Summary✓ 结论✓ Conclusion✓' — if any field is missing, complete it before printing this line."
-      ]
-    },
-    {
       "date": "2026-06-08",
       "score_before": 64,
       "score_after": 64,
@@ -886,6 +868,13 @@
     },
     {
       "date": "2026-08-03",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-04",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
