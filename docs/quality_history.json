@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-08",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Affordance-Based Hierarchical Reinforcement Learni\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Rapid co-design of Buoyancy-assisted robots for Ch\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Spline Policy: A Structured Representation for Rob\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"RhinoVLA Technical Report\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Self-evolving LLM agents with in-distribution Opti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before starting each brief, mentally verify all four fields exist: 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN). Never skip or defer any.",
-        "Treat the four bilingual fields as a single atomic block; output all four consecutively before writing any other section or transitioning.",
-        "If nearing output limits, halt new briefs immediately and complete all four required fields for the current brief first."
-      ]
-    },
-    {
       "date": "2026-06-09",
       "score_before": 64,
       "score_after": 64,
@@ -875,6 +858,13 @@
     },
     {
       "date": "2026-08-04",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-05",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
