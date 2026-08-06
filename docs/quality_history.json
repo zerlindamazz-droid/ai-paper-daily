@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-09",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"MemoryVLA++: Temporal Modeling via Memory and Imag\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"An Agency-Transferring Model-Free Policy Enhanceme\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Difference-Aware Retrieval Policies for Imitation \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Rethinking the Divergence Regularization in LLM RL\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Preserving Plasticity in Continual Learning via Dy\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "After completing each brief's main content, immediately output all four bilingual fields as one atomic block before any section break or new brief begins.",
-        "Use a strict per-brief checklist: output '摘要（中文）→Summary (EN)→结论（中文）→Conclusion (EN)' in sequence; never mark a brief complete until all four are substantively filled.",
-        "If approaching output limits mid-brief, prioritize completing the four bilingual fields over starting any new content or brief.",
-        "Treat missing bilingual fields as a hard blocker: scan for empty 摘要, Summary, 结论, Conclusion fields before transitioning and fill them immediately."
-      ]
-    },
-    {
       "date": "2026-06-10",
       "score_before": 64,
       "score_after": 64,
@@ -865,6 +847,13 @@
     },
     {
       "date": "2026-08-05",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-06",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
