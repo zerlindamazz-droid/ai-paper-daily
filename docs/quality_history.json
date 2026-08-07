@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-10",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"TacForeSight: Force-Guided Tactile World Model for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"RoboNaldo: Accurate, Stable and Powerful Humanoid \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Test-Time Gradient Guidance of Flow Policies in Re\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Generation of Diverse and Functional Robot Designs\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"When to Align, When to Predict: A Phase Diagram fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before closing any brief, run an explicit 4-field check: output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one uninterruptible block.",
-        "Never begin a new brief or section until the previous brief's four bilingual fields are fully written with substantive content.",
-        "If output limits approach, immediately complete all four bilingual fields for the current brief before stopping; never leave them empty.",
-        "Treat the four bilingual fields as the highest-priority content in each brief—write them before optional sections like methodology details."
-      ]
-    },
-    {
       "date": "2026-06-11",
       "score_before": 64,
       "score_after": 64,
@@ -854,6 +836,13 @@
     },
     {
       "date": "2026-08-06",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-07",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
