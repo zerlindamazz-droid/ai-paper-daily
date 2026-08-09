@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-12",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Mana: Dexterous Manipulation of Articulated Tools\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"$\\texttt{WEAVER}$, Better, Faster, Longer: An Effe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Multi-Agent Reinforcement Learning from Delayed Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"MaskWAM: Unifying Mask Prompting and Prediction fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"The Stable Recovery Manifold: Geometric Principles\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Write 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as the very first four fields after each brief's title—no exceptions, no deferral.",
-        "Treat any brief missing these four fields as critically incomplete; halt all other output and backfill them immediately before proceeding.",
-        "Never transition to a new brief until explicitly confirming all four bilingual fields contain substantive text in the previous brief."
-      ]
-    },
-    {
       "date": "2026-06-13",
       "score_before": 100,
       "score_after": 100,
@@ -832,6 +815,13 @@
     },
     {
       "date": "2026-08-08",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-09",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
