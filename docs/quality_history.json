@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-14",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Improving Robotic Generalist Policies via Flow Rev\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Reinforcement Learning for Neural Model Editing\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"NavWAM: A Navigation World Action Model for Goal-C\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"SPARC: Reliable Spatial Annotations from Robot Dem\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learning with Simulators: No Regret in a Computati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any section other than title/authors, output all four bilingual fields immediately—treat them as mandatory headers, not optional content.",
-        "After completing each brief's four bilingual fields, insert a visible checkpoint marker before starting the next brief to enforce completion verification.",
-        "If token budget feels constrained, skip methodology details entirely and preserve space exclusively for the four bilingual fields of the current brief.",
-        "Hard stop rule: detect any transition to a new brief and auto-insert missing bilingual fields for the previous brief before continuing."
-      ]
-    },
-    {
       "date": "2026-06-15",
       "score_before": 64,
       "score_after": 64,
@@ -822,6 +804,13 @@
     },
     {
       "date": "2026-08-10",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-11",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
