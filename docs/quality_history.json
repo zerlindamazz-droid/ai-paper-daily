@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-15",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Provably Safe, Yet Scalable Reinforcement Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Spatially Conditioned Diffusion Policy: Learning P\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"ORCA: A Platform for Open-Source Dexterity Researc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learning Coordinated Preference for Multi-Objectiv\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TRACE: Trajectory-Routed Causal Memory for Delayed\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Immediately after title/authors, output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as a mandatory block before any other content—zero exceptions.",
-        "Never begin a new brief until you have verified all four bilingual fields in the current brief contain at least two substantive sentences each.",
-        "If approaching output limits, truncate methodology/experiment details first; the four bilingual fields are non-negotiable and must always be completed.",
-        "Treat the four bilingual fields as structural prerequisites, not optional sections—missing even one field means the brief is critically incomplete and must be fixed immediately."
-      ]
-    },
-    {
       "date": "2026-06-16",
       "score_before": 100,
       "score_after": 100,
@@ -811,6 +793,13 @@
     },
     {
       "date": "2026-08-11",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-12",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
