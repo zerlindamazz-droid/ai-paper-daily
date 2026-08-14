@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-17",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Visual Verification Enables Inference-time Steerin\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"EBench: Elemental Diagnosis of Generalist Mobile M\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learning Fair Pareto-Optimal Policies in Multi-Obj\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"EAGG: Embodiment-Aligned Grasp Generation via Geom\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"From Reasoning Traces to Reusable Modules: Underst\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before outputting any content beyond title/authors, insert all four bilingual fields as a locked mandatory block—treat skipping any field as a critical failure.",
-        "After each bilingual field, write a self-check tag confirming it contains at least two substantive sentences before proceeding further.",
-        "If output length is constrained, omit methodology and experiments entirely; the four bilingual fields always take absolute priority over all other sections.",
-        "Never start a new brief without outputting a completion checkpoint confirming all four bilingual fields are present and substantive in the current brief."
-      ]
-    },
-    {
       "date": "2026-06-18",
       "score_before": 64,
       "score_after": 64,
@@ -800,6 +782,13 @@
     },
     {
       "date": "2026-08-13",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-14",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
