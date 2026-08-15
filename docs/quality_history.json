@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-18",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"UBP2: Uncertainty-Balanced Preference Planning for\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Zero-Shot Long-Horizon Dexterous Manipulation via \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Invertible Neural Network Adapter for One-Step Flo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"STARE: Surprisal-Guided Token-Level Advantage Rewe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Mobile Pedipulation for Object Sliding via Hierarc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any other section, output all four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one uninterruptible block.",
-        "If nearing output limits, delete methodology/experiments entirely—the four bilingual fields are mandatory and must never be sacrificed for other content.",
-        "After completing each brief, explicitly verify all four bilingual fields exist and contain two+ substantive sentences before starting the next brief.",
-        "Treat missing any bilingual field as a critical failure; halt and insert the missing field immediately before proceeding."
-      ]
-    },
-    {
       "date": "2026-06-19",
       "score_before": 64,
       "score_after": 64,
@@ -789,6 +771,13 @@
     },
     {
       "date": "2026-08-14",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-15",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
