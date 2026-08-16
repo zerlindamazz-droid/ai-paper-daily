@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-19",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"MemoryWAM: Efficient World Action Modeling with Pe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Direct Advantage Estimation for Scalable and Sampl\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TaCauchy: An Extensible FEM Framework for Vision-B\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Generating Robot Hands from Human Demonstrations\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Fisher-Geometric Sharpness and the Implicit Bias o\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Output all four bilingual fields as one atomic block immediately after title/authors—no other content may appear until all four are complete.",
-        "Treat any brief missing a bilingual field as a hard failure; verify all four fields exist before writing methodology, experiments, or any other section.",
-        "If output length is constrained, delete methodology and experiments entirely—the four bilingual fields are non-negotiable and cannot be sacrificed.",
-        "Add an explicit self-check after each brief: confirm 摘要（中文）, Summary (EN), 结论（中文）, and Conclusion (EN) are all present before proceeding."
-      ]
-    },
-    {
       "date": "2026-06-20",
       "score_before": 64,
       "score_after": 64,
@@ -778,6 +760,13 @@
     },
     {
       "date": "2026-08-15",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-16",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
