@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-20",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"CRAX: Fast Safe Reinforcement Learning Benchmarkin\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"On the Variance of Temporal Difference Learning an\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Sparsity, Superposition, and Forgetting: A Mechani\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Multi-Task Bayesian In-Context Learning\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Robust $Q$-learning for mean-field control under W\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any section except title/authors, output all four bilingual fields as one atomic, uninterruptible block.",
-        "Treat any brief missing 摘要（中文）, Summary (EN), 结论（中文）, or Conclusion (EN) as a hard failure requiring immediate correction.",
-        "If approaching output limits, silently drop methodology and experiments—never sacrifice the four mandatory bilingual fields.",
-        "After each brief, run a silent checklist confirming all four bilingual fields exist before starting the next brief."
-      ]
-    },
-    {
       "date": "2026-06-21",
       "score_before": 100,
       "score_after": 100,
@@ -767,6 +749,13 @@
     },
     {
       "date": "2026-08-16",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-17",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
