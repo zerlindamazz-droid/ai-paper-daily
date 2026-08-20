@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-23",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"CoorDex: Coordinating Body and Hand Priors for Con\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Learning Process Rewards via Success Visitation Ma\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"RECALL: Recovery Experience Collection for Active \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"AI Exposure Scores: what they measure, what they m\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"AutoDex: An Automated Real-World System for Dexter\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any other section, output all four bilingual fields atomically; treat any missing field as a hard stop requiring immediate insertion.",
-        "If output is truncated or length-constrained, drop methodology and experiments first—the four bilingual fields are always non-negotiable.",
-        "After completing each brief, run an explicit checklist: confirm 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) all exist with 2+ sentences.",
-        "Never begin the next brief until the previous brief's four bilingual fields are verified present and substantive."
-      ]
-    },
-    {
       "date": "2026-06-24",
       "score_before": 64,
       "score_after": 64,
@@ -756,6 +738,13 @@
     },
     {
       "date": "2026-08-19",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-20",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
