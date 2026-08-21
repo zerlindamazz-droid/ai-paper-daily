@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-24",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"InSight: Self-Guided Skill Acquisition via Steerab\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"World Value Models for Robotic Manipulation\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"LaGO: Latent Action Guidance for Online Reinforcem\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"TACTFUL: Tactile-Driven Exploration For Object Loc\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Beyond Monotonic Progress: Retry-Supervised Value \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Output all four bilingual fields (摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN)) as the very first block of every brief, before any other section.",
-        "If any of the four mandatory bilingual fields is absent, insert it immediately before continuing—never skip or defer these fields.",
-        "Treat the four bilingual fields as a single atomic unit; write all four consecutively without interruption or interspersed content."
-      ]
-    },
-    {
       "date": "2026-06-25",
       "score_before": 64,
       "score_after": 64,
@@ -745,6 +728,13 @@
     },
     {
       "date": "2026-08-20",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-21",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
