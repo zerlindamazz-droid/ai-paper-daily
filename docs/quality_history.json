@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-25",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Learning Action Priors for Cross-embodiment Robot \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"FORCE: Efficient VLA Reinforcement Fine-Tuning via\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Mixture-of-Experts RL for Fault-Tolerant Legged Lo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Hierarchical Reinforcement Learning for Neural Net\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"DeformGen: Dynamics-Based Topology Augmentation fo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Output the four bilingual fields (摘要中文, Summary EN, 结论中文, Conclusion EN) as one atomic block at the very start of every brief, before any other content.",
-        "If output length is constrained, drop methodology and experiments entirely—the four bilingual fields are always mandatory and must never be omitted.",
-        "Before moving to the next brief, verify all four bilingual fields exist and contain at least two sentences each; treat absence as a hard stop."
-      ]
-    },
-    {
       "date": "2026-06-26",
       "score_before": 64,
       "score_after": 64,
@@ -735,6 +718,13 @@
     },
     {
       "date": "2026-08-21",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-22",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
