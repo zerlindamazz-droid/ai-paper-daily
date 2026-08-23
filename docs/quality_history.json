@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-26",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Scalable Behavior Cloning with Open Data, Training\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Reinforcement Learning without Ground-Truth Soluti\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Bridging Performance and Generalization in Reinfor\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"E-TTS: A New Embodied Test-Time Scaling Framework \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"World Action Models Enable Continual Imitation Lea\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Output 摘要（中文）, Summary (EN), 结论（中文）, Conclusion (EN) as one atomic block before ANY other content in every brief, no exceptions.",
-        "After finishing each brief, explicitly verify all four bilingual fields exist with 2+ sentences before starting the next brief.",
-        "If token budget is tight, delete methodology/experiments sections entirely—never sacrifice the four mandatory bilingual fields for any reason.",
-        "Treat absence of any single bilingual field as a hard stop; insert it immediately before continuing output."
-      ]
-    },
-    {
       "date": "2026-06-27",
       "score_before": 64,
       "score_after": 64,
@@ -725,6 +707,13 @@
     },
     {
       "date": "2026-08-22",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-23",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
