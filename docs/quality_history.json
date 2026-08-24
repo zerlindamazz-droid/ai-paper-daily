@@ -1,24 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-06-27",
-      "score_before": 64,
-      "score_after": 64,
-      "issues": [
-        "  Brief \"Learning to Fold: prizewinning solution at LeHome \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Continual Robot Policy Learning via Variational Ne\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Automating Potential-based Reward Shaping with Vis\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Autoregressive Boltzmann Generators\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Hallucination in World Models is Predictable and P\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": [
-        "Before writing any brief content, output a labeled checklist: 摘要（中文）✓, Summary (EN)✓, 结论（中文）✓, Conclusion (EN)✓—then immediately fill each field.",
-        "The four bilingual fields are non-negotiable prerequisites; if they are missing at brief completion, regenerate them before any other output.",
-        "Hardcode the four bilingual fields as a fixed template header for every brief; populate them first, then append remaining sections.",
-        "Never begin a new brief until the previous one passes a four-field completeness check; missing fields must be inserted immediately."
-      ]
-    },
-    {
       "date": "2026-06-28",
       "score_before": 64,
       "score_after": 64,
@@ -714,6 +696,13 @@
     },
     {
       "date": "2026-08-23",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-24",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
