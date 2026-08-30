@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-07-03",
-      "score_before": 0,
-      "score_after": 0,
-      "issues": [
-        "  Featured \"LeVLJEPA: End-to-End Vision-Language Pretraining W\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"ASPIRE: Agentic /Skills Discovery for Robotics\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"ABot-M0.5: Unified Mobility-and-Manipulation World\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"Is One Layer Enough? Training A Single Transformer\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Brief \"Distributed Attacks in Persistent-State AI Control\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"LACUNA: A Testbed for Evaluating Localization Prec\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Program-as-Weights: A Programming Paradigm for Fuz\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Online Safety Monitoring for LLMs\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"ReContext: Recursive Evidence Replay as LLM Harnes\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": []
-    },
-    {
       "date": "2026-07-04",
       "score_before": 0,
       "score_after": 0,
@@ -655,6 +638,13 @@
     },
     {
       "date": "2026-08-29",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-08-30",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
