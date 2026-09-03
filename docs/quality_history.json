@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-07-07",
-      "score_before": 0,
-      "score_after": 0,
-      "issues": [
-        "  Featured \"EdgeBench: Unveiling Scaling Laws of Learning from\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"ResearchStudio-Idea: An Evidence-Grounded Research\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"RoboDojo: A Unified Sim-and-Real Benchmark for Com\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"Vision Pretraining for Dense Spatial Perception\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Brief \"From Fixed to Free Cameras: Calibration-Free View-\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Weak-to-Strong Generalization via Direct On-Policy\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Interpretable Human-Label-Free Deep Learning for R\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"LLM-as-a-Verifier: A General-Purpose Verification \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Deform360: A Massive Multi-view Visuotactile Datas\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": []
-    },
-    {
       "date": "2026-07-08",
       "score_before": 0,
       "score_after": 0,
@@ -615,6 +598,13 @@
     },
     {
       "date": "2026-09-02",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-09-03",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
