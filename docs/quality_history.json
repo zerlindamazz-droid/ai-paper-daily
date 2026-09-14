@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-07-18",
-      "score_before": 0,
-      "score_after": 0,
-      "issues": [
-        "  Featured \"T^2MLR: Transformer with Temporal Middle-Layer Rec\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"xHC: Expanded Hyper-Connections\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"SEED: Self-Evolving On-Policy Distillation for Age\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"DriftWorld: Fast World Modeling through Drifting\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Brief \"Pretraining Data Can Be Poisoned through Computati\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"SceneBind: Binding What and Where Across Vision, A\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Beyond Success Rate: Cost-Aware Evaluation of Offe\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Decoding Market Emotion from Blockchain Activity: \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"SearchOS-V1: Towards Robust Open-Domain Informatio\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": []
-    },
-    {
       "date": "2026-07-19",
       "score_before": 0,
       "score_after": 0,
@@ -505,6 +488,13 @@
     },
     {
       "date": "2026-09-13",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-09-14",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
