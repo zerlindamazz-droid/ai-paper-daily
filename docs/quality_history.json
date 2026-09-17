@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-07-21",
-      "score_before": 0,
-      "score_after": 0,
-      "issues": [
-        "  Featured \"Patch Policy: Efficient Embodied Control via Dense\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"FM-VLA: Force-based Memory for Vision-Language-Act\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"TimeLens2: Generalist Video Temporal Grounding wit\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"Loop the Loopies!\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Brief \"The Many Senses of Visual Similarity: A Text-Promp\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Automated Discovery Has No Universally Superior Ha\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"It's Not What You Say, It's How You Say It: Evalua\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Simple Domain Generalization for Strong Pixel-Leve\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Logical Judgments Under Pressure: Diagnosing Syllo\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": []
-    },
-    {
       "date": "2026-07-22",
       "score_before": 0,
       "score_after": 0,
@@ -475,6 +458,13 @@
     },
     {
       "date": "2026-09-16",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-09-17",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
