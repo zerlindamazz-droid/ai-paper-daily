@@ -1,23 +1,6 @@
 {
   "runs": [
     {
-      "date": "2026-07-25",
-      "score_before": 0,
-      "score_after": 0,
-      "issues": [
-        "  Featured \"Self-Supervised Learning of Structured Dynamics fr\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"OpenForgeRL: Train Harness-native Agents in Any En\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"Hilbert Operator for Progressive Encoding (HOPE): \": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Featured \"Tencent WorkBuddy Bench: A Multi-Domain Coding-Age\": missing ['待解决的问题（中文）', '解决的亮点（中文）', '实验内容（中文）', '实验结果（中文）', '结论（中文）', '为什么重要（中文）', '方法（中文）', 'Conclusion (EN)', 'Why It Matters (EN)']",
-        "  Brief \"Barzilai-Borwein Fails Superlinear Convergence on \": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Synthetic data generation framework for quality co\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Surprisal Theory is Tautological (without Rational\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Beyond Sufficiency: Time Series Explanation with C\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']",
-        "  Brief \"Beyond Episodic Evaluation: Memory Architectural B\": missing ['摘要（中文）', 'Summary (EN)', '结论（中文）', 'Conclusion (EN)']"
-      ],
-      "new_hints": []
-    },
-    {
       "date": "2026-07-26",
       "score_before": 0,
       "score_after": 0,
@@ -435,6 +418,13 @@
     },
     {
       "date": "2026-09-20",
+      "score_before": 100,
+      "score_after": 100,
+      "issues": [],
+      "new_hints": []
+    },
+    {
+      "date": "2026-09-21",
       "score_before": 100,
       "score_after": 100,
       "issues": [],
